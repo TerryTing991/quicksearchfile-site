@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quick Search Performance — 100,000-File Search-Time Results</title>
+  <meta name="description" content="Quick Search File performance notes with macOS and iOS 100,000-file search-time results using combined filename terms with default AND matching and an extension filter.">
+  <link rel="canonical" href="https://www.quicksearchfile.com/performance.html">
+  <meta property="og:title" content="Quick Search Performance">
+  <meta property="og:description" content="macOS and iOS 100,000-file search-time results for local filename search.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.quicksearchfile.com/performance.html">
+  <meta property="og:image" content="https://www.quicksearchfile.com/assets/quick-search-ios-icon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Quick Search Performance">
+  <meta name="twitter:description" content="Measured local stress test results for 100,000 generated files.">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.quicksearchfile.com/"},{"@type":"ListItem","position":2,"name":"Performance","item":"https://www.quicksearchfile.com/performance.html"}]}</script>
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/quick-search-ios-icon-192.png" width="34" height="34" alt="Quick Search File app icon"><span>Quick Search File</span></a><div class="nav-links"><a href="/">Home</a><a href="/macos.html">macOS</a><a href="/ios.html">iOS</a><a href="/performance.html" aria-current="page">Performance</a><a href="/guides/">Guides</a><a class="store-link" href="https://apps.apple.com/app/quick-search-file/id6765616570">App Store</a></div></nav></header>
+  <main>
+    <section class="hero"><div class="hero-inner"><p class="eyebrow">100,000-file stress test</p><h1>Measured search performance for large local file sets.</h1><p class="lead">The numbers below were measured against generated local test data using combined filename terms with default AND matching and an extension filter. Quick Search File is built to keep local file search in the millisecond range on both desktop and mobile devices.</p></div></section>
+    <section class="section"><div class="section-inner"><div class="section-head"><div><p class="eyebrow">Test conditions</p><h2>100,000 generated files. Combined terms with default AND matching.</h2></div><p>The stress test used multiple filename terms matched together by default, plus an extension filter. Each platform result is the average of three repeated searches.</p></div><div class="context-grid"><div class="context-item"><strong>Search condition</strong><span>Combined filename terms with default AND matching and an extension filter</span></div></div><article class="result-report" aria-labelledby="search-run-results"><h3 id="search-run-results">Search run results</h3><div class="platform-result"><div class="platform-result-head"><h4>macOS App</h4><p>Focused on lightning-fast local search.</p></div><div class="run-list"><div class="result-row"><span>Run 1</span><strong>5.222 ms</strong></div><div class="result-row"><span>Run 2</span><strong>4.887 ms</strong></div><div class="result-row"><span>Run 3</span><strong>4.748 ms</strong></div><div class="result-row average"><span>Average search time</span><strong>4.952 ms</strong></div></div></div><div class="platform-result"><div class="platform-result-head"><h4>iOS App</h4><p>Exceptional performance on mobile devices.</p></div><div class="run-list"><div class="result-row"><span>Run 1</span><strong>7.723 ms</strong></div><div class="result-row"><span>Run 2</span><strong>6.404 ms</strong></div><div class="result-row"><span>Run 3</span><strong>6.066 ms</strong></div><div class="result-row average"><span>Average search time</span><strong>6.731 ms</strong></div></div></div></article></div></section>
+    <section class="section"><div class="section-inner"><div class="section-head"><div><p class="eyebrow">Interpretation</p><h2>Use the numbers as search-time evidence, not a universal guarantee.</h2></div><p>The purpose of this page is to show search timing at a known dataset scale without overpromising performance on every device or storage provider.</p></div><div class="grid two"><article class="card"><h3>What this measures</h3><p>These results measure the app search path after a local search index is ready for use.</p></article><article class="card"><h3>Device and storage can vary</h3><p>Actual search time can vary by hardware, storage state, cloud file availability, index size, and system load.</p></article></div></div></section>
+  </main>
+  <footer class="footer"><div class="footer-inner">© 2026 Quick Search File performance notes.</div></footer>
+</body>
+</html>
