@@ -1,6 +1,6 @@
 # Quick Search File Website
 
-Static product website for `www.quicksearchfile.com`.
+Static product website for `quicksearchfile.com`.
 
 This site is separate from the existing App Store privacy and support pages:
 
