@@ -659,6 +659,24 @@ p {
   font-size: 14px;
 }
 
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-weight: 700;
+}
+
 @media (min-width: 760px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1.05fr) minmax(310px, 0.95fr);
@@ -725,5 +743,9 @@ p {
 
   .product-visual {
     padding: 16px;
+  }
+
+  .footer-row {
+    flex-direction: column;
   }
 }

@@ -2,10 +2,14 @@
 
 Static product website for `quicksearchfile.com`.
 
-This site is separate from the existing App Store privacy and support pages:
+Recommended App Store Connect URLs:
 
-- Privacy Policy: `https://terryting991.github.io/search-privacy/`
-- Support: `https://terryting991.github.io/search-privacy/support.html`
+- Marketing website: `https://quicksearchfile.com/`
+- Privacy Policy: `https://quicksearchfile.com/privacy.html`
+- Support: `https://quicksearchfile.com/support.html`
+- Terms of Service: `https://quicksearchfile.com/terms.html`
+
+Legacy GitHub Pages privacy and support URLs may remain online as a fallback, but new App Store metadata should use the `quicksearchfile.com` URLs.
 
 ## Local preview
 
