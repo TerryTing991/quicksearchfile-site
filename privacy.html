@@ -27,7 +27,7 @@
           <p class="eyebrow">Privacy</p>
           <h1>Privacy Policy</h1>
           <p class="lead">Quick Search File is built around local search. The app indexes folders and connected locations you choose so you can find files by filename, extension, folder path, and search terms.</p>
-          <p>Last updated: May 16, 2026</p>
+          <p>Last updated: May 28, 2026</p>
           <nav class="language-switch" aria-label="Language"><a href="#en">English</a><a href="#ja">日本語</a><a href="#zh-Hant">繁體中文</a></nav>
         </header>
 
@@ -38,9 +38,9 @@
         <h3>Purpose of File Access</h3>
         <p>Quick Search File uses the iOS, iPadOS, or macOS file picker and platform permissions to let you actively authorize specific folders. Folder access is used only to read file names, file extensions, paths, and related metadata needed to build and update a search index.</p>
 
-        <h3>Google Drive Read-Only Access</h3>
-        <p>If you choose to connect Google Drive, Quick Search File uses Google OAuth and the <code>https://www.googleapis.com/auth/drive.readonly</code> permission scope. This read-only scope allows the app to view Google Drive files and folders that your Google account can access.</p>
-        <p>Quick Search File uses Google Drive access to list and read file and folder metadata needed for search, indexing, result display, and user-directed file access. The app does not use Google Drive access to create, edit, move, delete, or share your Google Drive files.</p>
+        <h3>Google Drive Access</h3>
+        <p>If you choose to connect Google Drive, Quick Search File uses Google OAuth, Google Picker, and the <code>https://www.googleapis.com/auth/drive.file</code> permission scope. Google Drive access is limited to folders that you explicitly select through Google Picker and the files and subfolders inside those selected folders.</p>
+        <p>Quick Search File uses Google Drive access to list folder contents, read file and folder metadata needed for search and indexing, display search results, and open a file only when you choose to open it from a search result. The app does not use Google Drive access to create, edit, move, delete, or share your Google Drive files.</p>
         <p>You can revoke Google Drive access at any time from your Google Account security settings.</p>
 
         <h3>OneDrive Access</h3>
@@ -58,7 +58,7 @@
         <p>Google user data is used only to provide or improve user-facing file search features. It is not sold, used for advertising, transferred for unrelated purposes, or used to train generalized artificial intelligence or machine learning models.</p>
 
         <h3>Data Storage and Use</h3>
-        <p>Local index data and search settings are stored on your device. Quick Search File does not upload your local file index, local search history, or local folder metadata to a Quick Search File server.</p>
+        <p>Local index data and search settings are stored on your device. Quick Search File does not upload file contents, filenames, file paths, file identifiers, cloud drive metadata, search history, or local index data to any server or external location.</p>
         <p>If the macOS Command Line Interface (CLI) is enabled, it uses the same app-authorized local index. CLI output may include filenames, paths, extensions, file sizes, and other metadata you request in text, paths-only, or JSON form.</p>
 
         <h3>Subscriptions and Payments</h3>
@@ -82,7 +82,7 @@
 
       <section id="ja" class="legal-section" lang="ja">
         <h2>プライバシーポリシー</h2>
-        <p>最終更新日：2026年5月16日</p>
+        <p>最終更新日：2026年5月28日</p>
 
         <h3>収集するデータの範囲</h3>
         <p>Quick Search File は、ファイル検索のために端末内で索引を作成します。利用する機能に応じて、ファイル名、拡張子、フォルダパス、ファイル識別子、ファイルサイズ、更新日時、選択したフォルダ情報、検索語、索引更新状態、App設定、サブスクリプション状態、および検索結果の表示に必要な関連メタデータを処理する場合があります。</p>
@@ -91,9 +91,9 @@
         <h3>ファイルアクセスの目的</h3>
         <p>Quick Search File は、iOS / iPadOS / macOS のファイルピッカーおよびプラットフォーム権限を使用し、ユーザーが特定のフォルダを明示的に許可できるようにします。フォルダアクセスは、検索索引の作成と更新に必要なファイル名、拡張子、パス、および関連メタデータを読み取る目的のみに使用されます。</p>
 
-        <h3>Google Drive の読み取り専用アクセス</h3>
-        <p>Google Drive を接続する場合、Quick Search File は Google OAuth と <code>https://www.googleapis.com/auth/drive.readonly</code> 権限スコープを使用します。この読み取り専用スコープにより、App は Google アカウントでアクセス可能な Google Drive のファイルとフォルダを表示できます。</p>
-        <p>Quick Search File は、検索、索引作成、検索結果表示、およびユーザーが指示したファイルアクセスのために、Google Drive のファイルおよびフォルダのメタデータを一覧表示・読み取りします。本Appは、Google Drive のファイルを作成、編集、移動、削除、共有するために Google Drive アクセスを使用しません。</p>
+        <h3>Google Drive へのアクセス</h3>
+        <p>Google Drive を接続する場合、Quick Search File は Google OAuth、Google Picker、および <code>https://www.googleapis.com/auth/drive.file</code> 権限スコープを使用します。Google Drive へのアクセスは、ユーザーが Google Picker で明示的に選択したフォルダ、およびそのフォルダ内のファイルとサブフォルダに限定されます。</p>
+        <p>Quick Search File は、フォルダ内容の一覧表示、検索と索引作成に必要なファイルおよびフォルダのメタデータの読み取り、検索結果の表示、およびユーザーが検索結果からファイルを開いた場合のみに Google Drive アクセスを使用します。本Appは、Google Drive のファイルを作成、編集、移動、削除、共有するために Google Drive アクセスを使用しません。</p>
         <p>Google Drive へのアクセスは、Google アカウントのセキュリティ設定からいつでも取り消すことができます。</p>
 
         <h3>OneDrive へのアクセス</h3>
@@ -111,7 +111,7 @@
         <p>Google ユーザーデータは、ユーザー向けのファイル検索機能を提供または改善する目的のみに使用されます。販売、広告利用、無関係な目的への転送、または汎用的なAI・機械学習モデルの訓練には使用されません。</p>
 
         <h3>データの保存と利用</h3>
-        <p>ローカル索引データと検索設定は端末内に保存されます。Quick Search File は、ローカルのファイル索引、ローカル検索履歴、ローカルフォルダのメタデータを Quick Search File のサーバーへアップロードしません。</p>
+        <p>ローカル索引データと検索設定は端末内に保存されます。Quick Search File は、ファイル内容、ファイル名、ファイルパス、ファイル識別子、クラウドドライブのメタデータ、検索履歴、またはローカル索引データを、いかなるサーバーまたは外部の場所にもアップロードしません。</p>
         <p>macOS の Command Line Interface (CLI) を有効にした場合、CLI は同じApp承認済みローカル索引を使用します。CLI出力には、ユーザーが要求したファイル名、パス、拡張子、ファイルサイズ、およびその他のメタデータがテキスト、パスのみ、または JSON 形式で含まれる場合があります。</p>
 
         <h3>サブスクリプションと支払い</h3>
@@ -135,7 +135,7 @@
 
       <section id="zh-Hant" class="legal-section" lang="zh-Hant">
         <h2>隱私權政策</h2>
-        <p>最後更新日期：2026 年 5 月 16 日</p>
+        <p>最後更新日期：2026 年 5 月 28 日</p>
 
         <h3>資料收集範圍</h3>
         <p>Quick Search File 會為檔案搜尋功能在裝置本機建立索引。依照您使用的功能，本 App 可能會處理檔案名稱、副檔名、資料夾路徑、檔案識別碼、檔案大小、修改日期、已選取的資料夾資訊、搜尋字詞、索引更新狀態、App 設定、訂閱狀態，以及顯示搜尋結果所需的相關 metadata。</p>
@@ -144,9 +144,9 @@
         <h3>檔案存取用途</h3>
         <p>Quick Search File 會使用 iOS / iPadOS / macOS 的檔案選擇器與平台權限，讓您主動授權特定資料夾。資料夾存取僅用於讀取建立與更新搜尋索引所需的檔案名稱、副檔名、路徑與相關 metadata。</p>
 
-        <h3>Google Drive 唯讀存取</h3>
-        <p>如果您選擇連接 Google Drive，Quick Search File 會使用 Google OAuth 與 <code>https://www.googleapis.com/auth/drive.readonly</code> 權限範圍。此唯讀權限允許本 App 查看您的 Google 帳號可存取的 Google Drive 檔案與資料夾。</p>
-        <p>Quick Search File 使用 Google Drive 存取權限來列出與讀取搜尋、索引、結果顯示及使用者指定檔案存取所需的檔案與資料夾 metadata。本 App 不會使用 Google Drive 存取權限建立、編輯、移動、刪除或分享您的 Google Drive 檔案。</p>
+        <h3>Google Drive 存取</h3>
+        <p>如果您選擇連接 Google Drive，Quick Search File 會使用 Google OAuth、Google Picker 與 <code>https://www.googleapis.com/auth/drive.file</code> 權限範圍。Google Drive 存取範圍僅限於您透過 Google Picker 明確選取的資料夾，以及該資料夾內的檔案與子資料夾。</p>
+        <p>Quick Search File 使用 Google Drive 存取權限來列出資料夾內容、讀取搜尋與索引所需的檔案與資料夾 metadata、顯示搜尋結果，以及在您主動從搜尋結果開啟檔案時開啟該檔案。本 App 不會使用 Google Drive 存取權限建立、編輯、移動、刪除或分享您的 Google Drive 檔案。</p>
         <p>您可以隨時從 Google 帳號的安全性設定撤銷 Google Drive 存取權限。</p>
 
         <h3>OneDrive 存取</h3>
@@ -164,7 +164,7 @@
         <p>Google 使用者資料僅用於提供或改善面向使用者的檔案搜尋功能。本 App 不會出售 Google 使用者資料、不會用於廣告、不會轉移至無關用途，也不會用於訓練通用 AI 或機器學習模型。</p>
 
         <h3>資料儲存與使用</h3>
-        <p>本機索引資料與搜尋設定會儲存在您的裝置上。Quick Search File 不會將您的本機檔案索引、本機搜尋紀錄或本機資料夾 metadata 上傳到 Quick Search File 伺服器。</p>
+        <p>本機索引資料與搜尋設定會儲存在您的裝置上。Quick Search File 不會將檔案內容、檔案名稱、檔案路徑、檔案識別碼、雲端硬碟 metadata、搜尋紀錄或本機索引資料上傳到任何伺服器或外部位置。</p>
         <p>如果啟用 macOS Command Line Interface (CLI)，CLI 會使用同一份由 App 授權的本機索引。CLI 輸出可能包含您要求的檔案名稱、路徑、副檔名、檔案大小與其他 metadata，並以文字、paths-only 或 JSON 格式輸出。</p>
 
         <h3>訂閱與付款</h3>
