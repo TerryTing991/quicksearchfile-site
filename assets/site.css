@@ -150,7 +150,7 @@ code {
   max-width: 980px;
 }
 
-.hero-centered h1 {
+.hero h1 {
   font-size: clamp(38px, 8vw, 64px);
 }
 
