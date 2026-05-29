@@ -104,6 +104,39 @@
         return;
       }
 
+      if (document.hasStorageAccess) {
+        document.hasStorageAccess().then(hasAccess => {
+          if (hasAccess) {
+            showPicker();
+          } else {
+            showAuthButton();
+          }
+        }).catch(() => {
+          showAuthButton();
+        });
+      } else {
+        showPicker();
+      }
+    }
+
+    function showAuthButton() {
+      document.getElementById("status").innerHTML =
+        `<strong>Google Drive Access Required</strong><br><br><span>Please allow this app to access Google Drive to select folders. (If prompted by iOS, tap "Allow").</span>
+        <div style="margin-top: 24px;">
+          <button id="auth-button" style="padding: 12px 24px; font-size: 16px; font-weight: 600; background-color: #0b57d0; color: white; border: none; border-radius: 24px; cursor: pointer;">Allow Google Drive Access</button>
+        </div>`;
+      
+      document.getElementById("auth-button").addEventListener("click", () => {
+        document.requestStorageAccess().then(() => {
+          updateStatus("Opening Google Drive...", "Please choose the folder you want Quick Search File to index.");
+          showPicker();
+        }).catch((err) => {
+          fail("Access denied. Please try again or check your device settings.");
+        });
+      });
+    }
+
+    function showPicker() {
       const view = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
         .setIncludeFolders(true)
         .setMimeTypes("application/vnd.google-apps.folder")
