@@ -68,9 +68,10 @@
     function onPickerLoad() {
       if (!oauthToken) { fail("no_token"); return; }
       try {
-        var view = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
+        var view = new google.picker.DocsView(google.picker.ViewId.DOCS)
           .setIncludeFolders(true)
           .setSelectFolderEnabled(true)
+          .setMimeTypes("application/vnd.google-apps.folder")
           .setMode(google.picker.DocsViewMode.LIST);
 
         var builder = new google.picker.PickerBuilder()
@@ -115,6 +116,11 @@
     }
 
     window.onApiLoad = onApiLoad;
+    window.addEventListener("error", function (event) {
+      if (!pickerShown) {
+        fail(event.message || "script_error");
+      }
+    });
   </script>
   <script async defer src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
 </body>
