@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex">
-  <title>Quick Search File — Google Drive Picker</title>
+  <title>Quick Search File - Google Drive Picker</title>
   <style>
     html, body { margin: 0; height: 100%; background: #fff; font-family: -apple-system, system-ui, sans-serif; }
     #status { display: flex; align-items: center; justify-content: center; height: 100%;
@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-  <div id="status">Loading Google Drive…</div>
+  <div id="status">Loading Google Drive...</div>
   <script>
     var DEFAULT_APP_SCHEME = "quicksearchfile";
 
@@ -22,7 +22,7 @@
     }
 
     var oauthToken = qs("token");
-    var appId = qs("appId");        // Google Cloud project number
+    var appId = qs("appId");
     var developerKey = qs("developerKey");
     var callbackBase = qs("callbackBase");
     var appScheme = qs("callbackScheme") || DEFAULT_APP_SCHEME;
@@ -43,9 +43,6 @@
       var target = callbackURL(path);
       window.location.href = target;
 
-      // If the Universal Link association has not propagated yet, fall back to the
-      // app's custom URL scheme. When the Universal Link succeeds, Safari leaves this
-      // page before the timer fires.
       if (callbackBase) {
         setTimeout(function () {
           window.location.href = fallbackCallbackURL(path);
@@ -60,8 +57,6 @@
 
     var pickerShown = false;
 
-    // Safety net: if the Picker never renders (e.g. api.js blocked, cookie/network issue),
-    // don't leave Safari stuck on the loading page forever.
     setTimeout(function () {
       if (!pickerShown) { fail("picker_timeout"); }
     }, 25000);
@@ -73,18 +68,16 @@
     function onPickerLoad() {
       if (!oauthToken) { fail("no_token"); return; }
       try {
-        var view = new google.picker.DocsView(google.picker.ViewId.DOCS)
+        var view = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
           .setIncludeFolders(true)
-          .setSelectFolderEnabled(false)
+          .setSelectFolderEnabled(true)
           .setMode(google.picker.DocsViewMode.LIST);
 
         var builder = new google.picker.PickerBuilder()
-          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
-          .enableFeature(google.picker.Feature.NAV_HIDDEN)
           .setOAuthToken(oauthToken)
           .setOrigin(window.location.protocol + "//" + window.location.host)
           .addView(view)
-          .setTitle("Select files to index")
+          .setTitle("Select folder to index")
           .setCallback(pickerCallback);
 
         if (appId) { builder.setAppId(appId); }
@@ -102,8 +95,20 @@
       var action = data[google.picker.Response.ACTION];
       if (action === google.picker.Action.PICKED) {
         var docs = data[google.picker.Response.DOCUMENTS] || [];
-        var ids = docs.map(function (d) { return d[google.picker.Document.ID]; });
-        returnToApp("picked?ids=" + encodeURIComponent(ids.join(",")));
+        var folder = docs[0];
+        if (!folder) {
+          fail("no_folder");
+          return;
+        }
+
+        var id = folder[google.picker.Document.ID] || "";
+        var name = folder[google.picker.Document.NAME] || "";
+        var url = folder[google.picker.Document.URL] || "";
+        returnToApp(
+          "picked?folderId=" + encodeURIComponent(id) +
+          "&name=" + encodeURIComponent(name) +
+          "&url=" + encodeURIComponent(url)
+        );
       } else if (action === google.picker.Action.CANCEL) {
         returnToApp("cancelled");
       }
