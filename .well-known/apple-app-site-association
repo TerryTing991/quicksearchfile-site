@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "VJWQ653J9Q.com.terryding.quicksearchfile",
+        "paths": [
+          "/picker-callback/*"
+        ]
+      }
+    ]
+  }
+}

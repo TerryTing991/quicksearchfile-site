@@ -17,7 +17,7 @@
   <script>
     // Restricted to https://quicksearchfile.com/* in Google Cloud Console.
     var API_KEY = "AIzaSyCic4o7AZ2CXMijTtS5udRO5f0PoI6E57o";
-    var APP_SCHEME = "quicksearchfile";
+    var DEFAULT_APP_SCHEME = "quicksearchfile";
 
     function qs(name) {
       return new URLSearchParams(window.location.search).get(name) || "";
@@ -25,10 +25,33 @@
 
     var oauthToken = qs("token");
     var appId = qs("appId");        // Google Cloud project number
+    var callbackBase = qs("callbackBase");
+    var appScheme = qs("callbackScheme") || DEFAULT_APP_SCHEME;
     var statusEl = document.getElementById("status");
 
+    function callbackURL(path) {
+      if (callbackBase) {
+        return callbackBase.replace(/\/+$/, "") + "/" + path;
+      }
+      return appScheme + "://" + path;
+    }
+
+    function fallbackCallbackURL(path) {
+      return appScheme + "://" + path;
+    }
+
     function returnToApp(path) {
-      window.location.href = APP_SCHEME + "://" + path;
+      var target = callbackURL(path);
+      window.location.href = target;
+
+      // If the Universal Link association has not propagated yet, fall back to the
+      // app's custom URL scheme. When the Universal Link succeeds, Safari leaves this
+      // page before the timer fires.
+      if (callbackBase) {
+        setTimeout(function () {
+          window.location.href = fallbackCallbackURL(path);
+        }, 1500);
+      }
     }
 
     function fail(reason) {
@@ -39,7 +62,7 @@
     var pickerShown = false;
 
     // Safety net: if the Picker never renders (e.g. api.js blocked, cookie/network issue),
-    // don't hang the ASWebAuthenticationSession forever — bounce back to the app with an error.
+    // don't leave Safari stuck on the loading page forever.
     setTimeout(function () {
       if (!pickerShown) { fail("picker_timeout"); }
     }, 25000);
