@@ -15,8 +15,6 @@
 <body>
   <div id="status">Loading Google Drive…</div>
   <script>
-    // Restricted to https://quicksearchfile.com/* in Google Cloud Console.
-    var API_KEY = "AIzaSyCic4o7AZ2CXMijTtS5udRO5f0PoI6E57o";
     var DEFAULT_APP_SCHEME = "quicksearchfile";
 
     function qs(name) {
@@ -25,6 +23,7 @@
 
     var oauthToken = qs("token");
     var appId = qs("appId");        // Google Cloud project number
+    var developerKey = qs("developerKey");
     var callbackBase = qs("callbackBase");
     var appScheme = qs("callbackScheme") || DEFAULT_APP_SCHEME;
     var statusEl = document.getElementById("status");
@@ -83,13 +82,13 @@
           .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
           .enableFeature(google.picker.Feature.NAV_HIDDEN)
           .setOAuthToken(oauthToken)
-          .setDeveloperKey(API_KEY)
           .setOrigin(window.location.protocol + "//" + window.location.host)
           .addView(view)
           .setTitle("Select files to index")
           .setCallback(pickerCallback);
 
         if (appId) { builder.setAppId(appId); }
+        if (developerKey) { builder.setDeveloperKey(developerKey); }
 
         builder.build().setVisible(true);
         pickerShown = true;
