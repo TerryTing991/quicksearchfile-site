@@ -1,3 +1,4 @@
 *.backup-*.png
 .DS_Store
 mobile-check/
+.claude/
