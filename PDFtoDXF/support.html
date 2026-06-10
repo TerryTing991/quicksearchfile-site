@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support - TraceCAD</title>
-  <meta name="description" content="Support for TraceCAD, including PDF import, DXF export, scanned PDF conversion, OCR text previews, export credits, payments, and troubleshooting.">
+  <meta name="description" content="Support for TraceCAD, including PDF import, DXF export, scanned PDF conversion, OCR text previews, export credits, sample files, and troubleshooting.">
   <link rel="canonical" href="https://quicksearchfile.com/PDFtoDXF/support.html">
   <meta property="og:title" content="Support - TraceCAD">
-  <meta property="og:description" content="Get help with TraceCAD for macOS, PDF drawing conversion, DXF export, scanned PDFs, OCR text previews, and export credits.">
+  <meta property="og:description" content="Get help with TraceCAD for macOS, PDF drawing conversion, DXF export, scanned PDFs, OCR text previews, export credits, and sample files.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quicksearchfile.com/PDFtoDXF/support.html">
   <meta name="twitter:card" content="summary">
@@ -155,6 +155,38 @@
       font-size: 0.92em;
     }
 
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 14px 0 22px;
+    }
+
+    .sample-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fbfdff;
+    }
+
+    .sample-card h3 {
+      margin-top: 0;
+    }
+
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      margin-top: 6px;
+      padding: 0 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
     .footer {
       border-top: 1px solid var(--line);
       border-bottom: 0;
@@ -167,6 +199,10 @@
       .footer-row {
         align-items: flex-start;
         flex-direction: column;
+      }
+
+      .sample-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -188,8 +224,23 @@
         <p class="eyebrow">Support</p>
         <h1>Support</h1>
         <p class="lead">Need help with TraceCAD? Send a clear report and we will use it to diagnose PDF import, preview, conversion, export, or credit issues as quickly as possible.</p>
-        <p class="updated">Last updated: May 27, 2026</p>
+        <p class="updated">Last updated: June 10, 2026</p>
       </header>
+
+      <h2>Sample Files for App Review</h2>
+      <p>Use these sample PDF files to review TraceCAD's PDF preview, vector PDF export, scanned PDF preflight, OCR text preview, DXF preview, and DXF export workflows.</p>
+      <div class="sample-grid">
+        <section class="sample-card" aria-labelledby="vector-sample-title">
+          <h3 id="vector-sample-title">Vector PDF Sample</h3>
+          <p>This file contains PDF drawing paths and can be used to test the free Vector PDF to DXF export workflow.</p>
+          <a class="download-link" href="/PDFtoDXF/samples/SampleFile_VectorPDF.pdf" download>Download Vector PDF</a>
+        </section>
+        <section class="sample-card" aria-labelledby="scanned-sample-title">
+          <h3 id="scanned-sample-title">Scanned PDF Sample</h3>
+          <p>This file can be used to test scanned PDF preflight, auto-straighten, OCR text preview, geometry reconstruction, and DXF export.</p>
+          <a class="download-link" href="/PDFtoDXF/samples/SampleFile_ScannedPDF.pdf" download>Download Scanned PDF</a>
+        </section>
+      </div>
 
       <h2>How to Get Help</h2>
       <p>If you need help with the app, please contact us at <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>. To help us assist you faster, please include:</p>
