@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini to Obsidian — Export Gemini chats to Obsidian as Markdown</title>
+  <meta name="description" content="A Chrome extension that exports your Google Gemini conversations, including Deep Research reports, into your Obsidian vault as Markdown in one click." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary:#7c6cf0; --accent:#f0a500; --card:#1c1e26; --border:#2f323d; --muted:#9aa0ad; }
+    body {
+      min-height: 100vh; color: #f2f3f5; padding: 64px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", sans-serif;
+      background:
+        radial-gradient(1100px 540px at 50% -180px, rgba(124,108,240,.30), transparent 70%),
+        linear-gradient(180deg, #0f1014, #14151b 60%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; text-align: center; }
+    .logo { width: 76px; height: 76px; border-radius: 18px; box-shadow: 0 16px 50px rgba(124,108,240,.35); }
+    h1 { font-size: clamp(28px, 6vw, 44px); letter-spacing: -.02em; margin: 22px 0 12px; }
+    .tag { color: var(--muted); font-size: clamp(15px, 2.5vw, 18px); line-height: 1.55; max-width: 620px; margin: 0 auto 32px; }
+    .cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn { border: 0; border-radius: 12px; padding: 14px 26px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn--primary { background: var(--primary); color: #fff; }
+    .btn--primary:hover { background: #8c7df3; }
+    .btn--ghost { background: transparent; color: #cfd3db; border: 1px solid var(--border); }
+    .btn--ghost:hover { border-color: #4a4d5a; }
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 56px 0; text-align: left; }
+    @media (max-width: 620px) { .features { grid-template-columns: 1fr; } }
+    .feat { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
+    .feat h3 { font-size: 15.5px; margin-bottom: 6px; }
+    .feat p { color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+    .foot { color: #6f7682; font-size: 13px; margin-top: 8px; }
+    .foot a { color: #9aa0ad; text-decoration: none; margin: 0 7px; }
+    .foot a:hover { color: #cfd3db; text-decoration: underline; }
+    .copyright { margin-top: 14px; color: #5b616d; font-size: 12.5px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" alt="Gemini to Obsidian" src="icon.png" />
+    <h1>Gemini to Obsidian</h1>
+    <p class="tag">Export your Google Gemini conversations — including Deep Research reports — into your Obsidian vault as clean Markdown, in one click.</p>
+    <div class="cta">
+      <a class="btn btn--primary" href="buy.html">View plans</a>
+      <a class="btn btn--ghost" href="refund.html">Refund policy</a>
+    </div>
+
+    <div class="features">
+      <div class="feat"><h3>📝 One-click export</h3><p>Save the whole conversation as Markdown straight into a folder you choose in your Obsidian vault.</p></div>
+      <div class="feat"><h3>🔬 Deep Research included</h3><p>Long research reports are exported too, wrapped in a collapsible Obsidian callout.</p></div>
+      <div class="feat"><h3>🧩 Formatting preserved</h3><p>Code blocks, lists, headings and links are converted faithfully to Markdown.</p></div>
+      <div class="feat"><h3>💎 Free &amp; Pro</h3><p>Free tier exports a preview; Pro unlocks full-length exports via a license key.</p></div>
+    </div>
+
+    <p class="foot">
+      <a href="buy.html">Plans</a>·<a href="terms.html">Terms of Service</a>·<a href="privacy.html">Privacy Notice</a>·<a href="refund.html">Refund Policy</a>
+    </p>
+    <p class="foot">Questions? <a href="mailto:TerryTing991@gmail.com">TerryTing991@gmail.com</a></p>
+    <p class="copyright">© 2026 Terry Ting · Payments by Paddle</p>
+  </div>
+</body>
+</html>

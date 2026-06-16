@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini to Obsidian License</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: #111217; color: #f2f3f5; padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(560px, 100%); background: #1d2028; border: 1px solid #343844;
+      border-radius: 12px; padding: 28px; text-align: center; box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+    h1 { margin: 0 0 12px; font-size: 24px; }
+    p { margin: 0 0 20px; color: #aeb4c0; line-height: 1.5; }
+    code {
+      display: block; margin: 18px 0; padding: 16px; background: #101116;
+      border: 1px solid #343844; border-radius: 8px; color: #fff;
+      font-size: clamp(18px, 4vw, 28px); font-weight: 700; letter-spacing: 1px; word-break: break-all;
+    }
+    button { border: 0; border-radius: 8px; padding: 11px 18px; background: #f0a500; color: #111217; font-weight: 700; cursor: pointer; }
+    .muted { font-size: 13px; color: #8f96a3; }
+    .error { color: #ff8b84; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Your license key</h1>
+    <p id="message">Payment received. Waiting for your license key...</p>
+    <code id="key" hidden></code>
+    <button id="copy" hidden>Copy</button>
+    <p class="muted">Paste this license key into the extension's Settings to unlock full exports.</p>
+  </main>
+  <script>
+    const WORKER = 'https://gemini-to-obsidian-licenses.terryting.workers.dev';
+    const params = new URLSearchParams(location.search);
+    const txn = params.get('_ptxn');
+    const message = document.getElementById('message');
+    const keyEl = document.getElementById('key');
+    const copyBtn = document.getElementById('copy');
+
+    async function poll() {
+      if (!txn) {
+        message.textContent = 'Missing transaction id. If you completed payment, check your email receipt or contact support.';
+        message.className = 'error';
+        return;
+      }
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          const resp = await fetch(WORKER + '/key?txn=' + encodeURIComponent(txn));
+          const data = await resp.json();
+          if (data.key) {
+            keyEl.textContent = data.key;
+            keyEl.hidden = false;
+            copyBtn.hidden = false;
+            message.textContent = 'Copy this key and keep it somewhere safe.';
+            return;
+          }
+        } catch (e) { /* keep polling */ }
+        await new Promise((r) => setTimeout(r, 2000));
+      }
+      message.textContent = 'The payment is complete, but the license key is still pending. Refresh this page in a moment.';
+      message.className = 'error';
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(keyEl.textContent);
+      copyBtn.textContent = 'Copied';
+    });
+
+    poll();
+  </script>
+</body>
+</html>
