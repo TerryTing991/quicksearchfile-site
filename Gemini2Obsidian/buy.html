@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gemini to Obsidian — Upgrade to Pro</title>
-  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --primary:#7c6cf0; --accent:#f0a500; --card:#1c1e26; --border:#2f323d; --muted:#9aa0ad; }
@@ -98,13 +97,8 @@
         '<div class="price"><span class="amt">' + p.price + '</span><span class="per">' + p.period + '</span></div>' +
         '<div class="save">' + (p.save || '&nbsp;') + '</div>' +
         '<ul>' + features + '</ul>' +
-        '<a class="btn lemonsqueezy-button" href="' + p.url + '?embed=1">' + p.cta + '</a>';
+        '<a class="btn" href="' + p.url + '">' + p.cta + '</a>';
       grid.appendChild(card);
-    });
-
-    // Initialize Lemon Squeezy overlay after the buttons exist.
-    window.addEventListener('load', () => {
-      if (window.createLemonSqueezy) window.createLemonSqueezy();
     });
   </script>
 </body>
