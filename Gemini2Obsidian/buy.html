@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gemini to Obsidian — Upgrade to Pro</title>
-  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --primary:#7c6cf0; --accent:#f0a500; --card:#1c1e26; --border:#2f323d; --muted:#9aa0ad; }
@@ -24,7 +24,7 @@
     .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
     @media (max-width: 760px) { .grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
     .card {
-      position: relative; display: flex; flex-direction: column; cursor: pointer;
+      position: relative; display: flex; flex-direction: column;
       background: var(--card); border: 1px solid var(--border); border-radius: 18px;
       padding: 26px 24px; transition: transform .15s, border-color .15s, box-shadow .15s;
     }
@@ -43,9 +43,9 @@
     li { display: flex; gap: 9px; font-size: 13.5px; color: #d7dae1; line-height: 1.4; }
     li .tick { color: #3fb968; flex-shrink: 0; font-weight: 700; }
     .btn {
-      margin-top: auto; width: 100%; border: 0; border-radius: 11px; padding: 13px;
-      font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; color: #fff;
-      background: #2a2d38; transition: background .15s, transform .05s;
+      margin-top: auto; display: block; width: 100%; text-align: center; text-decoration: none;
+      border: 0; border-radius: 11px; padding: 13px; font-size: 14px; font-weight: 700; cursor: pointer;
+      color: #fff; background: #2a2d38; transition: background .15s, transform .05s;
     }
     .btn:hover { background: #343845; }
     .card:hover .btn { background: var(--primary); }
@@ -66,19 +66,19 @@
       <p>Export your full Gemini conversations — including Deep Research reports — straight into Obsidian. Pick a plan and you'll get a license key to activate the extension.</p>
     </div>
     <div class="grid" id="grid"></div>
-    <p id="err" class="err"></p>
-    <p class="foot"><b>Secure checkout by Paddle.</b> &nbsp;Taxes handled automatically · Cancel anytime</p>
+    <p class="foot"><b>Secure checkout by Lemon Squeezy.</b> &nbsp;Taxes handled automatically · Cancel anytime</p>
     <div class="legal">
       <a href="terms.html">Terms of Service</a>·<a href="privacy.html">Privacy Notice</a>·<a href="refund.html">Refund Policy</a>
     </div>
   </div>
   <script>
-    const TOKEN = 'live_fcdd2ce6e1cceecb6f061b414d3';
-    const SUCCESS_URL = 'https://quicksearchfile.com/Gemini2Obsidian/success.html';
     const PLANS = [
-      { plan: 'monthly', priceId: 'pri_01ktbqc9e349wxa3jm8rr3p670', title: 'Monthly Pro', price: '$1.99', period: '/ month', badge: '', save: '', cta: 'Choose Monthly' },
-      { plan: 'yearly', priceId: 'pri_01ktbqe28xs0mgncmpg1wpqwr3', title: 'Yearly Pro', price: '$12.99', period: '/ year', badge: 'Most popular', save: 'Save vs monthly', cta: 'Choose Yearly' },
-      { plan: 'lifetime', priceId: 'pri_01ktbqewsqxn9thsw9wzm0pm8x', title: 'Lifetime Pro', price: '$19.99', period: 'one-time', badge: 'Best value', save: 'Pay once, keep forever', cta: 'Get Lifetime' },
+      { url: 'https://gemini2obsidian.lemonsqueezy.com/checkout/buy/5c5e1dac-906b-463d-8632-e88288d00cf6',
+        title: 'Monthly Pro', price: '$1.99', period: '/ month', badge: '', save: '', cta: 'Choose Monthly' },
+      { url: 'https://gemini2obsidian.lemonsqueezy.com/checkout/buy/dc6087d5-3eaa-4a2e-b3a7-97a116e3d622',
+        title: 'Yearly Pro', price: '$12.99', period: '/ year', badge: 'Most popular', save: 'Save vs monthly', cta: 'Choose Yearly' },
+      { url: 'https://gemini2obsidian.lemonsqueezy.com/checkout/buy/47d36aff-2bb3-4dc0-b872-376930d6560c',
+        title: 'Lifetime Pro', price: '$19.99', period: 'one-time', badge: 'Best value', save: 'Pay once, keep forever', cta: 'Get Lifetime' },
     ];
     const FEATURES = [
       'Export full conversations — no 500-char limit',
@@ -88,41 +88,24 @@
     ];
 
     const grid = document.getElementById('grid');
-    const errEl = document.getElementById('err');
+    PLANS.forEach((p) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const features = FEATURES.map((f) => '<li><span class="tick">✓</span><span>' + f + '</span></li>').join('');
+      card.innerHTML =
+        (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') +
+        '<div class="plan-name">' + p.title + '</div>' +
+        '<div class="price"><span class="amt">' + p.price + '</span><span class="per">' + p.period + '</span></div>' +
+        '<div class="save">' + (p.save || '&nbsp;') + '</div>' +
+        '<ul>' + features + '</ul>' +
+        '<a class="btn lemonsqueezy-button" href="' + p.url + '?embed=1">' + p.cta + '</a>';
+      grid.appendChild(card);
+    });
 
-    function init() {
-      try { Paddle.Initialize({ token: TOKEN }); }
-      catch (e) { errEl.textContent = 'Failed to initialize Paddle.'; return; }
-
-      PLANS.forEach((p) => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        const features = FEATURES.map((f) => '<li><span class="tick">✓</span><span>' + f + '</span></li>').join('');
-        card.innerHTML =
-          (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') +
-          '<div class="plan-name">' + p.title + '</div>' +
-          '<div class="price"><span class="amt">' + p.price + '</span><span class="per">' + p.period + '</span></div>' +
-          '<div class="save">' + (p.save || '&nbsp;') + '</div>' +
-          '<ul>' + features + '</ul>' +
-          '<button class="btn">' + p.cta + '</button>';
-        card.querySelector('.btn').addEventListener('click', () => openCheckout(p.priceId));
-        grid.appendChild(card);
-      });
-    }
-
-    function openCheckout(priceId) {
-      errEl.textContent = '';
-      try {
-        Paddle.Checkout.open({
-          items: [{ priceId, quantity: 1 }],
-          settings: { successUrl: SUCCESS_URL, displayMode: 'overlay', theme: 'dark', allowLogout: false },
-        });
-      } catch (e) {
-        errEl.textContent = 'Could not open checkout. Please try again.';
-      }
-    }
-
-    init();
+    // Initialize Lemon Squeezy overlay after the buttons exist.
+    window.addEventListener('load', () => {
+      if (window.createLemonSqueezy) window.createLemonSqueezy();
+    });
   </script>
 </body>
 </html>
