@@ -14,7 +14,7 @@
   <meta name="twitter:title" content="Support - Mac DjVu">
   <meta name="twitter:description" content="Support for Mac DjVu on macOS.">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Support","url":"https://quicksearchfile.com/DjVu/support.html","publisher":{"@type":"Organization","name":"Mac DjVu"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Mac DjVu upload my documents or OCR text?","acceptedAnswer":{"@type":"Answer","text":"No. DjVu decoding, page rendering, text extraction, search, and OCR run locally on your Mac."}},{"@type":"Question","name":"Does page editing change my original DjVu file?","acceptedAnswer":{"@type":"Answer","text":"No. Reordering and deleting pages in the workspace are non-destructive. Mac DjVu creates a new document only when you choose Save As."}},{"@type":"Question","name":"Why can the first full-document search take time?","acceptedAnswer":{"@type":"Answer","text":"Mac DjVu searches embedded text and uses on-device OCR when needed. Large or high-resolution scanned documents may require time to build their first local OCR index."}},{"@type":"Question","name":"Where are highlights, bookmarks, and notes stored?","acceptedAnswer":{"@type":"Answer","text":"They are stored locally in the Mac DjVu app data and remain separate from the source DjVu document."}},{"@type":"Question","name":"How do I print only the current page?","acceptedAnswer":{"@type":"Answer","text":"Choose Print or press Command-P, then leave Pages set to Current Page. You can also select All or enter a page range in the macOS print panel."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Mac DjVu upload my documents or OCR text?","acceptedAnswer":{"@type":"Answer","text":"No. DjVu decoding, page rendering, text extraction, search, and OCR run locally on your Mac."}},{"@type":"Question","name":"Does page editing change my original DjVu file?","acceptedAnswer":{"@type":"Answer","text":"No. Reordering and deleting pages in the workspace are non-destructive. Mac DjVu creates a new document only when you choose Save As."}},{"@type":"Question","name":"Why can the first full-document search take time?","acceptedAnswer":{"@type":"Answer","text":"Mac DjVu combines available embedded text with an on-device Vision OCR index. Large or high-resolution scanned documents may require time to build their first local OCR index."}},{"@type":"Question","name":"Where are highlights, bookmarks, and notes stored?","acceptedAnswer":{"@type":"Answer","text":"They are stored locally in the Mac DjVu app data and remain separate from the source DjVu document."}},{"@type":"Question","name":"How do I print only the current page?","acceptedAnswer":{"@type":"Answer","text":"Choose Print or press Command-P, then leave Pages set to Current Page. You can also select All or enter a page range in the macOS print panel."}}]}</script>
   <style>
     :root {
       color-scheme: light;
@@ -190,7 +190,7 @@
         <p class="eyebrow">Support</p>
         <h1>Support</h1>
         <p class="lead">Need help with Mac DjVu? Send a clear report and we will use it to diagnose document opening, page display, OCR search, annotations, editing, saving, or printing as quickly as possible.</p>
-        <p class="updated">Last updated: August 5, 2026</p>
+        <p class="updated">Last updated: August 12, 2026</p>
       </header>
 
       <h2>System Requirements</h2>
@@ -200,7 +200,7 @@
       <ol>
         <li>Choose Add DjVu Files, press <kbd>Command-O</kbd>, or drag one or more DjVu documents into the app.</li>
         <li>Select a document and use the thumbnail list, page number field, or navigation buttons to move through its pages.</li>
-        <li>Use the search field to search embedded text. If text is unavailable, Mac DjVu performs local OCR and adds results as pages finish processing.</li>
+        <li>Use the search field to search available embedded text together with a local Vision OCR index. Results are added as pages finish processing.</li>
         <li>Use highlights, page bookmarks, and bookmark notes to mark important content without changing the source document.</li>
         <li>Reorder or remove pages in the workspace, then choose Save As to create a new DjVu file while keeping the original unchanged.</li>
         <li>Choose Print or press <kbd>Command-P</kbd> to print the current page, all pages, or a page range.</li>
@@ -228,10 +228,10 @@
       <p>Mac DjVu opens DjVu documents with the <code>.djvu</code> or <code>.djv</code> filename extension. You can open multiple documents in the same workspace and switch between them from the Documents list.</p>
 
       <h3>Why can the first full-document search take time?</h3>
-      <p>Mac DjVu first uses any text already embedded in the document. When searchable text is missing or incomplete, the app uses on-device OCR to build a local search index. Large, high-resolution, or image-only documents can take longer on the first search. Results appear incrementally as pages finish processing, and later searches can reuse the saved OCR index.</p>
+      <p>Mac DjVu combines available text embedded in the document with an on-device Vision OCR index. OCR analyzes rendered page images so result highlights align with the content displayed in the viewer, even when embedded document coordinates are inaccurate. Large, high-resolution, or image-only documents can take longer on the first search. Results appear incrementally as pages finish processing, and later searches can reuse the saved OCR index.</p>
 
       <h3>What should I do if search finds no results?</h3>
-      <p>Wait until the OCR progress finishes, then try a shorter keyword. Recognition quality depends on scan resolution, contrast, font, language, and page orientation. Mac DjVu supports English, horizontal Traditional Chinese, and vertical Chinese recognition, but unclear scans may still produce incomplete results.</p>
+      <p>Wait until the OCR progress finishes, then try a shorter keyword. Recognition quality depends on scan resolution, contrast, font, language, and page orientation. Mac DjVu supports English and Chinese, including left-to-right horizontal text and vertical Chinese text, but unclear scans may still produce incomplete results.</p>
 
       <h3>Does page editing change my original DjVu file?</h3>
       <p>No. Reordering and deleting pages in the workspace are non-destructive. The source document remains unchanged. Mac DjVu creates an edited copy only when you choose Save As and select a destination.</p>
