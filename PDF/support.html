@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support - PDF Pro</title>
+  <meta name="description" content="Support for PDF Pro, including opening PDF files, page navigation, local OCR search, area OCR for text, formulas, and tables, annotations, bookmarks, non-destructive page editing, saving, TIFF export, printing, and troubleshooting.">
+  <link rel="canonical" href="https://quicksearchfile.com/PDF/support.html">
+  <meta property="og:title" content="Support - PDF Pro">
+  <meta property="og:description" content="Get help with PDF Pro for macOS, document viewing, OCR search, formula and table OCR, annotations, page editing, saving, TIFF export, and printing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quicksearchfile.com/PDF/support.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Support - PDF Pro">
+  <meta name="twitter:description" content="Support for PDF Pro on macOS.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Support","url":"https://quicksearchfile.com/PDF/support.html","publisher":{"@type":"Organization","name":"PDF Pro"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does PDF Pro upload my documents or OCR text?","acceptedAnswer":{"@type":"Answer","text":"No. PDF rendering, text extraction, search, and OCR run locally on your Mac."}},{"@type":"Question","name":"Does page editing change my original PDF file?","acceptedAnswer":{"@type":"Answer","text":"Not until you save. Inserting, rotating, reordering, and deleting pages are non-destructive. Save replaces the original PDF; Save As creates a new file and leaves the original unchanged."}},{"@type":"Question","name":"Why can the first full-document search take time?","acceptedAnswer":{"@type":"Answer","text":"PDF Pro combines embedded PDF text with a local OCR index. Large or scanned documents may take time to build their first index; later searches reuse it."}},{"@type":"Question","name":"Can PDF Pro recognize formulas and tables?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click OCR, choose Text & Formula, Only Formula, or Table, then drag a rectangle on a page. The result is an editable document with text, LaTeX formulas, and Markdown tables, shown with a live preview."}},{"@type":"Question","name":"Where are highlights, bookmarks, and notes stored?","acceptedAnswer":{"@type":"Answer","text":"They are stored locally in the PDF Pro app data and remain separate from the source PDF. Use File > Export Flatten PDF to create a PDF with annotations fixed into its pages."}},{"@type":"Question","name":"How do I print only the current page?","acceptedAnswer":{"@type":"Answer","text":"Choose File > Print Document or press Command-P, then leave Pages set to Current Page. You can also choose Range or All Pages in the macOS print panel."}}]}</script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #5f6b7a;
+      --line: #dbe2ea;
+      --accent: #1667d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .site-header,
+    .footer {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav,
+    .footer-inner,
+    .article {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav,
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .nav-links a,
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .article {
+      padding: 52px 0 64px;
+    }
+
+    article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 56px);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 34px 0 8px;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 24px 0 6px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 18px;
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .lead {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    code,
+    kbd {
+      background: #eef3f8;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.1em 0.35em;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="/PDF/support.html">PDF Pro</a>
+      <div class="nav-links">
+        <a href="/PDF/privacy.html">Privacy Policy</a>
+        <a href="/PDF/support.html" aria-current="page">Support</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="article">
+    <article>
+      <header class="article-header">
+        <p class="eyebrow">Support</p>
+        <h1>Support</h1>
+        <p class="lead">Need help with PDF Pro? Send a clear report and we will use it to diagnose document opening, page display, OCR search, area OCR, annotations, page editing, saving, TIFF export, or printing as quickly as possible.</p>
+        <p class="updated">Last updated: September 14, 2026</p>
+      </header>
+
+      <h2>System Requirements</h2>
+      <p>PDF Pro requires macOS 14 or later and opens documents with the <code>.pdf</code> filename extension. Everything the app needs, including its OCR, is included; no internet connection or extra software is required.</p>
+
+      <h2>Getting Started</h2>
+      <ol>
+        <li>Choose Add PDF Files, press <kbd>Command-O</kbd>, or drag one or more PDF documents into the window.</li>
+        <li>Select a document in the Documents list and use the page thumbnails, page number field, or navigation buttons to move through its pages. The zoom menu offers Fit Page, Fit Width, and fixed percentages.</li>
+        <li>Use the search field to search the document text. Matching pages are added as OCR finishes; click a result to jump to the page and highlight the match.</li>
+        <li>Click OCR beside the zoom controls, choose Text &amp; Formula, Only Formula, or Table, then drag a rectangle around part of a page to recognize it as text, formulas, or a table.</li>
+        <li>Add highlights, outline boxes, arrows, and text annotations, plus page bookmarks with notes, without changing the source document.</li>
+        <li>Insert pages from other PDFs, rotate, reorder, or delete pages, then choose Save to update the original PDF or Save As to create a new one.</li>
+        <li>Choose File &gt; Export Flatten PDF to fix annotations into a new PDF, or File &gt; Export to TIFF to convert open documents into multi-page TIFF files.</li>
+        <li>Choose File &gt; Print Document or press <kbd>Command-P</kbd> to print the current page, a range, or all pages.</li>
+      </ol>
+
+      <h2>How to Get Help</h2>
+      <p>If you need help with the app, please contact us at <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>. To help us assist you faster, please include:</p>
+      <ul>
+        <li>Your Mac model and macOS version</li>
+        <li>The PDF Pro app version</li>
+        <li>The approximate document size and page count</li>
+        <li>The page number and feature involved</li>
+        <li>The steps that led to the issue</li>
+        <li>Relevant screenshots and the exact error message, if any</li>
+        <li>Whether the issue involves opening, rendering, thumbnails, OCR search, area OCR, annotations, bookmarks, page editing, Save, Save As, Export Flatten PDF, TIFF export, or printing</li>
+      </ul>
+      <p>Please avoid sending confidential documents unless they are necessary to reproduce the problem and you are authorized to share them.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Does PDF Pro upload my documents or OCR text?</h3>
+      <p>No. PDF rendering, text extraction, search, and OCR run locally on your Mac. Documents, page images, OCR results, search terms, highlights, bookmarks, and notes are not uploaded to a PDF Pro server for processing.</p>
+
+      <h3>Which file types can I open?</h3>
+      <p>PDF Pro opens PDF documents. You can open multiple documents in the same workspace and switch between them from the Documents list. Each document remembers its last viewed page, and open documents are restored on the next launch when their source files are still available.</p>
+
+      <h3>Why can the first full-document search take time?</h3>
+      <p>PDF Pro combines text embedded in the PDF with a local OCR index built from the page images, so result highlights match what you see in the viewer. Large, high-resolution, or scanned documents can take longer on the first search. The current page is handled first, results appear as pages finish, and later searches reuse the saved index.</p>
+
+      <h3>What should I do if search finds no results?</h3>
+      <p>Wait until the OCR progress finishes, then try a shorter keyword. Search ignores letter case, accents, and spaces. Recognition quality depends on scan resolution, contrast, typeface, language, and page orientation. PDF Pro supports English and Chinese, including horizontal text and vertical Chinese text, but unclear scans may still produce incomplete results.</p>
+
+      <h3>How does area OCR for formulas and tables work?</h3>
+      <p>Click OCR beside the zoom controls, pick a mode, and drag a rectangle on one page. When recognition finishes, a result window shows one editable document containing ordinary text, LaTeX formulas, and Markdown tables, with a live preview. Use Select All or Copy All to paste the result into another document. Recognition runs entirely on your Mac.</p>
+
+      <h3>Which OCR mode should I choose?</h3>
+      <p>Text &amp; Formula, the default, reads sentences and equations together and does not look for tables. Choose Only Formula when the area holds nothing but formulas, including one equation that runs over several lines. Choose Table when the whole area is one table. A matrix equation and a table can look alike on the page, so the app asks rather than guessing. Complex equations and tables should still be compared with the PDF and corrected before use.</p>
+
+      <h3>Does page editing change my original PDF file?</h3>
+      <p>Not until you save. Inserting pages from other PDFs, rotating, reordering, and deleting pages do not touch the original file. Choose File &gt; Save or press <kbd>Command-S</kbd> to update the original PDF with the edited pages, or File &gt; Save As to create a new PDF while keeping the original unchanged. If you remove a document, close the window, or quit with unsaved page edits, PDF Pro offers Save, Cancel, or Don't Save.</p>
+
+      <h3>What happens to annotations when I rotate a page?</h3>
+      <p>Rotate Left and Rotate Right turn every selected page by 90 degrees. Annotations on those pages are removed before the rotation; bookmarks and bookmark notes remain.</p>
+
+      <h3>Where are highlights, bookmarks, and notes stored?</h3>
+      <p>They are stored locally in PDF Pro app data and remain separate from the source PDF. Save and Save As do not embed them. Printing includes annotations when Print Annotations is selected, and TIFF export includes them when Export Annotations is selected. Use File &gt; Export Flatten PDF to create a new PDF with the annotations fixed into its pages; flattened annotations are visible in other PDF software but can no longer be moved or deleted individually. Removing a document from the workspace does not delete the source file or its saved annotations.</p>
+
+      <h3>How does TIFF export work?</h3>
+      <p>File &gt; Export to TIFF lists every open PDF. Select the files you want, choose Compact, Balanced, or High quality, decide whether to include annotations, and pick an output folder. Each PDF becomes one multi-page <code>.tiff</code> file with the same base filename, following the current page order. Two documents that would produce the same filename cannot be exported in the same batch. TIFF is an image format, so searchable text, links, and forms are not included.</p>
+
+      <h3>Why is a page or thumbnail still loading?</h3>
+      <p>Large or high-resolution pages may need extra time the first time they are shown. Jumping far into a long document can also start thumbnail and page rendering work that has not yet been cached. Wait for the page to finish; revisiting it is usually faster.</p>
+
+      <h3>How do I print only the current page?</h3>
+      <p>Choose File &gt; Print Document or press <kbd>Command-P</kbd>, then leave Pages set to Current Page in the macOS print panel. You can also choose Range or All Pages, and clear Print Annotations to print only the original page content. Printing follows the current page order, and each page is scaled proportionally to the printable area; final margins depend on the selected printer, paper size, and original page proportions.</p>
+
+      <h3>What should I do if a document no longer opens after relaunch?</h3>
+      <p>Confirm that the source file still exists and that your macOS account can read it. If the file was moved, renamed, or stored on a disconnected drive, open it again from its new location.</p>
+
+      <h2>Keyboard Shortcuts</h2>
+      <ul>
+        <li><kbd>Command-O</kbd>: Add PDF files</li>
+        <li><kbd>Command-Shift-I</kbd>: Insert pages from another PDF</li>
+        <li><kbd>Command-S</kbd>: Save changes to the original PDF</li>
+        <li><kbd>Command-Shift-S</kbd>: Save As a new PDF</li>
+        <li><kbd>Command-P</kbd>: Open the print panel</li>
+        <li><kbd>Command-Control-S</kbd>: Hide or show the sidebars</li>
+        <li><kbd>Command-?</kbd>: Open the in-app help</li>
+        <li><kbd>Delete</kbd>: Delete the selected annotation, or the selected pages when no annotation is selected</li>
+        <li><kbd>Escape</kbd>: Finish editing an annotation</li>
+      </ul>
+
+      <h2>Related Links</h2>
+      <p><a href="/PDF/privacy.html">Privacy Policy</a></p>
+      <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standard Terms of Use (EULA)</a></p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-row">
+        <span>Copyright 2026 PDF Pro.</span>
+        <span class="footer-links"><a href="/PDF/privacy.html">Privacy Policy</a><a href="/PDF/support.html" aria-current="page">Support</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
