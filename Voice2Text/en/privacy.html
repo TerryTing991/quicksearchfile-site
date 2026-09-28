@@ -144,6 +144,31 @@
       font-size: 0.95rem;
     }
 
+    .language-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .language-switch a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .language-switch a:hover,
+    .language-switch a[aria-current="page"] {
+      border-color: var(--accent);
+    }
+
     code {
       background: #eef3f8;
       border: 1px solid var(--line);
@@ -212,7 +237,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="support.html">繁字逐字稿（Voice2Text）</a>
-      <div class="nav-links"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="support.html">Support</a><a href="../privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></div>
+      <div class="nav-links"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="support.html">Support</a></div>
     </nav>
   </header>
   <main class="article">
@@ -222,6 +247,7 @@
         <h1>Privacy Policy</h1>
         <p class="lead">How 繁字逐字稿（Voice2Text） handles selected audio, partial transcription, transcript corrections, summaries, anonymous accounts, and credits.</p>
         <p class="updated">Last updated: September 28, 2026</p>
+        <nav class="language-switch" aria-label="Language"><a href="privacy.html" hreflang="en" lang="en" aria-current="page">English</a><a href="../privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></nav>
       </header>
       <h2>Data We Process</h2>
       <p>繁字逐字稿（Voice2Text） processes audio you select or share with the app, transcripts, transcript corrections, summaries, selected summary sections, custom vocabulary, processing status, anonymous account identifiers, credit balances, and Apple in-app purchase transaction data. The app also uses Apple DeviceCheck device state to prevent repeated claims of introductory credits; it does not store raw DeviceCheck tokens. The app does not collect contacts or location information and does not perform advertising tracking.</p>
@@ -253,7 +279,7 @@
     <div class="footer-inner">
       <div class="footer-row">
         <span>Copyright 2026 繁字逐字稿（Voice2Text）.</span>
-        <span class="footer-links"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="support.html">Support</a><a href="../privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></span>
+        <span class="footer-links"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="support.html">Support</a></span>
       </div>
     </div>
   </footer>

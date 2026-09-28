@@ -144,6 +144,31 @@
       font-size: 0.95rem;
     }
 
+    .language-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .language-switch a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .language-switch a:hover,
+    .language-switch a[aria-current="page"] {
+      border-color: var(--accent);
+    }
+
     code {
       background: #eef3f8;
       border: 1px solid var(--line);
@@ -212,7 +237,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="主要導覽">
       <a class="brand" href="support.html">繁字逐字稿</a>
-      <div class="nav-links"><a href="privacy.html" aria-current="page">隱私權政策</a><a href="support.html">支援</a><a href="en/privacy.html" hreflang="en" lang="en">English</a></div>
+      <div class="nav-links"><a href="privacy.html" aria-current="page">隱私權政策</a><a href="support.html">支援</a></div>
     </nav>
   </header>
   <main class="article">
@@ -222,6 +247,7 @@
         <h1>隱私權政策</h1>
         <p class="lead">說明繁字逐字稿如何處理您選擇的錄音檔、逐字稿、摘要、匿名帳號與點數資料。</p>
         <p class="updated">最後更新：2026 年 9 月 28 日</p>
+        <nav class="language-switch" aria-label="語言"><a href="en/privacy.html" hreflang="en" lang="en">English</a><a href="privacy.html" hreflang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</a></nav>
       </header>
       <h2>蒐集與處理的資料</h2>
       <p>繁字逐字稿會處理您主動選擇或分享至 App 的錄音檔、逐字稿、逐字稿修正內容、摘要、所選摘要段落、常用詞彙、工作狀態、匿名帳號識別碼、點數餘額，以及 Apple App 內購買交易資料。為避免重複領取試用點數，App 也會使用 Apple DeviceCheck 的隱私保護裝置狀態，但不會保存原始 DeviceCheck token。App 不會蒐集聯絡人或位置資訊，也不會進行廣告追蹤。</p>
@@ -253,7 +279,7 @@
     <div class="footer-inner">
       <div class="footer-row">
         <span>Copyright 2026 繁字逐字稿。</span>
-        <span class="footer-links"><a href="privacy.html" aria-current="page">隱私權政策</a><a href="support.html">支援</a><a href="en/privacy.html" hreflang="en" lang="en">English</a></span>
+        <span class="footer-links"><a href="privacy.html" aria-current="page">隱私權政策</a><a href="support.html">支援</a></span>
       </div>
     </div>
   </footer>

@@ -144,6 +144,31 @@
       font-size: 0.95rem;
     }
 
+    .language-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .language-switch a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .language-switch a:hover,
+    .language-switch a[aria-current="page"] {
+      border-color: var(--accent);
+    }
+
     code {
       background: #eef3f8;
       border: 1px solid var(--line);
@@ -212,7 +237,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="主要導覽">
       <a class="brand" href="support.html">繁字逐字稿</a>
-      <div class="nav-links"><a href="privacy.html">隱私權政策</a><a href="support.html" aria-current="page">支援</a><a href="en/support.html" hreflang="en" lang="en">English</a></div>
+      <div class="nav-links"><a href="privacy.html">隱私權政策</a><a href="support.html" aria-current="page">支援</a></div>
     </nav>
   </header>
   <main class="article">
@@ -222,6 +247,7 @@
         <h1>支援</h1>
         <p class="lead">提供錄音檔匯入、高品質逐字稿、部分逐字稿、摘要、匯出、點數及資料管理說明。</p>
         <p class="updated">最後更新：2026 年 9 月 28 日</p>
+        <nav class="language-switch" aria-label="語言"><a href="en/support.html" hreflang="en" lang="en">English</a><a href="support.html" hreflang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</a></nav>
       </header>
       <h2>聯絡支援</h2>
       <p>如需協助，請寄信至 <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>，並提供裝置型號、iOS 版本、繁字逐字稿版本、問題發生步驟及畫面顯示的錯誤訊息。逐字稿問題請一併說明音訊格式、長度及處理階段；點數問題請提供商品與購買日期。請勿寄送密碼、付款卡資料或機密錄音。</p>
@@ -255,7 +281,7 @@
     <div class="footer-inner">
       <div class="footer-row">
         <span>Copyright 2026 繁字逐字稿。</span>
-        <span class="footer-links"><a href="privacy.html">隱私權政策</a><a href="support.html" aria-current="page">支援</a><a href="en/support.html" hreflang="en" lang="en">English</a></span>
+        <span class="footer-links"><a href="privacy.html">隱私權政策</a><a href="support.html" aria-current="page">支援</a></span>
       </div>
     </div>
   </footer>
