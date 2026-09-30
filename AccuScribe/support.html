@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support - AccuScribe</title>
+  <meta name="description" content="Help with English transcripts, summaries, exports, credits, and your data in AccuScribe.">
+  <link rel="canonical" href="https://quicksearchfile.com/AccuScribe/support.html">
+  <meta property="og:title" content="Support - AccuScribe">
+  <meta property="og:description" content="Help with English transcripts, summaries, exports, credits, and your data in AccuScribe.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quicksearchfile.com/AccuScribe/support.html">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #5f6b7a;
+      --line: #dbe2ea;
+      --accent: #1667d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .site-header,
+    .footer {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav,
+    .footer-inner,
+    .article {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav,
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .nav-links a,
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .article {
+      padding: 52px 0 64px;
+    }
+
+    article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 56px);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 34px 0 8px;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 24px 0 6px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 18px;
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .lead {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .language-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .language-switch a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .language-switch a:hover,
+    .language-switch a[aria-current="page"] {
+      border-color: var(--accent);
+    }
+
+    code {
+      background: #eef3f8;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.1em 0.35em;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 14px 0 22px;
+    }
+
+    .sample-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fbfdff;
+    }
+
+    .sample-card h3 {
+      margin-top: 0;
+    }
+
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      margin-top: 6px;
+      padding: 0 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .sample-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    a { overflow-wrap: anywhere; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="support.html">AccuScribe</a>
+      <div class="nav-links"><a href="privacy.html">Privacy Policy</a><a href="support.html" aria-current="page">Support</a></div>
+    </nav>
+  </header>
+  <main class="article">
+    <article>
+      <header>
+        <p class="eyebrow">AccuScribe for iOS</p>
+        <h1>Support</h1>
+        <p class="lead">Help with English transcripts, summaries, exports, credits, and your data in AccuScribe.</p>
+        <p class="updated">Last updated: October 1, 2026</p>
+      </header>
+      <h2>Contact Support</h2>
+      <p>Email <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a> with your device model, iOS version, AccuScribe app version, steps to reproduce the issue, and any error message shown. For transcription issues, include the audio format, duration, and processing stage. For credit issues, include the product and purchase date. Do not send passwords, payment card details, or confidential recordings.</p>
+      <h2>Get Started</h2>
+      <p>On the New tab, tap Choose a Recording and pick an audio file from Files, or open a recording in Voice Memos and tap Share → AccuScribe. Supported formats are m4a, mp3, wav, aac, and caf, up to five hours long. Review the private cloud processing notice and the credit estimate, then tap Create Transcript. An internet connection is required. Open the finished item on the Transcripts tab to read the text and play back the recording. Transcripts can contain mistakes; check names, numbers, and important details against the original audio.</p>
+      <h2>Sample Recording for Apple Review</h2>
+      <p>The English M4A recording below is provided for Apple App Review and feature testing. It is a short fictional meeting read by a text-to-speech voice. Download it to Files, open AccuScribe, and choose it on the New tab to test transcripts and summaries.</p>
+      <div class="sample-grid">
+        <section class="sample-card">
+          <h3>English Sample Recording</h3>
+          <p>Format: M4A (AAC) · Duration: about 57 seconds · Size: about 234 KB</p>
+          <a class="download-link" href="samples/review-sample_english.m4a" download="review-sample_english.m4a" type="audio/mp4">Download Sample Recording</a>
+        </section>
+      </div>
+      <h2>Improve Recognition</h2>
+      <p>AccuScribe recognizes both American and British English and keeps each speaker's spelling. For the best results, use a clear recording with little background noise, keep the microphone close to the speakers, and avoid people talking over each other where possible. Before transcribing, add names, companies, products, and acronyms to Vocabulary so they are spelled correctly. After processing, you can touch and hold any line to correct it; summaries and exports use your corrected text.</p>
+      <h2>Find a Previous Transcript</h2>
+      <p>On the Transcripts tab, tap the calendar button to filter by date. Darker dates have transcripts; lighter dates have none. Tap Show All to clear the filter. Transcripts are grouped by the date they were created on your device.</p>
+      <h2>Create a Summary</h2>
+      <p>Open a finished transcript and tap the summary button, or select a transcript on the Summaries tab. Choose at least one section: Overview, Matters Arising, Reports, Discussion, Decisions, Other Business, Action Items, or Timeline. Your choice is remembered for next time. The number of sections doesn't change the price: recordings up to 1 hour cost 10 credits, 1 to 3 hours cost 15, and over 3 hours cost 25. If a summary fails, you are not charged, or the credits are refunded automatically. Tap any timeline point in a summary to jump back to that moment in the transcript.</p>
+      <h2>Export Your Work</h2>
+      <p>Open a transcript or summary, tap the export button, and choose a destination in the share sheet. Transcripts can be exported as plain text, Markdown, Word, PDF, or SRT subtitles. Summaries can be exported as plain text, Markdown, Word, or PDF. Exports are created on your device and include your corrections.</p>
+      <h2>How Credits Work</h2>
+      <p>AccuScribe uses consumable credits with no subscription. A transcript costs 1 credit per whole minute of each recording, with a minimum of 1 credit; for example, 10 minutes 40 seconds costs 10 credits. If processing fails, you are not charged, or the credits are refunded automatically. Current packs and prices are shown on the Credits tab.</p>
+      <h2>Transcribe Part of a Recording</h2>
+      <p>If your balance can't cover the whole recording but is above zero, the New tab offers to transcribe just the first part. Adjust the length in five-minute steps, up to what your balance allows. When possible, the suggested length leaves enough credits to summarize it. Only the selected beginning is processed, and the finished transcript notes that it covers part of the recording and shows the original length.</p>
+      <h2>Free Credits for New Users</h2>
+      <p>Eligible new users receive 60 credits after agreeing to the privacy notice. The offer is limited to once per device and does not require a rating or review. Apple DeviceCheck helps prevent repeated claims.</p>
+      <h2>A Job Is Taking Longer Than Expected</h2>
+      <p>Check your internet connection and the status shown in the app. Longer recordings and busy periods can take more time. Please don't submit the same file again while it is still processing. If a job stays stuck or shows an error, contact support with the processing stage, approximate start time, and recording length.</p>
+      <h2>A Purchase or Balance Looks Wrong</h2>
+      <p>Make sure Apple completed the purchase, then reconnect to the internet so the app can verify it; credits that don't appear right away are added the next time you open the app. Credits belong to the app's anonymous account and cannot be restored to a new account or moved to another device, so please don't delete your account to troubleshoot a balance. Contact support if the balance is still wrong. Apple handles App Store refund requests.</p>
+      <h2>Manage Consent and Delete Data</h2>
+      <p>You can withdraw consent at the bottom of Settings › About › Privacy Policy and still view or export existing content. Touch and hold a transcript to delete it along with its summary and recording. To remove your anonymous account, cloud content, recordings on the device, and remaining credits, choose Delete Account and All Data in Settings. Wait for active jobs to finish first. Deletion is permanent; copies you exported to other apps must be deleted separately.</p>
+      <h2>Related Links</h2>
+      <p>Read the <a href="privacy.html">Privacy Policy</a> for details on how data is handled. Use of the app is also subject to the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standard Terms of Use (EULA)</a>.</p>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-row">
+        <span>Copyright 2026 AccuScribe.</span>
+        <span class="footer-links"><a href="privacy.html">Privacy Policy</a><a href="support.html" aria-current="page">Support</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
