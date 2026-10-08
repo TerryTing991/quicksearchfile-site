@@ -235,7 +235,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="support.html">AccuScribe</a>
-      <div class="nav-links"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="support.html">Support</a></div>
+      <div class="nav-links"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="support.html">Support</a></div>
     </nav>
   </header>
   <main class="article">
@@ -244,16 +244,23 @@
         <p class="eyebrow">AccuScribe for iOS</p>
         <h1>Privacy Policy</h1>
         <p class="lead">How AccuScribe handles the audio you choose, transcripts, summaries, your anonymous account, and credits.</p>
-        <p class="updated">Last updated: October 1, 2026</p>
+        <p class="updated">Last updated: October 8, 2026</p>
       </header>
       <h2>Data We Process</h2>
       <p>AccuScribe processes the audio you choose or share with the app, transcripts, your transcript corrections, summaries, your selected summary sections, your vocabulary, job status, an anonymous account identifier, your credit balance, and Apple in-app purchase transaction data. The app also uses Apple DeviceCheck device state to prevent free credits for new users from being claimed more than once. A DeviceCheck token is stored on the server only temporarily while a new-user credit claim is being settled, and is deleted once Apple confirms the claim, or when the claim is declined or closed for review. The app does not collect contacts or location and does not track you for advertising.</p>
       <h2>Why We Process Data</h2>
-      <p>Your audio and related text are used only to create transcripts, proofread them, write the summaries you request, and export them. Account and transaction data are used for anonymous sign-in, job processing, credit accounting, purchase verification, refunds, and preventing duplicate redemption of purchases or new-user credits. Your content is never sold or rented, and never used for marketing, advertising audiences, cross-app or cross-website tracking, or anything unrelated to the app's features.</p>
+      <p>Your audio and related text are used only to create transcripts, proofread them, write the summaries you request, and export them. Account and transaction data are used for anonymous sign-in, job processing, credit accounting, purchase verification, refunds, and preventing duplicate redemption of purchases or new-user credits. Your content is never sold or rented, and never used for marketing, advertising audiences, cross-app or cross-website tracking, or anything unrelated to the app's features. Your recordings, transcripts, and summaries are not used by the developer or service providers to train or improve models.</p>
       <h2>Cloud Processing and Your Consent</h2>
-      <p>Speech recognition, proofreading, and summaries run on cloud services and require an internet connection. Before your first transcript or summary, the app explains how your data is processed and asks for your consent. If you transcribe only part of a recording because your balance can't cover the whole thing, the app trims a working copy on your device and uploads only the selected beginning. You can withdraw consent at the bottom of Settings › About › Privacy Policy. You can still view and export existing content after withdrawing, but you must agree again before starting another transcript or summary. Withdrawing consent does not delete existing content or undo processing already done.</p>
-      <h2>Service Providers</h2>
-      <p>Google Firebase and Google Cloud provide anonymous sign-in, the database, temporary file storage, and job scheduling. Whisper running on Modal, or OpenAI, processes audio for speech recognition. OpenAI processes transcript text and your vocabulary for proofreading and the summaries you request. Apple handles in-app payments and DeviceCheck checks for new-user credits. Audio, text, and technical information are sent only to the services needed for the feature you use, and these services may process it only to provide that feature.</p>
+      <p>Speech recognition, proofreading, and summaries run on cloud services and require an internet connection. The welcome screen identifies the data sent, each recipient, and the purpose of processing. No recording, transcript, or vocabulary is sent to these providers until you tap “I Agree and Start.” You can open the Privacy Policy and Terms of Service from that screen before deciding. Existing users must accept updated disclosures when the data-sharing policy changes. If you transcribe only part of a recording because your balance can't cover the whole thing, the app trims a working copy on your device and uploads only the selected beginning. You can withdraw consent at the bottom of Settings › About › Privacy Policy. You can still view and export existing content after withdrawing, but you must agree again before starting another transcript or summary. Withdrawing consent does not delete existing content or undo processing already done.</p>
+      <h2>Service Providers and Data Shared</h2>
+      <p>Before any transcription or summary, the app's consent screen lists the recipients below and the data each receives. Your recordings, transcripts, and vocabulary are not sent to these providers until you agree.</p>
+      <ul>
+        <li><strong>OpenAI (third-party AI service)</strong>: receives transcript text and your custom vocabulary to correct typos, add punctuation, and generate summaries you request. OpenAI may also receive recordings for fallback speech recognition. Data sent through the OpenAI API is not used to train or improve OpenAI's models by default.</li>
+        <li><strong>Modal (cloud computing service)</strong>: receives audio to run the Whisper speech recognition model and produce a timestamped transcript. Audio is used only for speech recognition and is not used to train or improve any model.</li>
+        <li><strong>Google Firebase and Google Cloud</strong>: store temporary audio, transcripts, summaries, anonymous account and credit records, and provide anonymous sign-in, databases, and job scheduling. Data is used only for the app's features and is not used to train or improve any model.</li>
+        <li><strong>Apple</strong>: handles in-app purchases and uses DeviceCheck to confirm introductory-credit eligibility.</li>
+      </ul>
+      <p>These providers may process data only to provide the app's features and, under their terms, must protect it at a level equal to or greater than this policy.</p>
       <h2>Local Storage and Exports</h2>
       <p>The anonymous sign-in credential is stored in the iOS Keychain. App settings, summary-section preferences, your transcript list, corrections, and recordings kept for playback may be stored on your device. Exports are created on your device. When you export or share content, the app or service you choose handles that copy. Deleting content in AccuScribe does not delete copies you have exported elsewhere.</p>
       <h2>Retention and Deletion</h2>
@@ -276,7 +283,7 @@
     <div class="footer-inner">
       <div class="footer-row">
         <span>Copyright 2026 AccuScribe.</span>
-        <span class="footer-links"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="support.html">Support</a></span>
+        <span class="footer-links"><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="support.html">Support</a></span>
       </div>
     </div>
   </footer>
