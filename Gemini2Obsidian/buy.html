@@ -49,6 +49,10 @@
     .btn:hover { background: #343845; }
     .card:hover .btn { background: var(--primary); }
     .card:hover .btn:hover { background: #8c7df3; }
+    .btn:disabled { cursor: default; color: #cfd3db; background: #2a2d38; opacity: .7; }
+    .card:hover .btn:disabled { background: #2a2d38; }
+    .notice { max-width: 680px; margin: 0 auto 30px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: #d7dae1; font-size: 14px; line-height: 1.6; text-align: center; }
+    .notice a { color: #b9afff; }
     .err { text-align: center; color: #ff8b84; font-size: 13px; margin-top: 18px; min-height: 18px; }
     .foot { text-align: center; color: #6f7682; font-size: 12.5px; margin-top: 26px; }
     .foot b { color: #aeb4c0; }
@@ -62,44 +66,52 @@
     <div class="head">
       <div class="brand"><img class="logo" alt="" src="icon.png" /> Gemini → Obsidian</div>
       <h1>Upgrade to Pro</h1>
-      <p>Export your full Gemini conversations — including Deep Research reports — straight into Obsidian. Pick a plan and you'll get a license key to activate the extension.</p>
+      <p>Export your full Gemini conversations — including Deep Research reports — straight into Obsidian. Compare the planned Pro options below. Purchases are not yet available.</p>
     </div>
-    <div class="grid" id="grid"></div>
-    <p class="foot"><b>Secure checkout by Lemon Squeezy.</b> &nbsp;Taxes handled automatically · Cancel anytime</p>
+    <div class="notice" role="status"><strong>Purchases are temporarily unavailable.</strong><br/>We are preparing checkout through Gumroad and updating the extension to support Gumroad licenses. Checkout will open after setup and testing are complete. Existing extension builds cannot activate Gumroad license keys.<br/>Questions? <a href="mailto:TerryTing991@gmail.com">Contact the developer</a>.</div>
+    <div class="grid">
+      <section class="card" aria-label="Monthly Pro">
+        <h2 class="plan-name">Monthly Pro</h2>
+        <div class="price"><span class="amt">$1.99</span><span class="per">/ month</span></div>
+        <p class="save">Planned price in USD</p>
+        <ul>
+          <li><span class="tick">✓</span><span>Export full conversations — no 500-character limit</span></li>
+          <li><span class="tick">✓</span><span>Include loaded Deep Research reports</span></li>
+          <li><span class="tick">✓</span><span>Convert code blocks, lists, headings and links</span></li>
+          <li><span class="tick">✓</span><span>Save directly into your selected vault folder</span></li>
+        </ul>
+        <button class="btn" type="button" disabled>Not available yet</button>
+      </section>
+      <section class="card" aria-label="Yearly Pro">
+        <h2 class="plan-name">Yearly Pro</h2>
+        <div class="price"><span class="amt">$12.99</span><span class="per">/ year</span></div>
+        <p class="save">Planned price in USD</p>
+        <ul>
+          <li><span class="tick">✓</span><span>Export full conversations — no 500-character limit</span></li>
+          <li><span class="tick">✓</span><span>Include loaded Deep Research reports</span></li>
+          <li><span class="tick">✓</span><span>Convert code blocks, lists, headings and links</span></li>
+          <li><span class="tick">✓</span><span>Save directly into your selected vault folder</span></li>
+        </ul>
+        <button class="btn" type="button" disabled>Not available yet</button>
+      </section>
+      <section class="card" aria-label="Lifetime Pro">
+        <h2 class="plan-name">Lifetime Pro</h2>
+        <div class="price"><span class="amt">$19.99</span><span class="per">one-time</span></div>
+        <p class="save">Planned price in USD</p>
+        <ul>
+          <li><span class="tick">✓</span><span>Export full conversations — no 500-character limit</span></li>
+          <li><span class="tick">✓</span><span>Include loaded Deep Research reports</span></li>
+          <li><span class="tick">✓</span><span>Convert code blocks, lists, headings and links</span></li>
+          <li><span class="tick">✓</span><span>Save directly into your selected vault folder</span></li>
+        </ul>
+        <button class="btn" type="button" disabled>Not available yet</button>
+      </section>
+    </div>
+    <p class="foot">Planned prices are shown in USD. Applicable taxes and the final charge will be shown at checkout when purchases reopen. Monthly and yearly plans will renew automatically until cancelled; Lifetime is a one-time purchase.</p>
     <div class="legal">
-      <a href="terms.html">Terms of Service</a>·<a href="privacy.html">Privacy Notice</a>·<a href="refund.html">Refund Policy</a>
+      <a href="index.html">Product overview</a>·<a href="terms.html">Terms of Service</a>·<a href="privacy.html">Privacy Notice</a>·<a href="refund.html">Refund Policy</a>
     </div>
   </div>
-  <script>
-    const PLANS = [
-      { url: 'https://gemini2obsidian.lemonsqueezy.com/checkout/buy/5c5e1dac-906b-463d-8632-e88288d00cf6',
-        title: 'Monthly Pro', price: '$1.99', period: '/ month', badge: '', save: '', cta: 'Choose Monthly' },
-      { url: 'https://gemini2obsidian.lemonsqueezy.com/checkout/buy/dc6087d5-3eaa-4a2e-b3a7-97a116e3d622',
-        title: 'Yearly Pro', price: '$12.99', period: '/ year', badge: 'Most popular', save: 'Save vs monthly', cta: 'Choose Yearly' },
-      { url: 'https://gemini2obsidian.lemonsqueezy.com/checkout/buy/47d36aff-2bb3-4dc0-b872-376930d6560c',
-        title: 'Lifetime Pro', price: '$19.99', period: 'one-time', badge: 'Best value', save: 'Pay once, keep forever', cta: 'Get Lifetime' },
-    ];
-    const FEATURES = [
-      'Export full conversations — no 500-char limit',
-      'Deep Research reports included',
-      'Code blocks & formatting preserved',
-      'Saved straight into your Obsidian vault',
-    ];
 
-    const grid = document.getElementById('grid');
-    PLANS.forEach((p) => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      const features = FEATURES.map((f) => '<li><span class="tick">✓</span><span>' + f + '</span></li>').join('');
-      card.innerHTML =
-        (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') +
-        '<div class="plan-name">' + p.title + '</div>' +
-        '<div class="price"><span class="amt">' + p.price + '</span><span class="per">' + p.period + '</span></div>' +
-        '<div class="save">' + (p.save || '&nbsp;') + '</div>' +
-        '<ul>' + features + '</ul>' +
-        '<a class="btn" href="' + p.url + '">' + p.cta + '</a>';
-      grid.appendChild(card);
-    });
-  </script>
 </body>
 </html>

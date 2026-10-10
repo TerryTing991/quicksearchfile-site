@@ -33,6 +33,9 @@
     .foot { color: #6f7682; font-size: 13px; margin-top: 8px; }
     .foot a { color: #9aa0ad; text-decoration: none; margin: 0 7px; }
     .foot a:hover { color: #cfd3db; text-decoration: underline; }
+    .notice { margin: 24px auto 0; max-width: 620px; color: #cfd3db; font-size: 14px; line-height: 1.6; }
+    .details { text-align: left; margin: 32px 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .details h2 { color: #f2f3f5; font-size: 18px; margin: 20px 0 8px; }
     .copyright { margin-top: 14px; color: #5b616d; font-size: 12.5px; }
   </style>
 </head>
@@ -46,18 +49,29 @@
       <a class="btn btn--ghost" href="refund.html">Refund policy</a>
     </div>
 
+    <p class="notice">Pro purchases are temporarily unavailable while we prepare our Gumroad store and the compatible extension update. Please review the planned options before purchasing.</p>
+
     <div class="features">
       <div class="feat"><h3>📝 One-click export</h3><p>Save the whole conversation as Markdown straight into a folder you choose in your Obsidian vault.</p></div>
       <div class="feat"><h3>🔬 Deep Research included</h3><p>Long research reports are exported too, wrapped in a collapsible Obsidian callout.</p></div>
       <div class="feat"><h3>🧩 Formatting preserved</h3><p>Code blocks, lists, headings and links are converted faithfully to Markdown.</p></div>
-      <div class="feat"><h3>💎 Free &amp; Pro</h3><p>Free tier exports a preview; Pro unlocks full-length exports via a license key.</p></div>
+      <div class="feat"><h3>💎 Free &amp; Pro</h3><p>Free exports contain the first 500 characters. Pro is designed to unlock full-length exports with a license key once purchases reopen.</p></div>
     </div>
+
+    <section class="details" aria-label="Product details">
+      <h2>How it works</h2>
+      <p>Gemini to Obsidian is a Chrome browser extension. Choose an Obsidian vault folder in the extension settings, open a conversation at gemini.google.com, and export it as a Markdown file. Conversation content is processed locally and written to the folder you selected.</p>
+      <h2>Requirements and limitations</h2>
+      <p>A Chromium browser with File System Access support and write access to your vault folder are required. Only conversation content currently loaded on the page can be exported. To include a Deep Research report, open its report panel and scroll through it before exporting.</p>
+      <h2>About the developer</h2>
+      <p>Developed and supported by Terry Ting, an independent developer in Taiwan. This extension is an independent product and is not affiliated with or endorsed by Google or Obsidian.</p>
+    </section>
 
     <p class="foot">
       <a href="buy.html">Plans</a>·<a href="terms.html">Terms of Service</a>·<a href="privacy.html">Privacy Notice</a>·<a href="refund.html">Refund Policy</a>
     </p>
     <p class="foot">Questions? <a href="mailto:TerryTing991@gmail.com">TerryTing991@gmail.com</a></p>
-    <p class="copyright">© 2026 Terry Ting · Payments by Lemon Squeezy</p>
+    <p class="copyright">© 2026 Terry Ting · Independent developer in Taiwan</p>
   </div>
 </body>
 </html>
