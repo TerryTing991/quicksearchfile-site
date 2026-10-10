@@ -20,7 +20,7 @@
     .brand .logo { width: 26px; height: 26px; border-radius: 7px; }
     h1 { font-size: clamp(26px, 5vw, 38px); letter-spacing: -.02em; margin-bottom: 10px; }
     .head p { color: var(--muted); font-size: 15px; max-width: 540px; margin: 0 auto; line-height: 1.5; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+    .grid { display: grid; grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; gap: 18px; align-items: stretch; }
     @media (max-width: 760px) { .grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
     .card {
       position: relative; display: flex; flex-direction: column;
@@ -66,48 +66,24 @@
     <div class="head">
       <div class="brand"><img class="logo" alt="" src="icon.png" /> Gemini → Obsidian</div>
       <h1>Upgrade to Pro</h1>
-      <p>Export your full Gemini conversations — including Deep Research reports — straight into Obsidian. Compare the planned Pro options below. Purchases are not yet available.</p>
+      <p>Export your full Gemini conversations — including Deep Research reports — straight into Obsidian. Unlock full-length exports with Lifetime Pro. One payment, no subscription.</p>
     </div>
-    <div class="notice" role="status"><strong>Purchases are temporarily unavailable.</strong><br/>We are preparing checkout through Gumroad and updating the extension to support Gumroad licenses. Checkout will open after setup and testing are complete. Existing extension builds cannot activate Gumroad license keys.<br/>Questions? <a href="mailto:TerryTing991@gmail.com">Contact the developer</a>.</div>
+    <div class="notice"><strong>Download and activate through Gumroad.</strong><br/>Your purchase includes the extension ZIP, installation instructions and a personal license key. Install version 1.0.2 or later and activate the key in Settings.</div>
     <div class="grid">
-      <section class="card" aria-label="Monthly Pro">
-        <h2 class="plan-name">Monthly Pro</h2>
-        <div class="price"><span class="amt">$1.99</span><span class="per">/ month</span></div>
-        <p class="save">Planned price in USD</p>
-        <ul>
-          <li><span class="tick">✓</span><span>Export full conversations — no 500-character limit</span></li>
-          <li><span class="tick">✓</span><span>Include loaded Deep Research reports</span></li>
-          <li><span class="tick">✓</span><span>Convert code blocks, lists, headings and links</span></li>
-          <li><span class="tick">✓</span><span>Save directly into your selected vault folder</span></li>
-        </ul>
-        <button class="btn" type="button" disabled>Not available yet</button>
-      </section>
-      <section class="card" aria-label="Yearly Pro">
-        <h2 class="plan-name">Yearly Pro</h2>
-        <div class="price"><span class="amt">$12.99</span><span class="per">/ year</span></div>
-        <p class="save">Planned price in USD</p>
-        <ul>
-          <li><span class="tick">✓</span><span>Export full conversations — no 500-character limit</span></li>
-          <li><span class="tick">✓</span><span>Include loaded Deep Research reports</span></li>
-          <li><span class="tick">✓</span><span>Convert code blocks, lists, headings and links</span></li>
-          <li><span class="tick">✓</span><span>Save directly into your selected vault folder</span></li>
-        </ul>
-        <button class="btn" type="button" disabled>Not available yet</button>
-      </section>
       <section class="card" aria-label="Lifetime Pro">
         <h2 class="plan-name">Lifetime Pro</h2>
-        <div class="price"><span class="amt">$19.99</span><span class="per">one-time</span></div>
-        <p class="save">Planned price in USD</p>
+        <div class="price"><span class="amt">US$9.99</span><span class="per">one-time</span></div>
+        <p class="save">Lifetime Pro · No recurring payments</p>
         <ul>
           <li><span class="tick">✓</span><span>Export full conversations — no 500-character limit</span></li>
           <li><span class="tick">✓</span><span>Include loaded Deep Research reports</span></li>
-          <li><span class="tick">✓</span><span>Convert code blocks, lists, headings and links</span></li>
+          <li><span class="tick">✓</span><span>Preserve code, tables, LaTeX formulas and source links</span></li>
           <li><span class="tick">✓</span><span>Save directly into your selected vault folder</span></li>
         </ul>
-        <button class="btn" type="button" disabled>Not available yet</button>
+        <a class="btn" href="https://terryverse828.gumroad.com/l/gemini-to-obsidian">Buy Lifetime Pro on Gumroad</a>
       </section>
     </div>
-    <p class="foot">Planned prices are shown in USD. Applicable taxes and the final charge will be shown at checkout when purchases reopen. Monthly and yearly plans will renew automatically until cancelled; Lifetime is a one-time purchase.</p>
+    <p class="foot">Price shown in USD. Applicable taxes and the final total are displayed at checkout. Lifetime Pro is a one-time purchase with a 14-day money-back guarantee.</p>
     <div class="legal">
       <a href="index.html">Product overview</a>·<a href="terms.html">Terms of Service</a>·<a href="privacy.html">Privacy Notice</a>·<a href="refund.html">Refund Policy</a>
     </div>
