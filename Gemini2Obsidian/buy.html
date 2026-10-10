@@ -14,15 +14,18 @@
         radial-gradient(1100px 520px at 50% -160px, rgba(124,108,240,.28), transparent 70%),
         linear-gradient(180deg, #0f1014, #14151b 60%);
     }
-    .wrap { max-width: 1000px; margin: 0 auto; }
+    .wrap { max-width: 1080px; margin: 0 auto; }
     .head { text-align: center; margin-bottom: 40px; }
     .brand { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; color: var(--muted); font-size: 14px; margin-bottom: 16px; }
     .brand .logo { width: 26px; height: 26px; border-radius: 7px; }
     h1 { font-size: clamp(26px, 5vw, 38px); letter-spacing: -.02em; margin-bottom: 10px; }
     .head p { color: var(--muted); font-size: clamp(18px, 2.4vw, 21px); max-width: 640px; margin: 0 auto; line-height: 1.65; text-wrap: balance; }
     .head .payment-note { font-size: clamp(16px, 2vw, 18px); margin-top: 12px; color: #b4b9c5; }
-    .grid { display: grid; grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; gap: 18px; align-items: stretch; }
-    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+    .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+    .product-visual img { display: block; width: 100%; height: auto; border-radius: 16px; }
+    .product-visual figcaption { color: var(--muted); font-size: 16px; line-height: 1.65; margin: 20px 4px 0; text-wrap: balance; }
+    .product-visual figcaption strong { display: block; color: #f2f3f5; font-size: 20px; margin-bottom: 6px; }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; gap: 24px; } }
     .card {
       position: relative; display: flex; flex-direction: column;
       background: var(--card); border: 1px solid var(--border); border-radius: 18px;
@@ -40,14 +43,14 @@
     .price .per { color: var(--muted); font-size: 13px; }
     .save { font-size: 12px; color: var(--accent); font-weight: 600; min-height: 16px; margin-bottom: 18px; }
     ul { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 24px; }
-    li { display: flex; gap: 9px; font-size: 13.5px; color: #d7dae1; line-height: 1.4; }
+    li { display: flex; gap: 9px; font-size: 15px; color: #d7dae1; line-height: 1.4; }
     li .tick { color: #3fb968; flex-shrink: 0; font-weight: 700; }
     .btn {
       margin-top: auto; display: block; width: 100%; text-align: center; text-decoration: none;
       border: 0; border-radius: 11px; padding: 13px; font-size: 14px; font-weight: 700; cursor: pointer;
-      color: #fff; background: #2a2d38; transition: background .15s, transform .05s;
+      color: #fff; background: var(--primary); transition: background .15s, transform .05s;
     }
-    .btn:hover { background: #343845; }
+    .btn:hover { background: #8c7df3; }
     .card:hover .btn { background: var(--primary); }
     .card:hover .btn:hover { background: #8c7df3; }
     .btn:disabled { cursor: default; color: #cfd3db; background: #2a2d38; opacity: .7; }
@@ -71,6 +74,10 @@
       <p class="payment-note">Lifetime Pro unlocks full-length exports.<br/>One payment. No subscription.</p>
     </div>
     <div class="grid">
+      <figure class="product-visual">
+        <img src="cover.png" width="1672" height="941" alt="Gemini to Obsidian — save your conversations as Markdown notes" fetchpriority="high" />
+        <figcaption><strong>From Gemini to your vault.</strong>Keep conversations and research in local Markdown notes, with code, tables, formulas and source links.</figcaption>
+      </figure>
       <section class="card" aria-label="Lifetime Pro">
         <h2 class="plan-name">Lifetime Pro</h2>
         <div class="price"><span class="amt">US$9.99</span><span class="per">one-time</span></div>
