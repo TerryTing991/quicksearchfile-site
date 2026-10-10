@@ -3,100 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gemini to Obsidian — Upgrade to Pro</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --primary:#7c6cf0; --accent:#f0a500; --card:#1c1e26; --border:#2f323d; --muted:#9aa0ad; }
-    body {
-      min-height: 100vh; color: #f2f3f5; padding: 48px 20px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", sans-serif;
-      background:
-        radial-gradient(1100px 520px at 50% -160px, rgba(124,108,240,.28), transparent 70%),
-        linear-gradient(180deg, #0f1014, #14151b 60%);
-    }
-    .wrap { max-width: 1080px; margin: 0 auto; }
-    .head { text-align: center; margin-bottom: 40px; }
-    .brand { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; color: var(--muted); font-size: 14px; margin-bottom: 16px; }
-    .brand .logo { width: 26px; height: 26px; border-radius: 7px; }
-    h1 { font-size: clamp(26px, 5vw, 38px); letter-spacing: -.02em; margin-bottom: 10px; }
-    .head p { color: var(--muted); font-size: clamp(18px, 2.4vw, 21px); max-width: 640px; margin: 0 auto; line-height: 1.65; text-wrap: balance; }
-    .head .payment-note { font-size: clamp(16px, 2vw, 18px); margin-top: 12px; color: #b4b9c5; }
-    .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; }
-    .product-visual img { display: block; width: 100%; height: auto; border-radius: 16px; }
-    .product-visual figcaption { color: var(--muted); font-size: 16px; line-height: 1.65; margin: 20px 4px 0; text-wrap: balance; }
-    .product-visual figcaption strong { display: block; color: #f2f3f5; font-size: 20px; margin-bottom: 6px; }
-    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; gap: 24px; } }
-    .card {
-      position: relative; display: flex; flex-direction: column;
-      background: var(--card); border: 1px solid var(--border); border-radius: 18px;
-      padding: 26px 24px; transition: transform .15s, border-color .15s, box-shadow .15s;
-    }
-    .card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 24px 60px rgba(124,108,240,.18); }
-    .badge {
-      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-      background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff;
-      font-size: 11.5px; font-weight: 700; letter-spacing: .3px; padding: 5px 14px; border-radius: 999px; white-space: nowrap;
-    }
-    .plan-name { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
-    .price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
-    .price .amt { font-size: 36px; font-weight: 800; letter-spacing: -.02em; }
-    .price .per { color: var(--muted); font-size: 13px; }
-    .save { font-size: 12px; color: var(--accent); font-weight: 600; min-height: 16px; margin-bottom: 18px; }
-    ul { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 24px; }
-    li { display: flex; gap: 9px; font-size: 15px; color: #d7dae1; line-height: 1.4; }
-    li .tick { color: #3fb968; flex-shrink: 0; font-weight: 700; }
-    .btn {
-      margin-top: auto; display: block; width: 100%; text-align: center; text-decoration: none;
-      border: 0; border-radius: 11px; padding: 13px; font-size: 14px; font-weight: 700; cursor: pointer;
-      color: #fff; background: var(--primary); transition: background .15s, transform .05s;
-    }
-    .btn:hover { background: #8c7df3; }
-    .card:hover .btn { background: var(--primary); }
-    .card:hover .btn:hover { background: #8c7df3; }
-    .btn:disabled { cursor: default; color: #cfd3db; background: #2a2d38; opacity: .7; }
-    .card:hover .btn:disabled { background: #2a2d38; }
-    .notice { max-width: 680px; margin: 24px auto 0; padding: 18px 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: #d7dae1; font-size: 14px; line-height: 1.6; text-align: center; }
-    .notice a { color: #b9afff; }
-    .err { text-align: center; color: #ff8b84; font-size: 13px; margin-top: 18px; min-height: 18px; }
-    .foot { text-align: center; color: #6f7682; font-size: 12.5px; margin-top: 26px; }
-    .foot b { color: #aeb4c0; }
-    .legal { text-align: center; margin-top: 10px; font-size: 12.5px; }
-    .legal a { color: #9aa0ad; text-decoration: none; margin: 0 7px; }
-    .legal a:hover { color: #cfd3db; text-decoration: underline; }
-  </style>
+  <meta name="theme-color" content="#f8f7f3" />
+  <title>Gemini to Obsidian — Lifetime Pro, US$9.99</title>
+  <meta name="description" content="Keep your Gemini conversations and Deep Research in Obsidian. Lifetime Pro unlocks full-length Markdown exports. US$9.99 once, no subscription." />
+  <link rel="canonical" href="https://quicksearchfile.com/Gemini2Obsidian/buy.html" />
+  <link rel="icon" href="icon.png" type="image/png" />
+  <link rel="stylesheet" href="product.css" />
 </head>
 <body>
-  <div class="wrap">
-    <div class="head">
-      <div class="brand"><img class="logo" alt="" src="icon.png" /> Gemini → Obsidian</div>
-      <h1>Upgrade to Pro</h1>
-      <p>Export full Gemini conversations and Deep Research reports directly to Obsidian.</p>
-      <p class="payment-note">Lifetime Pro unlocks full-length exports.<br/>One payment. No subscription.</p>
-    </div>
-    <div class="grid">
-      <figure class="product-visual">
-        <img src="cover.png" width="1672" height="941" alt="Gemini to Obsidian — save your conversations as Markdown notes" fetchpriority="high" />
-        <figcaption><strong>From Gemini to your vault.</strong>Keep conversations and research in local Markdown notes, with code, tables, formulas and source links.</figcaption>
-      </figure>
-      <section class="card" aria-label="Lifetime Pro">
-        <h2 class="plan-name">Lifetime Pro</h2>
-        <div class="price"><span class="amt">US$9.99</span><span class="per">one-time</span></div>
-        <p class="save">Lifetime Pro · No recurring payments</p>
-        <ul>
-          <li><span class="tick">✓</span><span>Export full conversations — no 500-character limit</span></li>
-          <li><span class="tick">✓</span><span>Include loaded Deep Research reports</span></li>
-          <li><span class="tick">✓</span><span>Preserve code, tables, LaTeX formulas and source links</span></li>
-          <li><span class="tick">✓</span><span>Save directly into your selected vault folder</span></li>
-        </ul>
-        <a class="btn" href="https://terryverse828.gumroad.com/l/gemini-to-obsidian">Buy Lifetime Pro on Gumroad</a>
-      </section>
-    </div>
-    <div class="notice"><strong>Download and activate through Gumroad.</strong><br/>Your purchase includes the extension ZIP, installation instructions and a personal license key. Install version 1.0.2 or later and activate the key in Settings.</div>
-    <p class="foot">Price shown in USD. Applicable taxes and the final total are displayed at checkout. Lifetime Pro is a one-time purchase with a 14-day money-back guarantee.</p>
-    <div class="legal">
-      <a href="index.html">Product overview</a>·<a href="terms.html">Terms of Service</a>·<a href="privacy.html">Privacy Notice</a>·<a href="refund.html">Refund Policy</a>
-    </div>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="container">
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Gemini to Obsidian home"><img src="icon.png" width="34" height="34" alt="" /><span>Gemini <span>→</span> Obsidian</span></a>
+    <nav class="nav" aria-label="Main navigation"><a class="secondary" href="index.html">Overview</a><a class="secondary" href="#how-it-works">How it works</a><a class="nav-buy" href="#pricing">Lifetime Pro</a></nav>
+  </header>
+  <main id="main">
 
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Gemini to Obsidian · Lifetime Pro</p>
+        <h1 id="hero-title">Good conversations<br />deserve <em>a home.</em></h1>
+        <p class="intro">Turn your Gemini conversations and research into Markdown notes you can keep, connect and come back to.</p>
+        <div class="tags" aria-label="Product format"><span>Desktop Chrome extension</span><span>Made for your Obsidian vault</span></div>
+        <figure class="art"><picture><source type="image/webp" srcset="cover-640.webp 640w, cover-1280.webp 1280w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1184px) 52vw, 600px" /><img src="cover.png" width="1672" height="941" alt="Gemini to Obsidian: save your conversations as Markdown notes." fetchpriority="high" decoding="async" /></picture></figure>
+        <div class="art-caption"><span>From a conversation</span><span>To your own collection ↗</span></div>
+      </div>
+      <div>
+        <section class="plan" id="pricing" aria-labelledby="plan-title">
+          <div class="plan-top"><span>ONE PAYMENT. YOURS TO KEEP.</span><span>PRO</span></div>
+          <div class="plan-body">
+            <h2 id="plan-title">Lifetime Pro</h2><p class="plan-sub">More room for every idea.</p>
+            <div class="price"><span class="currency">US$</span><strong>9.99</strong><span class="once">paid once</span></div>
+            <p class="price-note">Lifetime access. No recurring payments.</p>
+            <div class="rule"></div>
+            <ul class="checklist"><li>Full-length conversation exports</li><li>Loaded Deep Research reports included</li><li>Code, tables, formulas &amp; source links</li><li>Save directly to your vault folder</li><li>Extension ZIP &amp; personal license key</li></ul>
+            <a class="button" href="https://terryverse828.gumroad.com/l/gemini-to-obsidian">Get Lifetime Pro <span class="arrow" aria-hidden="true">↗</span></a>
+            <p class="checkout-note">Checkout &amp; download via Gumroad.<br />Taxes and final total shown at checkout.</p>
+            <p class="guarantee">✓ <a href="refund.html">14-day money-back guarantee</a></p>
+          </div>
+        </section>
+        <p class="requirements">For desktop Chrome · Manual installation<br />Already purchased? Activate your key in extension Settings.</p>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Product highlights">
+      <div class="benefit"><span class="feature-icon" aria-hidden="true">↳</span><div><h2>Your notes. Your vault.</h2><p>Conversations are processed locally and saved to the folder you choose.</p></div></div>
+      <div class="benefit"><span class="feature-icon" aria-hidden="true">≡</span><div><h2>Keep the useful details.</h2><p>Preserve code, tables, LaTeX formulas and source links in Markdown.</p></div></div>
+      <div class="benefit"><span class="feature-icon" aria-hidden="true">◇</span><div><h2>Research, ready to revisit.</h2><p>Save loaded Deep Research reports as collapsible Obsidian callouts.</p></div></div>
+    </section>
+
+    <section class="section" id="how-it-works" aria-labelledby="steps-title">
+      <div class="section-heading"><div><p class="eyebrow">A simpler workflow</p><h2>From conversation<br />to collection.</h2></div><p>A few minutes to set up.<br />Then one click to save what matters.</p></div>
+      <ol class="steps">
+        <li class="step"><h3>Install the extension</h3><p>Download and extract the ZIP from your Gumroad purchase. In desktop Chrome, open <code>chrome://extensions</code>, enable Developer mode, and use <strong>Load unpacked</strong> to select the folder containing <code>manifest.json</code>.</p></li>
+        <li class="step"><h3>Make it yours</h3><p>In the extension’s Settings, choose your Obsidian vault folder and allow write access. Paste your personal license key to activate Lifetime Pro. Use version 1.0.2 or later.</p></li>
+        <li class="step"><h3>Save your next idea</h3><p>Open a Gemini conversation, load the content you want to keep, and click <strong>Export to Obsidian</strong>. Your conversation becomes a Markdown note in your selected folder.</p></li>
+      </ol>
+    </section>
+
+    <section class="section faq-section" aria-labelledby="faq-title">
+      <div class="faq-heading"><p class="eyebrow">Good to know</p><h2>A little clarity,<br />before you start.</h2><p>Still have a question?<br /><a href="mailto:TerryTing991@gmail.com">Get in touch with Terry ↗</a></p></div>
+      <div class="faq">
+        <details><summary>What is included in my purchase?</summary><p>Your Gumroad purchase includes the extension ZIP, installation instructions and a personal license key. Lifetime Pro unlocks full-length exports for a one-time payment of US$9.99. There is no subscription. Applicable taxes and the final total are shown at checkout.</p></details>
+        <details><summary>How is Pro different from the free plan?</summary><p>The free plan exports the first 500 characters of the conversation body. Pro removes that limit, so you can save the full conversation content loaded on the page, including loaded Deep Research reports.</p></details>
+        <details><summary>Can I use it on my phone?</summary><p>The extension is designed for desktop Chrome or a compatible Chromium browser with File System Access support. It requires permission to write to your selected vault folder. This website works on mobile, but the extension does not run in mobile Chrome, Safari or Firefox.</p></details>
+        <details><summary>How do I include a Deep Research report?</summary><p>Open the report panel in Gemini and scroll through it to load the report before exporting. Only content currently loaded on the page can be exported. Long conversations may also need to be scrolled through first.</p></details>
+        <details><summary>Where does my conversation data go?</summary><p>The extension processes conversation content locally and writes Markdown to the folder you select. License verification contacts Gumroad; your conversations are not sent to Gumroad. See the <a href="privacy.html">Privacy Notice</a> for details.</p></details>
+        <details><summary>What if it is not right for me?</summary><p>Lifetime Pro includes a 14-day money-back guarantee. Email <a href="mailto:TerryTing991@gmail.com">TerryTing991@gmail.com</a> with your purchase receipt or order reference to request a refund. See the <a href="refund.html">Refund Policy</a> for full terms.</p></details>
+      </div>
+    </section>
+
+  </main>
+  <footer class="footer"><div><p>© 2026 Terry Ting · Independent developer in Taiwan</p><p>Not affiliated with or endorsed by Google or Obsidian.</p></div><nav aria-label="Footer navigation"><a href="index.html">Overview</a><a href="buy.html">Pricing</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refunds</a></nav></footer>
+</div>
 </body>
 </html>
