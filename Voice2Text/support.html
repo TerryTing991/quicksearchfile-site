@@ -7,7 +7,7 @@
   <meta name="description" content="繁字逐字稿的錄音匯入、逐字稿、摘要、匯出、點數與資料管理說明。">
   <link rel="canonical" href="https://quicksearchfile.com/Voice2Text/support.html">
   <link rel="alternate" hreflang="zh-Hant" href="https://quicksearchfile.com/Voice2Text/support.html">
-  <link rel="alternate" hreflang="en" href="https://quicksearchfile.com/Voice2Text/en/support.html">
+  <link rel="alternate" hreflang="en" href="https://quicksearchfile.com/Voice2Text/support.html#en">
   <meta property="og:title" content="支援－繁字逐字稿">
   <meta property="og:description" content="繁字逐字稿的錄音匯入、逐字稿、摘要、匯出、點數與資料管理說明。">
   <meta property="og:type" content="website">
@@ -144,30 +144,41 @@
       font-size: 0.95rem;
     }
 
-    .language-switch {
+    .language-tabs {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 24px;
+      margin-bottom: 28px;
     }
 
-    .language-switch a {
+    .language-tabs button {
       display: inline-flex;
       align-items: center;
       min-height: 38px;
-      padding: 6px 14px;
+      padding: 6px 16px;
       border: 1px solid var(--line);
       border-radius: 999px;
       background: var(--panel);
       color: var(--accent);
+      font: inherit;
       font-weight: 800;
-      text-decoration: none;
+      cursor: pointer;
     }
 
-    .language-switch a:hover,
-    .language-switch a[aria-current="page"] {
+    .language-tabs button:hover,
+    .language-tabs button[aria-selected="true"] {
       border-color: var(--accent);
     }
+
+    .language-tabs button[aria-selected="true"] {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Without JavaScript both languages stay visible, one after the other. */
+    .language-tabs { display: none; }
+    .js .language-tabs { display: flex; }
+    #panel-en { margin-top: 48px; }
+    .js #panel-en { margin-top: 0; }
 
     code {
       background: #eef3f8;
@@ -236,18 +247,21 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="主要導覽">
-      <a class="brand" href="support.html">繁字逐字稿</a>
-      <div class="nav-links"><a href="privacy.html">隱私權政策</a><a href="support.html" aria-current="page">支援</a></div>
+      <a class="brand" href="support.html" data-en="AccuScribe" data-en-href="support.html#en">繁字逐字稿</a>
+      <div class="nav-links"><a href="privacy.html" data-en="Privacy Policy" data-en-href="privacy.html#en">隱私權政策</a><a href="support.html" aria-current="page" data-en="Support" data-en-href="support.html#en">支援</a></div>
     </nav>
   </header>
   <main class="article">
-    <article>
+    <div class="language-tabs" role="tablist" aria-label="語言 / Language">
+      <button type="button" role="tab" id="tab-en" lang="en" aria-controls="panel-en" aria-selected="false">English</button>
+      <button type="button" role="tab" id="tab-zh" lang="zh-Hant" aria-controls="panel-zh" aria-selected="true">繁體中文</button>
+    </div>
+    <article id="panel-zh" lang="zh-Hant" role="tabpanel" aria-labelledby="tab-zh">
       <header>
         <p class="eyebrow">繁字逐字稿 iOS</p>
         <h1>支援</h1>
         <p class="lead">提供錄音檔匯入、高品質逐字稿、部分逐字稿、摘要、匯出、點數及資料管理說明。</p>
         <p class="updated">最後更新：2026 年 9 月 28 日</p>
-        <nav class="language-switch" aria-label="語言"><a href="en/support.html" hreflang="en" lang="en">English</a><a href="support.html" hreflang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</a></nav>
       </header>
       <h2>聯絡支援</h2>
       <p>如需協助，請寄信至 <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>，並提供裝置型號、iOS 版本、繁字逐字稿版本、問題發生步驟及畫面顯示的錯誤訊息。逐字稿問題請一併說明音訊格式、長度及處理階段；點數問題請提供商品與購買日期。請勿寄送密碼、付款卡資料或機密錄音。</p>
@@ -285,14 +299,91 @@
       <h2>相關連結</h2>
       <p>資料處理詳情請參閱<a href="privacy.html">隱私權政策</a>。使用本 App 亦適用 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple 標準使用條款（EULA）</a>。</p>
     </article>
+    <article id="panel-en" lang="en" role="tabpanel" aria-labelledby="tab-en">
+      <header>
+        <p class="eyebrow">AccuScribe for iOS</p>
+        <h1>Support</h1>
+        <p class="lead">Help with English transcripts, summaries, exports, credits, and your data in AccuScribe.</p>
+        <p class="updated">Last updated: October 15, 2026</p>
+      </header>
+      <h2>Contact Support</h2>
+      <p>Email <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a> with your device model, iOS version, AccuScribe app version, steps to reproduce the issue, and any error message shown. For transcription issues, include the audio format, duration, and processing stage. For credit issues, include the product and purchase date. Do not send passwords, payment card details, or confidential recordings.</p>
+      <h2>Get Started</h2>
+      <p>First, review the welcome screen’s disclosure of the data shared with OpenAI, Modal, and Google Firebase / Google Cloud. You can read the Privacy Policy and Terms of Service before tapping “I Agree and Start.” Then, on the New tab, tap Choose a Recording and pick an audio file from Files, or open a recording in Voice Memos and tap Share → AccuScribe. Supported formats are m4a, mp3, wav, aac, and caf, up to five hours long. Review the credit estimate, then tap Create Transcript. An internet connection is required. Open the finished item on the Transcripts tab to read the text and play back the recording. Transcripts can contain mistakes; check names, numbers, and important details against the original audio.</p>
+      <h2>Sample Recording for Apple Review</h2>
+      <p>The English M4A recording below is provided for Apple App Review and feature testing. It is a short fictional meeting read by a text-to-speech voice. Download it to Files, open AccuScribe, and choose it on the New tab to test transcripts and summaries.</p>
+      <div class="sample-grid">
+        <section class="sample-card">
+          <h3>English Sample Recording</h3>
+          <p>Format: M4A (AAC) · Duration: about 57 seconds · Size: about 234 KB</p>
+          <a class="download-link" href="samples/review-sample_english.m4a" download="review-sample_english.m4a" type="audio/mp4">Download Sample Recording</a>
+        </section>
+      </div>
+      <h2>Improve Recognition</h2>
+      <p>AccuScribe recognizes both American and British English and keeps each speaker's spelling. For the best results, use a clear recording with little background noise, keep the microphone close to the speakers, and avoid people talking over each other where possible. Before transcribing, add names, companies, products, and acronyms to Vocabulary so they are spelled correctly. After processing, you can touch and hold any line to correct it; summaries and exports use your corrected text.</p>
+      <h2>Find a Previous Transcript</h2>
+      <p>On the Transcripts tab, tap the calendar button to filter by date. Darker dates have transcripts; lighter dates have none. Tap Show All to clear the filter. Transcripts are grouped by the date they were created on your device.</p>
+      <h2>Create a Summary</h2>
+      <p>Open a finished transcript and tap the summary button, or select a transcript on the Summaries tab. Choose at least one section: Overview, Matters Arising, Reports, Discussion, Decisions, Other Business, Action Items, or Timeline. Your choice is remembered for next time. The number of sections doesn't change the price: recordings up to 1 hour cost 10 credits, 1 to 3 hours cost 15, and over 3 hours cost 25. If a summary fails, you are not charged, or the credits are refunded automatically. Tap any timeline point in a summary to jump back to that moment in the transcript.</p>
+      <h2>Export Your Work</h2>
+      <p>Open a transcript or summary, tap the export button, and choose a destination in the share sheet. Transcripts can be exported as plain text, Markdown, Word, PDF, or SRT subtitles. Summaries can be exported as plain text, Markdown, Word, or PDF. Exports are created on your device and include your corrections.</p>
+      <h2>How Credits Work</h2>
+      <p>AccuScribe uses consumable credits with no subscription. A transcript costs 1 credit per whole minute of each recording, with a minimum of 1 credit; for example, 10 minutes 40 seconds costs 10 credits. If processing fails, you are not charged, or the credits are refunded automatically. Current packs and prices are shown on the Credits tab.</p>
+      <h2>Transcribe Part of a Recording</h2>
+      <p>If your balance can't cover the whole recording but is above zero, the New tab offers to transcribe just the first part. Adjust the length in five-minute steps, up to what your balance allows. When possible, the suggested length leaves enough credits to summarize it. Only the selected beginning is processed, and the finished transcript notes that it covers part of the recording and shows the original length.</p>
+      <h2>Free Credits for New Users</h2>
+      <p>Eligible new users may receive 60 credits after accepting the Privacy Policy and Terms of Service. The offer is limited to once per device and does not require a rating or review. Apple DeviceCheck helps prevent repeated claims. If the Credits tab says your welcome credits require verification, contact support; your existing credits remain available.</p>
+      <h2>A Job Is Taking Longer Than Expected</h2>
+      <p>Check your internet connection and the status shown in the app. Longer recordings and busy periods can take more time. Please don't submit the same file again while it is still processing. If a job stays stuck or shows an error, contact support with the processing stage, approximate start time, and recording length.</p>
+      <h2>A Purchase or Balance Looks Wrong</h2>
+      <p>Make sure Apple completed the purchase, then reconnect to the internet so the app can verify it; credits that don't appear right away are added the next time you open the app. Credits belong to the app's anonymous account and cannot be restored to a new account or moved to another device, so please don't delete your account to troubleshoot a balance. Contact support if the balance is still wrong. Apple handles App Store refund requests.</p>
+      <h2>Manage Consent and Delete Data</h2>
+      <p>You can withdraw consent at the bottom of Settings › About › Privacy Policy and still view or export existing content. Touch and hold a transcript to delete it along with its summary and recording. To remove your anonymous account, cloud content, recordings on the device, and remaining credits, choose Delete Account and All Data in Settings. Wait for active jobs to finish first. Deletion is permanent; copies you exported to other apps must be deleted separately.</p>
+      <h2>Related Links</h2>
+      <p>Read the <a href="privacy.html#en">Privacy Policy</a> for details on how data is handled. The Terms of Service, covering service and credit rules, are in the app under Settings › About › Terms of Service. Use of the app is also subject to the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standard Terms of Use (EULA)</a>.</p>
+    </article>
   </main>
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-row">
-        <span>Copyright 2026 繁字逐字稿。</span>
-        <span class="footer-links"><a href="privacy.html">隱私權政策</a><a href="support.html" aria-current="page">支援</a></span>
+        <span data-en="Copyright 2026 AccuScribe.">Copyright 2026 繁字逐字稿。</span>
+        <span class="footer-links"><a href="privacy.html" data-en="Privacy Policy" data-en-href="privacy.html#en">隱私權政策</a><a href="support.html" aria-current="page" data-en="Support" data-en-href="support.html#en">支援</a></span>
       </div>
     </div>
   </footer>
+  <script>
+    // One page, two languages. #en / #zh in the URL picks the tab (the
+    // English App Store listing links to support.html#en); otherwise the
+    // browser language decides: Chinese -> 繁體中文, anything else -> English.
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var labels = Array.prototype.slice.call(document.querySelectorAll("[data-en]"));
+      labels.forEach(function (el) { el.setAttribute("data-zh", el.textContent); });
+      var links = Array.prototype.slice.call(document.querySelectorAll("[data-en-href]"));
+      links.forEach(function (el) { el.setAttribute("data-zh-href", el.getAttribute("href")); });
+      var titles = { zh: "支援－繁字逐字稿", en: "Support - AccuScribe" };
+      function show(lang) {
+        ["zh", "en"].forEach(function (code) {
+          var on = code === lang;
+          document.getElementById("panel-" + code).hidden = !on;
+          document.getElementById("tab-" + code).setAttribute("aria-selected", on ? "true" : "false");
+        });
+        root.lang = lang === "en" ? "en" : "zh-Hant";
+        document.title = titles[lang];
+        labels.forEach(function (el) { el.textContent = el.getAttribute(lang === "en" ? "data-en" : "data-zh"); });
+        links.forEach(function (el) { el.href = el.getAttribute(lang === "en" ? "data-en-href" : "data-zh-href"); });
+      }
+      ["zh", "en"].forEach(function (code) {
+        document.getElementById("tab-" + code).addEventListener("click", function () {
+          show(code);
+          history.replaceState(null, "", "#" + code);
+        });
+      });
+      var hash = location.hash.replace("#", "");
+      var browser = (navigator.language || "").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+      show(hash === "en" || hash === "zh" ? hash : browser);
+    })();
+  </script>
 </body>
 </html>
