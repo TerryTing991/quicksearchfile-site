@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>隱私權政策－MeetWise</title>
+  <meta name="description" content="MeetWise 如何處理英文會議的麥克風音訊、字幕、翻譯、建議回覆、講稿、參考資料、匿名帳號與訂閱資料。">
+  <link rel="canonical" href="https://quicksearchfile.com/MeetWise/privacy.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://quicksearchfile.com/MeetWise/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://quicksearchfile.com/MeetWise/privacy.html#en">
+  <link rel="alternate" hreflang="ja" href="https://quicksearchfile.com/MeetWise/privacy.html#ja">
+  <meta property="og:title" content="隱私權政策－MeetWise">
+  <meta property="og:description" content="MeetWise 如何處理英文會議的麥克風音訊、字幕、翻譯、建議回覆、講稿、參考資料、匿名帳號與訂閱資料。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quicksearchfile.com/MeetWise/privacy.html">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #5f6b7a;
+      --line: #dbe2ea;
+      --accent: #1667d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .site-header,
+    .footer {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav,
+    .footer-inner,
+    .article {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav,
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .nav-links a,
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .article {
+      padding: 52px 0 64px;
+    }
+
+    article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 56px);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 34px 0 8px;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 24px 0 6px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 18px;
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .lead {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .language-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .language-tabs button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--accent);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .language-tabs button:hover,
+    .language-tabs button[aria-selected="true"] {
+      border-color: var(--accent);
+    }
+
+    .language-tabs button[aria-selected="true"] {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Without JavaScript all languages stay visible, one after the other. */
+    .language-tabs { display: none; }
+    .js .language-tabs { display: flex; }
+    #panel-en, #panel-ja { margin-top: 48px; }
+    .js #panel-en, .js #panel-ja { margin-top: 0; }
+
+    code {
+      background: #eef3f8;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.1em 0.35em;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 14px 0 22px;
+    }
+
+    .sample-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fbfdff;
+    }
+
+    .sample-card h3 {
+      margin-top: 0;
+    }
+
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      margin-top: 6px;
+      padding: 0 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 14px 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+
+    thead th {
+      background: #fbfdff;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    tbody th {
+      text-align: left;
+      font-weight: 400;
+    }
+
+    tbody td:nth-child(2) {
+      font-weight: 700;
+    }
+
+    tbody td:last-child {
+      color: var(--muted);
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .sample-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    a { overflow-wrap: anywhere; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主要導覽">
+      <a class="brand" href="support.html" data-en="MeetWise" data-ja="MeetWise" data-en-href="support.html#en" data-ja-href="support.html#ja">MeetWise</a>
+      <div class="nav-links"><a href="privacy.html" aria-current="page" data-en="Privacy Policy" data-ja="プライバシーポリシー" data-en-href="privacy.html#en" data-ja-href="privacy.html#ja">隱私權政策</a><a href="support.html" data-en="Support" data-ja="サポート" data-en-href="support.html#en" data-ja-href="support.html#ja">支援</a></div>
+    </nav>
+  </header>
+  <main class="article">
+    <div class="language-tabs" role="tablist" aria-label="語言 / Language / 言語">
+      <button type="button" role="tab" id="tab-en" lang="en" aria-controls="panel-en" aria-selected="false">English</button>
+      <button type="button" role="tab" id="tab-zh" lang="zh-Hant" aria-controls="panel-zh" aria-selected="true">繁體中文</button>
+      <button type="button" role="tab" id="tab-ja" lang="ja" aria-controls="panel-ja" aria-selected="false">日本語</button>
+    </div>
+    <article id="panel-zh" lang="zh-Hant" role="tabpanel" aria-labelledby="tab-zh">
+      <header>
+        <p class="eyebrow">MeetWise iOS</p>
+        <h1>隱私權政策</h1>
+        <p class="lead">說明 MeetWise 如何處理英文會議的麥克風音訊、字幕、翻譯、建議回覆、講稿、參考資料、匿名帳號與訂閱資料。MeetWise 提供繁體中文與日本語介面，可在「設定 › 語言」切換。</p>
+        <p class="updated">最後更新：2026 年 10 月 21 日</p>
+      </header>
+      <h2>適用範圍與處理目的</h2>
+      <p>本政策說明 MeetWise 如何處理英文會議的即時聽寫、字幕翻譯、建議回覆、講稿對照、文字辨識與語音跟隨所需的資料。會議在電腦上進行，App 透過手機或平板的麥克風收音，顯示文字供您閱讀，不會自動代您回答或播放合成語音。</p>
+      <h2>處理的資料</h2>
+      <p>App 會處理麥克風音訊、辨識出的英文、字幕譯文、產生的回覆、會議名稱與時間，以及您匯入或編輯的講稿、Q&amp;A、參考資料、圖片及辨識文字。另會處理語言與使用偏好、匿名帳號識別碼、用量、請求次數、模型用量及 Apple 訂閱驗證資料。App 未實作聯絡人、精確位置或廣告追蹤功能。</p>
+      <h2>字幕聽寫與語音跟隨</h2>
+      <p>開始字幕聆聽時，麥克風音訊會即時傳送至 OpenAI 進行 GPT 聽寫，因此需要網路連線；為改善專有名詞辨識，App 也可能傳送從詞彙、講稿及參考資料擷取的提示詞。提詞器的語音跟隨使用 Apple 語音辨識，並以講稿字詞作為辨識提示：裝置支援時在本機辨識，音訊不會離開裝置；不支援時由 Apple 處理，適用 Apple 的隱私權政策。語音跟隨若共用正在運作的字幕聽寫，不會另外開啟一組收音。暫停、停止或關閉語音跟隨會停止其自行啟動的收音；自動捲動與手動捲動本身不需收音。App 不會把麥克風音訊存成可回放的本機錄音檔。</p>
+      <h2>翻譯、回覆與文字辨識</h2>
+      <p>產生字幕翻譯、講稿對照或建議回覆時，所需的英文、最近對話、詞彙及相關講稿、Q&amp;A、參考資料文字會經由後端傳送至 OpenAI。建議回覆會使用與提問相關的資料片段。PDF、Word、Markdown、TXT 等檔案先在裝置讀取；掃描 PDF 或圖片先以 Apple Vision 在裝置辨識。使用 AI 重新辨識時，需辨識的頁面圖片會傳送至 OpenAI。</p>
+      <h2>第三方服務</h2>
+      <ul>
+        <li><strong>OpenAI（第三方 AI 服務，位於美國）</strong>：接收上述音訊、文字及需要 AI 辨識的頁面圖片，提供 GPT 聽寫、翻譯與文字生成。即時聽寫請求另附匿名帳號識別碼的雜湊值，供服務安全用途。</li>
+        <li><strong>Google Firebase／Google Cloud</strong>：提供匿名登入、請求轉送、訂閱驗證與用量管理，處理匿名帳號、訂閱綁定、用量及請求必要的網路資料。</li>
+        <li><strong>Apple</strong>：處理 App 內訂閱付款；裝置不支援本機語音辨識時，處理語音跟隨的音訊。</li>
+      </ul>
+      <p>雲端服務可能在您所在國家或地區以外處理資料，其保存與使用方式依各供應商適用的服務條款、隱私政策及帳號設定。MeetWise 不會收集您的資料用於訓練模型。</p>
+      <h2>保存位置與期間</h2>
+      <p>講稿、Q&amp;A、參考文字、字幕、回覆、進行中的會議與歷史紀錄保存在 App 的本機資料夾。需要再次辨識的掃描原始檔可能另存本機副本。結束會議會將內容與資料快照存入歷史紀錄，再清空目前工作區，並不會刪除已存的歷史紀錄。刪除目前資料也不會移除其已存入歷史紀錄的快照。後端程式不會將會議音訊、講稿、字幕或回覆內容寫入 Firestore；匿名帳號、訂閱綁定、用量、模型用量及請求次數紀錄會保留至帳號刪除或另行清理。服務供應商的系統紀錄另依其政策處理。</p>
+      <h2>匿名帳號與訂閱</h2>
+      <p>使用 App 不需提供姓名、電子郵件或密碼；同意資料處理後，App 會建立或恢復 Firebase 匿名帳號，用於訂閱及用量管理。登入憑證保存在系統 Keychain。MeetWise Pro 採 App Store 月費或年費自動續訂；後端會接收 Apple 簽署的交易資料，保存商品、原始交易編號、到期時間與訂閱綁定等驗證資訊。App 不會取得您的完整付款卡號。刪除 App 不等於刪除匿名帳號，也不等於取消訂閱。</p>
+      <h2>您的選擇與刪除方式</h2>
+      <p>您可在系統設定撤銷麥克風權限，或停止聆聽、改用不需收音的提詞模式。使用雲端聽寫、翻譯、回覆或 AI 文字辨識時，必須傳送完成該功能所需的資料。您可刪除個別講稿、參考資料或會議紀錄，並透過系統分享功能自行決定匯出對象；已分享至其他 App 或服務的副本不受 MeetWise 控制。執行「設定 › 刪除帳號與所有資料」並成功完成後，會移除後端的帳號、訂閱綁定、用量與請求紀錄，以及主要本機內容及設定；原先從其他位置匯入的檔案不會被刪除。訂閱需另至 App Store 管理或取消。</p>
+      <h2>安全性</h2>
+      <p>正式雲端連線使用 HTTPS／WSS，登入憑證以 Keychain 保存；本機 JSON 資料使用原子寫入與系統檔案保護。App 未實作廣告、出售資料或模型訓練功能。</p>
+      <h2>網站與支援信件</h2>
+      <p>本靜態網站未加入廣告追蹤器或分析指令碼。網站託管服務可能為維運及安全目的處理 IP 位址、瀏覽器資訊與請求時間等基本資料。若您寄送支援信件，我們會收到您的電子郵件地址及您主動提供的資訊，以協助處理問題。除非確有必要，請勿寄送機密的會議內容或講稿。</p>
+      <h2>政策更新</h2>
+      <p>政策會隨功能與資料處理方式調整，更新後的政策與日期會公布於本頁。</p>
+      <h2>聯絡方式</h2>
+      <p>若有隱私權問題或需要資料刪除協助，請寄信至 <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>。</p>
+    </article>
+    <article id="panel-en" lang="en" role="tabpanel" aria-labelledby="tab-en">
+      <header>
+        <p class="eyebrow">MeetWise for iOS</p>
+        <h1>Privacy Policy</h1>
+        <p class="lead">How MeetWise handles microphone audio, captions, translations, suggested replies, scripts, reference materials, anonymous accounts, and subscriptions for English meetings. The MeetWise interface is available in Traditional Chinese (繁體中文) and Japanese (日本語).</p>
+        <p class="updated">Last updated: October 21, 2026</p>
+      </header>
+      <h2>Scope and Purpose</h2>
+      <p>This policy explains how MeetWise processes data for English meeting transcription, caption translation, suggested replies, bilingual scripts, text recognition and voice following. The app uses your phone or tablet microphone to hear the meeting on your computer and displays text for you to read. It does not answer automatically or play synthesized speech.</p>
+      <h2>Data Processed</h2>
+      <p>The app processes microphone audio, recognized English, translated captions, generated replies, meeting names and times, and scripts, Q&amp;A, reference files, images and recognized text you import or edit. It also processes language and usage preferences, an anonymous account ID, usage, request counts, model usage and Apple subscription verification data. It has no contacts, precise-location or advertising-tracking feature.</p>
+      <h2>Caption Transcription and Voice Following</h2>
+      <p>Caption listening streams microphone audio to OpenAI for GPT transcription and requires an internet connection. Vocabulary hints extracted from terms, scripts and reference materials may also be sent. Prompter voice following uses Apple speech recognition with the script's words as hints: on devices that support it, recognition runs on the device and audio stays there; otherwise Apple processes it under Apple's privacy policy. A follower sharing active captions does not open a second capture session. Pausing, stopping or closing the follower stops audio capture it started. Automatic and manual scrolling do not themselves require audio. The app does not save microphone audio as replayable local recordings.</p>
+      <h2>Translation, Replies and Text Recognition</h2>
+      <p>Caption translation, bilingual script generation and suggested replies send the required English, recent conversation, vocabulary and relevant script, Q&amp;A and reference text through the backend to OpenAI. Suggested replies use material relevant to the question. PDF, Word, Markdown and TXT files are read on the device; scanned PDFs and images first use on-device Apple Vision recognition. AI re-recognition sends page images to OpenAI.</p>
+      <h2>Third-Party Services</h2>
+      <ul>
+        <li><strong>OpenAI (third-party AI service, based in the United States)</strong>: receives the audio, text and page images described above for GPT transcription, translation and generation. Realtime requests also include a hash of the anonymous account ID for service safety.</li>
+        <li><strong>Google Firebase and Google Cloud</strong>: provide anonymous sign-in, request forwarding, subscription verification and usage management, processing account IDs, subscription bindings, usage and network data needed for requests.</li>
+        <li><strong>Apple</strong>: handles in-app subscription payments, and processes voice-following audio on devices that don't support on-device speech recognition.</li>
+      </ul>
+      <p>Cloud services may process data outside your country or region; provider retention and use follow their applicable terms, privacy policies and account settings. MeetWise does not collect your data to train models.</p>
+      <h2>Storage and Retention</h2>
+      <p>Scripts, Q&amp;A, reference text, captions, replies, the current meeting and history are stored in the app’s local folder. Scanned source files may be copied locally for re-recognition. Ending a meeting saves its content and material snapshots to history before clearing the current workspace; it does not delete that history. Deleting current materials does not remove historical snapshots. The backend does not write meeting audio, scripts, captions or reply content to Firestore. Anonymous accounts, subscription bindings, usage, model usage and request counts remain until account deletion or separate cleanup. Provider system logs follow provider policies.</p>
+      <h2>Anonymous Account and Subscription</h2>
+      <p>No name, email or password is required. After you agree to data processing, the app creates or restores a Firebase anonymous account for subscriptions and usage, with sign-in credentials stored in the system Keychain. MeetWise Pro is an auto-renewing monthly or yearly App Store subscription. The backend receives Apple-signed transaction data and stores verification information including product, original transaction ID, expiry and account binding. The app does not receive your full payment card number. Uninstalling does not delete the anonymous account or cancel the subscription.</p>
+      <h2>Your Choices and Deletion</h2>
+      <p>You can revoke microphone access in system Settings, stop listening or use a prompter mode without audio. Cloud transcription, translation, replies and AI text recognition require transmitting the data needed for those features. You can delete individual scripts, references and meetings, and choose destinations through system sharing. Copies shared to other apps or services are outside MeetWise’s control. Successfully completing Settings › Delete account and all data (刪除帳號與所有資料) removes backend account, subscription bindings, usage and request records, and primary local content and settings. Original files imported from other locations are not deleted. Manage or cancel the subscription separately in the App Store.</p>
+      <h2>Security</h2>
+      <p>Production cloud connections use HTTPS/WSS. Credentials use Keychain, and local JSON uses atomic writes and system file protection. The app has no advertising, data-selling or model-training feature.</p>
+      <h2>Website and Support Requests</h2>
+      <p>These static pages do not include advertising trackers or analytics scripts. The hosting provider may process request information such as IP address, browser details, and request time to operate and secure the website. If you email support, we receive your email address and the information you choose to send to help resolve your request. Please avoid sending confidential meeting content or scripts unless necessary.</p>
+      <h2>Policy Updates</h2>
+      <p>This policy may be updated when features or data processing change. The updated policy and date will be published on this page.</p>
+      <h2>Contact</h2>
+      <p>For privacy questions or help with data deletion, email <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>.</p>
+    </article>
+    <article id="panel-ja" lang="ja" role="tabpanel" aria-labelledby="tab-ja">
+      <header>
+        <p class="eyebrow">MeetWise iOS版</p>
+        <h1>プライバシーポリシー</h1>
+        <p class="lead">MeetWiseが、英語会議のマイク音声、字幕、翻訳、返信案、原稿、参考資料、匿名アカウント、サブスクリプションの情報をどのように取り扱うかをご説明します。MeetWiseは繁體中文と日本語の表示に対応し、「設定 › 言語」で切り替えられます。</p>
+        <p class="updated">最終更新日：2026年10月21日</p>
+      </header>
+      <h2>適用範囲と処理の目的</h2>
+      <p>本ポリシーは、英語会議の文字起こし、字幕翻訳、返信案、原稿の対訳、文字認識、音声追従に必要なデータの取り扱いについて説明します。スマートフォンやタブレットのマイクでパソコン上の会議の音声を取り込み、読むためのテキストを表示します。自動で回答したり、合成音声を再生したりすることはありません。</p>
+      <h2>処理するデータ</h2>
+      <p>マイク音声、認識された英語、翻訳字幕、生成された返信、会議名と時刻、読み込み・編集した原稿、Q&amp;A、参考資料、画像、認識テキストを処理します。また、言語などの設定、匿名アカウントID、利用量、リクエスト回数、モデル利用量、Appleの登録確認情報を処理します。連絡先、正確な位置情報、広告追跡の機能は実装していません。</p>
+      <h2>字幕の文字起こしと音声追従</h2>
+      <p>字幕の聞き取りでは、マイク音声をOpenAIへリアルタイムで送信してGPTで文字起こしするため、インターネット接続が必要です。用語、原稿、参考資料から抽出した認識用のヒントも送信する場合があります。プロンプターの音声追従はAppleの音声認識を使い、原稿の語句を認識のヒントにします。対応端末では端末内で認識し、音声は端末の外に出ません。非対応の場合はAppleが処理し、Appleのプライバシーポリシーが適用されます。稼働中の字幕を共有する場合、別の録音は開始しません。音声追従を一時停止・停止・終了すると、その機能が開始した収音を停止します。自動・手動スクロール自体に収音は不要です。マイク音声を再生可能な録音ファイルとして端末に保存しません。</p>
+      <h2>翻訳・返信・文字認識</h2>
+      <p>字幕翻訳、原稿の対訳、返信案の生成では、必要な英語、直近の会話、用語、関連する原稿・Q&amp;A・参考資料のテキストをバックエンド経由でOpenAIへ送信します。返信案には質問に関連する資料を使用します。PDF、Word、Markdown、TXTなどは端末で読み取り、スキャンPDFや画像はまずApple Visionで端末内の文字認識を行います。AIで再認識する場合、対象ページの画像をOpenAIへ送信します。</p>
+      <h2>外部サービス</h2>
+      <ul>
+        <li><strong>OpenAI（米国の第三者AIサービス）</strong>：上記の音声、テキスト、AI認識用のページ画像を受け取り、GPTによる文字起こし、翻訳、文章生成を行います。リアルタイム認識のリクエストには、安全対策用に匿名アカウントIDのハッシュ値も含めます。</li>
+        <li><strong>Google Firebase／Google Cloud</strong>：匿名ログイン、リクエスト転送、登録確認、利用量管理を提供し、アカウントID、登録の紐付け、利用量、通信に必要なネットワーク情報を処理します。</li>
+        <li><strong>Apple</strong>：アプリ内のサブスクリプションの支払いを処理します。端末内の音声認識に対応していない端末では、音声追従の音声を処理します。</li>
+      </ul>
+      <p>クラウドサービスは国外でデータを処理する場合があり、保存と利用は各提供元の適用規約、プライバシーポリシー、アカウント設定に従います。MeetWiseは、モデルの学習のためにお客様のデータを収集しません。</p>
+      <h2>保存場所と期間</h2>
+      <p>原稿、Q&amp;A、参考テキスト、字幕、返信、進行中の会議、履歴はAppの端末内フォルダに保存します。再認識用にスキャン元ファイルを複製する場合があります。会議を終了すると内容と資料のスナップショットを履歴に保存してから作業領域をクリアします。保存済みの履歴は削除しません。現在の資料を削除しても履歴内のコピーは残ります。バックエンドは会議音声、原稿、字幕、返信本文をFirestoreへ書き込みません。匿名アカウント、登録の紐付け、利用量・モデル利用量、リクエスト回数は、アカウント削除または別途の消去まで保存します。提供元のシステムログは各社のポリシーに従います。</p>
+      <h2>匿名アカウントとサブスクリプション</h2>
+      <p>氏名、メールアドレス、パスワードは不要です。データ処理への同意後、登録と利用量を管理するFirebase匿名アカウントを作成・復元し、認証情報をシステムのKeychainに保存します。MeetWise ProはApp Storeの月額または年額の自動更新サブスクリプションです。バックエンドはApple署名付き取引情報を受け取り、商品、元の取引ID、有効期限、アカウントとの紐付けなどの確認情報を保存します。完全な決済カード番号は取得しません。Appをアンインストールしても、匿名アカウントの削除や登録の解約にはなりません。</p>
+      <h2>選択と削除の方法</h2>
+      <p>システム設定でマイク権限を取り消したり、聞き取りを停止したり、収音不要の提詞モードを利用できます。クラウドの文字起こし、翻訳、返信、AI文字認識には、各機能に必要なデータの送信が必要です。原稿、参考資料、会議記録を個別に削除でき、システムの共有機能で書き出し先を選べます。他のAppやサービスへ共有したコピーはMeetWiseでは管理できません。「設定」›「アカウントとすべてのデータを削除」が正常に完了すると、バックエンドのアカウント、登録の紐付け、利用量、リクエスト記録、および主要な端末内データと設定を削除します。他の場所から読み込んだ元ファイルは削除しません。サブスクリプションはApp Storeで別途管理・解約してください。</p>
+      <h2>安全性</h2>
+      <p>正式なクラウド通信はHTTPS／WSSを使用し、認証情報はKeychain、本機JSONはアトミック書き込みとシステムのファイル保護を使用します。広告、データ販売、モデル学習の機能はありません。</p>
+      <h2>ウェブサイトとサポートへのお問い合わせ</h2>
+      <p>この静的ウェブサイトには、広告トラッカーやアクセス解析スクリプトを組み込んでいません。ホスティングサービス提供者は、ウェブサイトの運用と安全確保のため、IPアドレス、ブラウザー情報、リクエスト時刻などを処理する場合があります。サポートにメールをお送りいただいた場合、問題の解決に対応するため、お客様のメールアドレスと、お客様が送信した情報を受け取ります。必要な場合を除き、機密性の高い会議の内容や原稿は送信しないでください。</p>
+      <h2>ポリシーの更新</h2>
+      <p>機能やデータ処理の変更に応じて本ポリシーを更新する場合があります。更新後のポリシーと日付は、このページに掲載します。</p>
+      <h2>お問い合わせ</h2>
+      <p>プライバシーに関するご質問やデータの削除についてのご相談は、<a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>までメールでお問い合わせください。</p>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-row">
+        <span data-en="Copyright 2026 MeetWise." data-ja="Copyright 2026 MeetWise。">Copyright 2026 MeetWise。</span>
+        <span class="footer-links"><a href="privacy.html" aria-current="page" data-en="Privacy Policy" data-ja="プライバシーポリシー" data-en-href="privacy.html#en" data-ja-href="privacy.html#ja">隱私權政策</a><a href="support.html" data-en="Support" data-ja="サポート" data-en-href="support.html#en" data-ja-href="support.html#ja">支援</a></span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // #en / #zh / #ja in the URL picks the tab; otherwise use the
+    // browser language: zh -> 繁體中文, ja -> 日本語, anything else -> English.
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var labels = Array.prototype.slice.call(document.querySelectorAll("[data-en]"));
+      labels.forEach(function (el) { el.setAttribute("data-zh", el.textContent); });
+      var links = Array.prototype.slice.call(document.querySelectorAll("[data-en-href], [data-ja-href]"));
+      links.forEach(function (el) { el.setAttribute("data-zh-href", el.getAttribute("href")); });
+      var titles = { zh: "隱私權政策－MeetWise", en: "Privacy Policy - MeetWise", ja: "プライバシーポリシー - MeetWise" };
+      function show(lang) {
+        ["zh", "en", "ja"].forEach(function (code) {
+          var on = code === lang;
+          document.getElementById("panel-" + code).hidden = !on;
+          document.getElementById("tab-" + code).setAttribute("aria-selected", on ? "true" : "false");
+        });
+        root.lang = lang === "zh" ? "zh-Hant" : lang;
+        document.title = titles[lang];
+        labels.forEach(function (el) { el.textContent = el.getAttribute("data-" + lang); });
+        links.forEach(function (el) { el.href = el.getAttribute("data-" + lang + "-href") || el.getAttribute("data-zh-href"); });
+      }
+      ["zh", "en", "ja"].forEach(function (code) {
+        document.getElementById("tab-" + code).addEventListener("click", function () {
+          show(code);
+          history.replaceState(null, "", "#" + code);
+        });
+      });
+      var hash = location.hash.replace("#", "");
+      var browserLanguage = (navigator.language || "").toLowerCase();
+      var browser = browserLanguage.indexOf("zh") === 0 ? "zh" : browserLanguage.indexOf("ja") === 0 ? "ja" : "en";
+      show(hash === "en" || hash === "zh" || hash === "ja" ? hash : browser);
+    })();
+  </script>
+</body>
+</html>

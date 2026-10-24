@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>支援－MeetWise</title>
+  <meta name="description" content="MeetWise 英文會議即時字幕、建議回覆、語音提詞、雙語逐字稿、會議摘要、訂閱方案與資料管理說明。">
+  <link rel="canonical" href="https://quicksearchfile.com/MeetWise/support.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://quicksearchfile.com/MeetWise/support.html">
+  <link rel="alternate" hreflang="en" href="https://quicksearchfile.com/MeetWise/support.html#en">
+  <link rel="alternate" hreflang="ja" href="https://quicksearchfile.com/MeetWise/support.html#ja">
+  <meta property="og:title" content="支援－MeetWise">
+  <meta property="og:description" content="MeetWise 英文會議即時字幕、建議回覆、語音提詞、雙語逐字稿、會議摘要、訂閱方案與資料管理說明。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quicksearchfile.com/MeetWise/support.html">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #5f6b7a;
+      --line: #dbe2ea;
+      --accent: #1667d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .site-header,
+    .footer {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav,
+    .footer-inner,
+    .article {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav,
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .nav-links a,
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .article {
+      padding: 52px 0 64px;
+    }
+
+    article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 56px);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 34px 0 8px;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 24px 0 6px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 18px;
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .lead {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .language-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .language-tabs button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--accent);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .language-tabs button:hover,
+    .language-tabs button[aria-selected="true"] {
+      border-color: var(--accent);
+    }
+
+    .language-tabs button[aria-selected="true"] {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Without JavaScript all languages stay visible, one after the other. */
+    .language-tabs { display: none; }
+    .js .language-tabs { display: flex; }
+    #panel-en, #panel-ja { margin-top: 48px; }
+    .js #panel-en, .js #panel-ja { margin-top: 0; }
+
+    code {
+      background: #eef3f8;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.1em 0.35em;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 14px 0 22px;
+    }
+
+    .sample-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fbfdff;
+    }
+
+    .sample-card h3 {
+      margin-top: 0;
+    }
+
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      margin-top: 6px;
+      padding: 0 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 14px 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+
+    thead th {
+      background: #fbfdff;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    tbody th {
+      text-align: left;
+      font-weight: 400;
+    }
+
+    tbody td:nth-child(2) {
+      font-weight: 700;
+    }
+
+    tbody td:last-child {
+      color: var(--muted);
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .sample-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    a { overflow-wrap: anywhere; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主要導覽">
+      <a class="brand" href="support.html" data-en="MeetWise" data-ja="MeetWise" data-en-href="support.html#en" data-ja-href="support.html#ja">MeetWise</a>
+      <div class="nav-links"><a href="privacy.html" data-en="Privacy Policy" data-ja="プライバシーポリシー" data-en-href="privacy.html#en" data-ja-href="privacy.html#ja">隱私權政策</a><a href="support.html" aria-current="page" data-en="Support" data-ja="サポート" data-en-href="support.html#en" data-ja-href="support.html#ja">支援</a></div>
+    </nav>
+  </header>
+  <main class="article">
+    <div class="language-tabs" role="tablist" aria-label="語言 / Language / 言語">
+      <button type="button" role="tab" id="tab-en" lang="en" aria-controls="panel-en" aria-selected="false">English</button>
+      <button type="button" role="tab" id="tab-zh" lang="zh-Hant" aria-controls="panel-zh" aria-selected="true">繁體中文</button>
+      <button type="button" role="tab" id="tab-ja" lang="ja" aria-controls="panel-ja" aria-selected="false">日本語</button>
+    </div>
+    <article id="panel-zh" lang="zh-Hant" role="tabpanel" aria-labelledby="tab-zh">
+      <header>
+        <p class="eyebrow">MeetWise iOS</p>
+        <h1>支援</h1>
+        <p class="lead">英文會議的即時助手：聽懂、回應、準備，一次到位。提供即時字幕、建議回覆、語音提詞、會議紀錄、訂閱方案及資料管理說明。</p>
+        <p class="updated">最後更新：2026 年 10 月 24 日</p>
+      </header>
+      <h2>聯絡支援</h2>
+      <p>如需協助，請寄信至 <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>，並提供裝置型號、iOS 版本、MeetWise 版本（「設定 › 關於 › 版本」）、問題發生步驟及畫面顯示的錯誤訊息。訂閱問題請一併提供方案與購買日期。請勿寄送密碼、付款卡資料或機密的會議內容。</p>
+      <h2>你可以做到</h2>
+      <div class="sample-grid">
+        <section class="sample-card"><h3>即時字幕</h3><p>英文逐句顯示，同步中文翻譯。</p></section>
+        <section class="sample-card"><h3>建議回覆</h3><p>依會議內容與資料生成。</p></section>
+        <section class="sample-card"><h3>語音提詞</h3><p>唸到哪、亮到哪。</p></section>
+        <section class="sample-card"><h3>雙語逐字稿</h3><p>可匯出 PDF、Word。</p></section>
+        <section class="sample-card"><h3>會議摘要</h3><p>重點、決議與待辦事項。</p></section>
+        <section class="sample-card"><h3>資料匯入</h3><p>講稿、Q&amp;A、PDF 掃描檔。</p></section>
+      </div>
+      <h2>開始使用</h2>
+      <p>MeetWise 支援 iOS 18 以上的 iPhone 與 iPad。首次開啟時，歡迎畫面會說明 MeetWise Pro 的功能、方案內容與資料處理方式：製作中英對照及即時英文字幕，使用第三方 AI 服務（OpenAI，位於美國）處理。閱讀<a href="privacy.html">隱私權政策</a>與使用條款（EULA）後，按「同意並立即訂閱免費使用7天」，並在 Apple 的確認畫面確認訂閱。已訂閱者可按「恢復購買」。介面語言可在「設定 › 語言」切換為繁體中文或日本語，同時切換字幕與回覆的對照語言；會議聽寫維持英文。</p>
+      <h2>即時字幕</h2>
+      <p>會議在電腦上進行（例如 Zoom、Teams 或 Meet），把手機或平板放在電腦喇叭旁，或讓電腦外放聲音；戴耳機時手機聽不到。在「字幕」分頁按「開始聆聽」，英文會逐句顯示並附上中文翻譯。字幕聽寫需要網路連線，並計入方案的字幕時數。</p>
+      <h2>建議回覆</h2>
+      <p>在「回覆」分頁按「建議回覆」，App 會依照講稿、Q&amp;A、參考資料和即時字幕，產生合適的英文回覆及中文對照，供您閱讀後自行說出。App 不會代您回答，也不會播放合成語音。AI 輸出可能有誤，重要的姓名、數字與會議決定請自行核對。</p>
+      <h2>講稿、Q&amp;A 與語音提詞</h2>
+      <p>在「講稿」分頁選擇「匯入中文講稿」或「匯入中文 Q&amp;A」，支援 PDF、Word、Markdown 或 TXT，App 會自動產生中英對照。開啟講稿後可選「中英對照」檢視，或「開始提詞」使用提詞器。提詞器有三種模式：語音跟隨（唸到哪、亮到哪）、自動捲動（可調整每分鐘字數）及手動捲動，並可調整字級、行距、配色、側邊留白，以及水平鏡像或垂直翻轉。語音跟隨使用 Apple 語音辨識，裝置支援時在本機辨識；若找不到目前位置，請從目前段落繼續唸，或點選要唸的段落。</p>
+      <h2>參考資料與掃描檔</h2>
+      <p>「匯入參考資料」可一次選擇多個簡報、報告或規格書。參考資料只用於建議回覆，不會出現在字幕或提詞。掃描 PDF 或圖片會先在裝置上以 Apple Vision 辨識文字；若辨識結果不理想，可使用「用 AI 重新辨識」。</p>
+      <h2>會議紀錄、摘要與匯出</h2>
+      <p>會議結束後按「結束會議」，字幕、回覆與會議資料會存入「紀錄」分頁，再清空目前的講稿、Q&amp;A、參考資料、字幕和回覆。在「紀錄」中可用月曆依日期篩選，深色日期表示有會議紀錄。開啟一場會議後按「產生摘要」，AI 會整理重點摘要、討論事項、決議事項、待辦事項與時間軸，約需一分鐘；點選時間軸可跳至逐字稿。字幕、回覆、逐字稿與摘要皆可匯出為 PDF、Word、純文字（TXT）或 Markdown，再於 iOS 分享選單中選擇目的位置。也可選擇「用這場資料開新會議」，沿用同一組資料。</p>
+      <h2>MeetWise Pro 方案與額度</h2>
+      <p>MeetWise 需訂閱 MeetWise Pro 才能使用，提供月費與年費兩種自動續訂方案；台灣 App Store 價格為每月 NT$270 或每年 NT$2,290，實際價格依 App Store 顯示及 Apple 確認畫面為準。兩種方案皆可讓符合資格的新訂閱者免費試用 7 天，每月用量上限相同：</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">項目</th><th scope="col">月費／年費<br>每月</th><th scope="col">7 天<br>免費試用</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">即時字幕</th><td>18 小時</td><td>4 小時</td></tr>
+            <tr><th scope="row">建議回覆</th><td>200 次</td><td>50 次</td></tr>
+            <tr><th scope="row">中英對照</th><td>32 份</td><td>8 份</td></tr>
+            <tr><th scope="row">會議摘要</th><td>40 次</td><td>10 次</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>年費方案的額度每月重置。可在「設定 › 訂閱與帳號」查看本期用量及額度重置時間。語音跟隨使用 Apple 語音辨識，免費使用；自動捲動與手動捲動不需收音。</p>
+      <h2>付款、續訂與取消</h2>
+      <p>付款由 Apple 處理，確認購買後將向 Apple 帳號收費。訂閱會自動續訂，除非您在目前期間結束前至少 24 小時取消；續訂費用將於期間結束前 24 小時內收取。可隨時在 App Store 帳號設定管理或取消。試用結束後按顯示的價格續訂；恢復購買不會重新取得已使用的試用。刪除 App 或帳號不會取消訂閱；退款申請依 Apple 的處理程序辦理。</p>
+      <h2>購買或恢復購買異常</h2>
+      <p>請確認 Apple 已完成交易並連上網路，再於歡迎畫面或「設定 › 查看訂閱方案」按「恢復購買」。若顯示「找不到有效的訂閱」，請確認 App Store 登入的是購買時的 Apple 帳號。仍無法使用時，請聯絡支援並提供方案與購買日期。</p>
+      <h2>管理資料與刪除帳號</h2>
+      <p>您可在系統設定撤銷麥克風權限，或停止聆聽、改用不需收音的提詞模式。講稿、參考資料與會議紀錄可個別刪除。若要移除後端的匿名帳號、訂閱綁定與用量紀錄，以及本機講稿、Q&amp;A、參考資料、字幕、回覆、會議紀錄與設定，請在「設定」選擇「刪除帳號與所有資料」。刪除後無法復原；已匯出至其他 App 的副本須另外刪除，訂閱需另外至 App Store 取消。</p>
+      <h2>相關連結</h2>
+      <p>資料處理詳情請參閱<a href="privacy.html">隱私權政策</a>。服務內容、訂閱方案與使用責任的服務條款，可在 App 的「設定 › 關於 › 服務條款」查看。使用本 App 亦適用 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple 標準使用條款（EULA）</a>。</p>
+    </article>
+    <article id="panel-en" lang="en" role="tabpanel" aria-labelledby="tab-en">
+      <header>
+        <p class="eyebrow">MeetWise for iOS</p>
+        <h1>Support</h1>
+        <p class="lead">Your live assistant for English meetings: understand, respond and prepare, all in one place. Help with live captions, suggested replies, the voice prompter, meeting history, subscriptions, and your data.</p>
+        <p class="updated">Last updated: October 24, 2026</p>
+      </header>
+      <h2>Contact Support</h2>
+      <p>Email <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a> with your device model, iOS version, MeetWise version (Settings › About › Version), steps to reproduce the issue, and any error message shown. For subscription issues, include the plan and purchase date. Do not send passwords, payment card details, or confidential meeting content.</p>
+      <h2>What You Can Do</h2>
+      <div class="sample-grid">
+        <section class="sample-card"><h3>Live captions</h3><p>English line by line, translated as you listen.</p></section>
+        <section class="sample-card"><h3>Suggested replies</h3><p>From the discussion and your materials.</p></section>
+        <section class="sample-card"><h3>Voice prompter</h3><p>Follows along as you speak.</p></section>
+        <section class="sample-card"><h3>Bilingual transcript</h3><p>Export to PDF or Word.</p></section>
+        <section class="sample-card"><h3>Meeting summary</h3><p>Key points, decisions, action items.</p></section>
+        <section class="sample-card"><h3>Import materials</h3><p>Scripts, Q&amp;A, scanned PDFs.</p></section>
+      </div>
+      <h2>Get Started</h2>
+      <p>MeetWise runs on iPhone and iPad with iOS 18 or later. Its interface is in Traditional Chinese (繁體中文) or Japanese (日本語); switch in Settings › Language (設定 › 語言). The same choice sets the translation language for captions and replies, while speech recognition stays English. On first launch, the welcome screen explains MeetWise Pro, what each plan includes, and how data is handled: bilingual text and live English captions are processed by a third-party AI service (OpenAI, based in the United States). After reading the <a href="privacy.html#en">Privacy Policy</a> and Terms of Use (EULA), tap “Agree and subscribe now — 7 days free” and confirm on Apple's sheet. Existing subscribers can tap Restore purchases.</p>
+      <h2>Live Captions</h2>
+      <p>Run the meeting on your computer (for example Zoom, Teams or Meet) and place your phone or tablet near its speakers, or play the meeting aloud; your phone cannot hear through your headphones. On the Captions tab, tap Start listening. English appears line by line with its translation. Captions require an internet connection and count toward your plan's caption hours.</p>
+      <h2>Suggested Replies</h2>
+      <p>On the Reply tab, tap Suggest reply. MeetWise drafts English replies with a translation from your scripts, Q&amp;A, reference materials and live captions, for you to read and say yourself. The app does not answer for you or play synthesized speech. AI output may contain errors; verify important names, numbers and decisions.</p>
+      <h2>Scripts, Q&amp;A and the Voice Prompter</h2>
+      <p>On the Script tab, import a script or Q&amp;A as PDF, Word, Markdown or TXT; English pairs are generated automatically. Open a script for the Bilingual view, or tap Start prompter. The prompter has three modes: Voice follow, which highlights where you are as you speak; Auto scroll, with adjustable words per minute; and Manual scroll. You can change text size, line spacing, colors and side margins, and mirror or flip the text. Voice follow uses Apple speech recognition, on the device when supported. If it loses your place, continue reading the current paragraph or tap the paragraph to read.</p>
+      <h2>Reference Materials and Scanned Files</h2>
+      <p>Import reference materials such as slides, reports or specs, several files at a time. They are used only for suggested replies, not captions or the prompter. Scanned PDFs and images are first recognized on the device with Apple Vision; if the result is poor, use Re-recognize with AI.</p>
+      <h2>Meeting History, Summaries and Exports</h2>
+      <p>After a meeting, tap End meeting. Its captions, replies and materials are saved to the History tab, and the current scripts, Q&amp;A, reference materials, captions and replies are cleared. In History, tap the calendar to filter by date; darker dates have meetings. Open a meeting and tap Create Summary to let AI organize it into key points, discussion, decisions, action items and a timeline, which takes about a minute; tap a timeline point to open the transcript. Captions, replies, the transcript and the summary can each be exported as PDF, Word, plain text (TXT) or Markdown through the share sheet. You can also start a new meeting with the same materials.</p>
+      <h2>MeetWise Pro Plans and Allowances</h2>
+      <p>MeetWise requires a MeetWise Pro subscription, offered as auto-renewing monthly and yearly plans. On the Taiwan App Store they cost NT$270 per month or NT$2,290 per year; the App Store and Apple's confirmation sheet show the price that applies to you. Both plans include a 7-day free trial for eligible new subscribers and have the same monthly allowance:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Feature</th><th scope="col">Monthly / yearly<br>per month</th><th scope="col">7-day<br>free trial</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Live captions</th><td>18 h</td><td>4 h</td></tr>
+            <tr><th scope="row">Suggested replies</th><td>200</td><td>50</td></tr>
+            <tr><th scope="row">Bilingual pairs</th><td>32</td><td>8</td></tr>
+            <tr><th scope="row">Meeting summaries</th><td>40</td><td>10</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The yearly plan's allowance resets every month. Settings › Subscription &amp; account shows this period's usage and when it resets. Voice follow uses Apple speech recognition and is free; automatic and manual scrolling don't use audio.</p>
+      <h2>Payment, Renewal and Cancellation</h2>
+      <p>Apple handles payment, charged to your Apple Account at confirmation. Subscriptions renew automatically unless cancelled at least 24 hours before the current period ends, and renewal is charged within 24 hours before the end. Manage or cancel at any time in your App Store account settings. After a free trial, renewal starts at the displayed price; restoring purchases does not restart a used trial. Deleting the app or account does not cancel the subscription. Refund requests follow Apple’s process.</p>
+      <h2>A Purchase or Restore Doesn't Work</h2>
+      <p>Make sure Apple completed the purchase and you are online, then tap Restore purchases on the welcome screen or in Settings › View subscription plans. If you see “No active subscription was found,” check that the App Store is signed in with the Apple Account you purchased with. If it still doesn't work, contact support with the plan and purchase date.</p>
+      <h2>Manage and Delete Your Data</h2>
+      <p>You can revoke microphone access in system Settings, stop listening, or use a prompter mode without audio. Scripts, reference materials and meetings can be deleted individually. To remove your anonymous account, subscription binding and usage records on the backend, along with local scripts, Q&amp;A, reference materials, captions, replies, meeting history and settings, choose Delete account and all data in Settings. Deletion is permanent; copies you exported to other apps must be deleted separately, and your subscription must be cancelled separately in the App Store.</p>
+      <h2>Related Links</h2>
+      <p>Read the <a href="privacy.html#en">Privacy Policy</a> for details on how data is handled. The Terms of Service, covering the service, subscription plans and responsible use, are in the app under Settings › About › Terms of Service. Use of the app is also subject to the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standard Terms of Use (EULA)</a>.</p>
+    </article>
+    <article id="panel-ja" lang="ja" role="tabpanel" aria-labelledby="tab-ja">
+      <header>
+        <p class="eyebrow">MeetWise iOS版</p>
+        <h1>サポート</h1>
+        <p class="lead">英語会議のリアルタイムアシスタント。聞き取り・返答・準備をひとつに。リアルタイム字幕、返信の提案、音声プロンプター、会議記録、サブスクリプション、データの管理についてご案内します。</p>
+        <p class="updated">最終更新日：2026年10月24日</p>
+      </header>
+      <h2>サポートへのお問い合わせ</h2>
+      <p><a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a>まで、端末のモデル、iOSのバージョン、MeetWiseのバージョン（「設定 › アプリについて › バージョン」）、問題を再現する手順、表示されたエラーメッセージをお知らせください。サブスクリプションの問題については、プランと購入日もお知らせください。パスワード、支払いカード情報、機密性の高い会議の内容は送信しないでください。</p>
+      <h2>できること</h2>
+      <div class="sample-grid">
+        <section class="sample-card"><h3>リアルタイム字幕</h3><p>英語を一文ずつ、同時に日本語訳。</p></section>
+        <section class="sample-card"><h3>返信の提案</h3><p>会議内容と資料から作成。</p></section>
+        <section class="sample-card"><h3>音声プロンプター</h3><p>読んだ所を自動で追従。</p></section>
+        <section class="sample-card"><h3>対訳の文字起こし</h3><p>PDF・Wordに書き出し。</p></section>
+        <section class="sample-card"><h3>会議の要約</h3><p>概要・決定事項・アクション。</p></section>
+        <section class="sample-card"><h3>資料の読み込み</h3><p>原稿・Q&amp;A・スキャンPDF。</p></section>
+      </div>
+      <h2>使い始めるには</h2>
+      <p>MeetWiseは、iOS 18以降のiPhoneとiPadに対応しています。初回起動時のようこそ画面で、MeetWise Proの機能、プラン内容、データの取り扱いをご確認ください。日英対訳の作成とリアルタイム英語字幕には、米国の第三者AIサービス（OpenAI）を使用します。<a href="privacy.html#ja">プライバシーポリシー</a>と利用規約（EULA）をお読みいただき、「同意して今すぐ登録・7日間無料」をタップして、Appleの確認画面で登録を確定してください。登録済みの方は「購入を復元」をタップします。表示言語は「設定 › 言語」で繁體中文と日本語を切り替えられ、字幕と返信の対訳言語も同時に切り替わります。音声認識は英語のままです。</p>
+      <h2>リアルタイム字幕</h2>
+      <p>会議はパソコンで行います（Zoom、Teams、Meetなど）。スマートフォンやタブレットをパソコンのスピーカーの近くに置くか、会議の音声をスピーカーから流してください。イヤホンを使用していると、スマートフォンは音声を聞き取れません。「字幕」タブで「聞き取り開始」をタップすると、英語が一文ずつ日本語訳付きで表示されます。字幕にはインターネット接続が必要で、プランの字幕時間を消費します。</p>
+      <h2>返信の提案</h2>
+      <p>「返信」タブで「返信を提案」をタップすると、原稿、Q&amp;A、参考資料、リアルタイム字幕をもとに、英語の返信案と日本語訳を作成します。読み上げるのはご自身です。自動で回答したり、合成音声を再生したりすることはありません。AIの出力には誤りがあり得るため、重要な氏名、数値、決定事項はご確認ください。</p>
+      <h2>原稿・Q&amp;Aと音声プロンプター</h2>
+      <p>「原稿」タブで「日本語の原稿を読み込む」または「日本語のQ&amp;Aを読み込む」を選びます。PDF・Word・Markdown・TXTに対応し、日英対訳を自動で作成します。原稿を開いて「対訳表示」を選ぶか、「プロンプターを開始」をタップします。プロンプターには、読んだ所を自動で追従する「音声追従」、速度を調整できる「自動スクロール」、「手動スクロール」の3つのモードがあり、文字サイズ、行間、配色、左右の余白、左右反転・上下反転を設定できます。音声追従はAppleの音声認識を使い、対応端末では端末内で認識します。現在位置が見つからない場合は、現在の段落を読み続けるか、読む段落をタップしてください。</p>
+      <h2>参考資料とスキャンファイル</h2>
+      <p>「参考資料を読み込む」では、スライド・報告書・仕様書などを複数選択できます。参考資料は返信の提案のみに使われ、字幕やプロンプターには表示されません。スキャンPDFや画像は、まず端末上のApple Visionで文字を認識します。結果が不十分な場合は「AIで再認識」をご利用ください。</p>
+      <h2>会議記録・要約・書き出し</h2>
+      <p>会議が終わったら「会議を終了」をタップすると、字幕・返信・資料が「記録」タブに保存され、現在の原稿・Q&amp;A・参考資料・字幕・返信がクリアされます。「記録」ではカレンダーで日付を絞り込めます。濃い色の日付に会議記録があります。会議を開いて要約を作成すると、AIが要点、討議事項、決定事項、アクションアイテム、タイムラインを整理します（約1分）。タイムラインをタップすると文字起こしに移動します。字幕、返信、文字起こし、要約は、それぞれPDF、Word、テキスト（TXT）、Markdownとして共有シートから書き出せます。同じ資料で新しい会議を始めることもできます。</p>
+      <h2>MeetWise Proのプランと利用枠</h2>
+      <p>MeetWiseのご利用にはMeetWise Proへの登録が必要です。自動更新の月額プランと年額プランがあり、台湾のApp Storeでは月額NT$270、年額NT$2,290です。実際の価格はApp StoreおよびAppleの確認画面の表示に従います。どちらのプランも、対象の新規登録者は7日間無料で体験でき、毎月の利用枠は同じです。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">項目</th><th scope="col">月額／年額<br>毎月</th><th scope="col">7日間<br>無料体験</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">リアルタイム字幕</th><td>18時間</td><td>4時間</td></tr>
+            <tr><th scope="row">返信の提案</th><td>200回</td><td>50回</td></tr>
+            <tr><th scope="row">日英対訳</th><td>32件</td><td>8件</td></tr>
+            <tr><th scope="row">会議の要約</th><td>40回</td><td>10回</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>年額プランの利用枠は毎月リセットされます。「設定 › サブスクリプションとアカウント」で今期の利用量とリセット日時を確認できます。音声追従はAppleの音声認識を使い、無料でご利用いただけます。自動・手動スクロールに収音は不要です。</p>
+      <h2>支払い・更新・解約</h2>
+      <p>支払いはAppleが処理し、購入確認時にAppleアカウントへ請求されます。期間終了の24時間前までに解約しない限り自動更新され、終了前24時間以内に更新料金が請求されます。App Storeのアカウント設定でいつでも管理・解約できます。無料体験の終了後は表示された料金で更新されます。購入の復元で使用済みの体験は再開しません。Appやアカウントを削除しても解約にはなりません。返金申請はAppleの手続きに従います。</p>
+      <h2>購入や復元がうまくいかない場合</h2>
+      <p>Appleで購入が完了していること、インターネットに接続していることを確認し、ようこそ画面または「設定 › プランを見る」で「購入を復元」をタップしてください。「有効なサブスクリプションが見つかりません。」と表示された場合は、購入時のApple アカウントでApp Storeにサインインしているかご確認ください。それでも解決しない場合は、プランと購入日を添えてサポートにお問い合わせください。</p>
+      <h2>データの管理とアカウントの削除</h2>
+      <p>システム設定でマイク権限を取り消したり、聞き取りを停止したり、収音不要のプロンプターモードを利用したりできます。原稿、参考資料、会議記録は個別に削除できます。バックエンドの匿名アカウント、登録の紐付け、利用量の記録と、端末内の原稿・Q&amp;A・参考資料・字幕・返信・会議記録・設定を削除するには、「設定」で「アカウントとすべてのデータを削除」を選択してください。削除は元に戻せません。他のアプリに書き出したコピーは別途削除する必要があり、サブスクリプションはApp Storeで別途解約してください。</p>
+      <h2>関連リンク</h2>
+      <p>データの取り扱いについて詳しくは、<a href="privacy.html#ja">プライバシーポリシー</a>をご覧ください。サービス内容、プラン、利用上の責任を定めた利用規約は、アプリ内の「設定 › アプリについて › 利用規約」で確認できます。アプリの利用には、<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約（EULA）</a>も適用されます。</p>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-row">
+        <span data-en="Copyright 2026 MeetWise." data-ja="Copyright 2026 MeetWise。">Copyright 2026 MeetWise。</span>
+        <span class="footer-links"><a href="privacy.html" data-en="Privacy Policy" data-ja="プライバシーポリシー" data-en-href="privacy.html#en" data-ja-href="privacy.html#ja">隱私權政策</a><a href="support.html" aria-current="page" data-en="Support" data-ja="サポート" data-en-href="support.html#en" data-ja-href="support.html#ja">支援</a></span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // #en / #zh / #ja in the URL picks the tab; otherwise use the
+    // browser language: zh -> 繁體中文, ja -> 日本語, anything else -> English.
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var labels = Array.prototype.slice.call(document.querySelectorAll("[data-en]"));
+      labels.forEach(function (el) { el.setAttribute("data-zh", el.textContent); });
+      var links = Array.prototype.slice.call(document.querySelectorAll("[data-en-href], [data-ja-href]"));
+      links.forEach(function (el) { el.setAttribute("data-zh-href", el.getAttribute("href")); });
+      var titles = { zh: "支援－MeetWise", en: "Support - MeetWise", ja: "サポート - MeetWise" };
+      function show(lang) {
+        ["zh", "en", "ja"].forEach(function (code) {
+          var on = code === lang;
+          document.getElementById("panel-" + code).hidden = !on;
+          document.getElementById("tab-" + code).setAttribute("aria-selected", on ? "true" : "false");
+        });
+        root.lang = lang === "zh" ? "zh-Hant" : lang;
+        document.title = titles[lang];
+        labels.forEach(function (el) { el.textContent = el.getAttribute("data-" + lang); });
+        links.forEach(function (el) { el.href = el.getAttribute("data-" + lang + "-href") || el.getAttribute("data-zh-href"); });
+      }
+      ["zh", "en", "ja"].forEach(function (code) {
+        document.getElementById("tab-" + code).addEventListener("click", function () {
+          show(code);
+          history.replaceState(null, "", "#" + code);
+        });
+      });
+      var hash = location.hash.replace("#", "");
+      var browserLanguage = (navigator.language || "").toLowerCase();
+      var browser = browserLanguage.indexOf("zh") === 0 ? "zh" : browserLanguage.indexOf("ja") === 0 ? "ja" : "en";
+      show(hash === "en" || hash === "zh" || hash === "ja" ? hash : browser);
+    })();
+  </script>
+</body>
+</html>
