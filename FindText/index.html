@@ -3,194 +3,429 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quick Search Files & Find Text — Local Full-Text Search for macOS</title>
-  <meta name="description" content="Quick Search Files & Find Text is a local-first macOS app for finding files by file name, extension, document content, exclude keywords, and OCR text in PDFs, Office files, iWork files, text files, web files, and images.">
+  <title>Find Text: File Content Search for Mac — Search Inside PDFs, Docs &amp; Scans</title>
+  <meta name="description" content="Find Text searches inside the PDF, Word, Excel, PowerPoint, Pages, Numbers, Keynote, and text files on your Mac, reads scanned PDFs and photos with built-in OCR, and highlights every match. Free to start, private on your Mac, no account.">
   <link rel="canonical" href="https://quicksearchfile.com/FindText/">
-  <meta property="og:title" content="Quick Search Files & Find Text">
-  <meta property="og:description" content="Find local files and text inside documents from folders you choose on your Mac.">
+  <meta property="og:title" content="Find Text: File Content Search">
+  <meta property="og:description" content="Search inside PDFs, Office and iWork files, text files, scanned PDFs, and photos on your Mac. Every match highlighted. Private, no account.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quicksearchfile.com/FindText/">
-  <meta property="og:image" content="https://quicksearchfile.com/assets/quick-search-find-text-icon.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Quick Search Files & Find Text">
-  <meta name="twitter:description" content="Local-first macOS full-text search for documents, folders, and OCR-ready files.">
+  <meta property="og:image" content="https://quicksearchfile.com/assets/findtext/app-and-terminal.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Find Text: File Content Search">
+  <meta name="twitter:description" content="Search inside PDFs, docs, and scans on your Mac, with every match highlighted.">
+  <meta name="twitter:image" content="https://quicksearchfile.com/assets/findtext/app-and-terminal.jpg">
+  <link rel="icon" href="/assets/findtext/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/findtext/icon-192.png">
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="stylesheet" href="/FindText/findtext.css">
+  <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Quick Search Files & Find Text","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS","description":"Quick Search Files & Find Text is a local-first macOS app for searching selected folders by file name, file extension, document content, exclude keywords, and OCR text in supported PDFs, Office files, iWork files, text files, web files, and images.","url":"https://quicksearchfile.com/FindText/","downloadUrl":"https://apps.apple.com/app/quick-search-files-find-text/id6768711705","installUrl":"https://apps.apple.com/app/quick-search-files-find-text/id6768711705","sameAs":"https://apps.apple.com/app/quick-search-files-find-text/id6768711705","isAccessibleForFree":true}
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Find Text: File Content Search","alternateName":"Find Text","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS","softwareVersion":"1.2","description":"Find Text searches inside PDF, Word, Excel, PowerPoint, Pages, Numbers, Keynote, Markdown, JSON, HTML, CSV, and plain text files on your Mac, reads scanned PDFs and images with built-in OCR, and highlights every match. Pro adds more folders, up to 3 content keywords, exclude keywords, automatic index updates, and a command line tool.","url":"https://quicksearchfile.com/FindText/","image":"https://quicksearchfile.com/assets/findtext/app-and-terminal.jpg","downloadUrl":"https://apps.apple.com/app/id6768711705","installUrl":"https://apps.apple.com/app/id6768711705","sameAs":"https://apps.apple.com/app/id6768711705","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Basic is free. Pro is available as Monthly, Yearly, or Lifetime."}}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://quicksearchfile.com/"},{"@type":"ListItem","position":2,"name":"Find Text","item":"https://quicksearchfile.com/FindText/"}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is OCR included in the free plan?","acceptedAnswer":{"@type":"Answer","text":"Yes. Since version 1.2, built-in OCR for scanned PDFs and images is included on every plan, including Basic."}},
+    {"@type":"Question","name":"Do my files leave my Mac?","acceptedAnswer":{"@type":"Answer","text":"No. Find Text reads only the folders you add, builds its index on your Mac, and never uploads your files, document text, or search history. No account is needed."}},
+    {"@type":"Question","name":"Can I search part of a word or number?","acceptedAnswer":{"@type":"Answer","text":"Yes. Type 4401 to find PN-44017, or end a word with * to match its start, so ap* finds apple and approval. This works with English, Chinese, Japanese, and Korean text."}},
+    {"@type":"Question","name":"How do I set up the command line tool?","acceptedAnswer":{"@type":"Answer","text":"With Pro, open Settings > Command Line Tool, turn it on, click Copy Setup Command, and paste the command into Terminal. Then run ft search followed by your keywords."}}
+  ]}
   </script>
 </head>
 <body class="findtext-page">
-  <header class="site-header findtext-header">
-    <nav class="nav" aria-label="Find Text navigation">
-      <a class="brand" href="/FindText/" aria-current="page">
-        <img src="/assets/quick-search-find-text-icon-192.png" width="34" height="34" alt="Quick Search Files & Find Text app icon">
-        <span>Find Text</span>
-      </a>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header class="site-header ft-header">
+    <nav class="nav" aria-label="Find Text">
+      <a class="brand" href="/FindText/" aria-current="page"><img src="/assets/findtext/icon-192.png" width="34" height="34" alt=""><span>Find Text</span></a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/FindText/macos.html">macOS</a>
+        <a href="/FindText/#features">Features</a>
+        <a href="/FindText/#pricing">Pricing</a>
+        <a href="/FindText/cli.html">CLI</a>
         <a href="/FindText/guides/">Guides</a>
-        <a class="store-link" href="https://apps.apple.com/app/quick-search-files-find-text/id6768711705">App Store</a>
+        <a href="/FindText/support.html">Support</a>
+        <a class="store-link" href="https://apps.apple.com/app/id6768711705">App Store</a>
       </div>
     </nav>
   </header>
 
-  <main>
-    <!-- ── Hero ── -->
-    <section class="hero content-hero">
-      <div class="hero-inner hero-centered">
-        <div>
-          <p class="eyebrow">Quick Search Files & Find Text</p>
-          <h1>Find the words inside your files.</h1>
-          <p class="lead">A local-first macOS search app for the folders you choose. Search by file name, extension, document content, exclude keywords, or a combination of fields, then preview matching text with highlights on the right. Pro adds Optical Character Recognition (OCR) for scanned PDFs and images.</p>
-          <div class="availability" aria-label="Highlights">
-            <span class="pill">macOS full-text search</span>
-            <span class="pill">Local index on your Mac</span>
-            <span class="pill">Optical Character Recognition (OCR) with Pro</span>
-          </div>
-          <div class="download-widget">
-            <div class="download-heading">
-              <span class="download-badge">MAC</span>
-              <span>Find Text</span>
-            </div>
-            <a class="findtext-download-icon" href="https://apps.apple.com/app/quick-search-files-find-text/id6768711705" aria-label="Download Quick Search Files & Find Text on the App Store"><img class="standalone-app-icon" src="/assets/quick-search-find-text-icon.png" width="96" height="96" alt="Quick Search Files & Find Text app icon"></a>
-            <p class="download-caption"><a href="https://apps.apple.com/app/quick-search-files-find-text/id6768711705">Download on the App Store</a> for document-heavy Mac folders and cloud-synced folders available locally.</p>
-          </div>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero ft-hero">
+      <div class="ft-hero-copy">
+        <img class="ft-hero-icon" src="/assets/findtext/icon-512.png" width="88" height="88" alt="Find Text app icon">
+        <p class="eyebrow">Find Text: File Content Search · for Mac</p>
+        <h1>Find the words inside your files.</h1>
+        <p class="lead">You remember a word, but not which file it was in. Type it into Find Text and see every document that contains it, with the word highlighted right where it appears.</p>
+        <div class="ft-cta-row">
+          <a class="ft-store-btn" href="https://apps.apple.com/app/id6768711705">
+            <img src="/assets/findtext/icon-192.png" width="40" height="40" alt="">
+            <div><small>Download on the</small><span>Mac App Store</span></div>
+          </a>
+          <a class="ft-ghost-btn" href="#pricing">Compare Basic and Pro</a>
         </div>
+        <div class="ft-hero-meta">
+          <span>Free to start</span>
+          <span>OCR on every plan</span>
+          <span>Private on your Mac</span>
+          <span>No account</span>
+        </div>
+      </div>
+      <div class="ft-hero-shot">
+        <figure class="ft-shot">
+          <img src="/assets/findtext/app-and-terminal.jpg" width="1600" height="854" alt="Find Text searching for budget and Q3 across Word, Excel, and photo files, with highlighted matches in the preview and the same search run from Terminal with ft search budget Q3" fetchpriority="high">
+        </figure>
       </div>
     </section>
 
-    <!-- ── Feature Bar ── -->
-    <div class="section" style="padding-top:0;padding-bottom:0;">
-      <div class="section-inner reveal">
-        <div class="feature-bar">
-          <div class="feature-bar-item">
-            <strong>Formats</strong>
-            <span>PDFs, Office files, images</span>
-          </div>
-          <div class="feature-bar-item">
-            <strong>Fields</strong>
-            <span>Name, type, content, exclude</span>
-          </div>
-          <div class="feature-bar-item">
-            <strong>Local</strong>
-            <span>Search results on your Mac</span>
-          </div>
-          <div class="feature-bar-item">
-            <strong>OCR</strong>
-            <span>Search scans, newspapers, and old books</span>
-          </div>
-        </div>
+    <div class="ft-strip" aria-label="Searches inside">
+      <div class="ft-strip-inner">
+        <span class="ft-strip-label">Searches inside</span>
+        <span class="ft-chip">PDF</span>
+        <span class="ft-chip">Word</span>
+        <span class="ft-chip">Excel</span>
+        <span class="ft-chip">PowerPoint</span>
+        <span class="ft-chip">Pages</span>
+        <span class="ft-chip">Numbers</span>
+        <span class="ft-chip">Keynote</span>
+        <span class="ft-chip">Markdown</span>
+        <span class="ft-chip">JSON</span>
+        <span class="ft-chip">HTML</span>
+        <span class="ft-chip">CSV</span>
+        <span class="ft-chip">Text</span>
+        <span class="ft-chip">Scans &amp; photos</span>
       </div>
     </div>
 
-    <!-- ── App Screenshots ── -->
-    <section class="section">
+    <!-- How it works -->
+    <section class="section" id="how-it-works">
       <div class="section-inner">
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">App preview</p>
-            <h2>See Find Text in action.</h2>
-          </div>
-          <p>Search across folders by file name, extension, document content, and OCR-recognized text. Results and previews highlight matching words so you can confirm the right file before opening it.</p>
+        <div class="section-head ft-center reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>Three steps, then just type.</h2>
         </div>
-        <div class="findtext-screenshot-gallery reveal-stagger">
-          <figure class="screenshot-card">
-            <img src="/assets/findtext-content-search.png" width="1024" height="640" alt="Quick Search Files & Find Text macOS app searching multiple content keywords in Word documents">
-            <figcaption>
-              <strong>Multi-keyword document search</strong>
-              <span>Search up to three content keywords, such as &ldquo;ai technical automation&rdquo;, with separate highlight colors across matching documents.</span>
-            </figcaption>
-          </figure>
-          <figure class="screenshot-card">
-            <img src="/assets/findtext-ocr-book-search.png" width="1024" height="640" alt="Quick Search Files & Find Text macOS app using OCR to find cowboy text in a photographed old book page">
-            <figcaption>
-              <strong>OCR image search</strong>
-              <span>Use Optical Character Recognition (OCR) to find printed words in photographed pages, old books, scans, and images.</span>
-            </figcaption>
-          </figure>
+        <div class="grid three ft-steps reveal">
+          <article class="card ft-step">
+            <h3>Add folders</h3>
+            <p>Choose the folders you want to search, including iCloud Drive folders. Find Text reads only what you add.</p>
+          </article>
+          <article class="card ft-step">
+            <h3>Build the index once</h3>
+            <p>Document text and OCR are read in the background with a progress bar. The index stays on your Mac.</p>
+          </article>
+          <article class="card ft-step">
+            <h3>Type a word, press Return</h3>
+            <p>Every file that contains it appears, with the match highlighted in the preview beside the results.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ── Explore Pages ── -->
-    <section class="section">
+    <!-- Features -->
+    <section class="section" id="features">
       <div class="section-inner">
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">Explore</p>
-            <h2>Learn the app and the everyday search workflows.</h2>
-          </div>
-          <p>Start with the macOS overview, then use short guides for content search, OCR, and multi-keyword highlighting.</p>
+        <div class="section-head ft-center reveal">
+          <p class="eyebrow">Features</p>
+          <h2>Find the exact spot, not just the file.</h2>
+          <p>Search inside documents, scans, and photos, then jump straight to each highlighted match.</p>
         </div>
-        <div class="grid two reveal-stagger">
-          <a class="page-card" href="/FindText/macos.html">
-            <div class="page-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+
+        <div class="ft-features">
+          <div class="ft-feature reveal">
+            <div class="ft-feature-text">
+              <p class="ft-kicker">See every match</p>
+              <h3>Each keyword gets its own color and counter.</h3>
+              <p>Matches are highlighted in the preview, and each keyword has a counter like <span class="hl hl-orange">budget 1/7</span> with arrows to step through a long document without scrolling.</p>
+              <ul class="ft-checks">
+                <li>Search <span class="hl hl-orange">up to 3</span> <span class="hl hl-green">content</span> <span class="hl hl-blue">keywords</span> at once with Pro</li>
+                <li>Matching lines are shown under each result, so you can tell files apart before opening them</li>
+                <li>Drag a box over a PDF preview to zoom in up to 800% on drawings, tables, and small print</li>
+              </ul>
             </div>
-            <h3>Find Text for macOS</h3>
-            <p>See how the Mac app searches file names, file types, document content, and scanned text in selected folders.</p>
-            <span class="page-card-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-            </span>
-          </a>
-          <a class="page-card" href="/FindText/guides/">
-            <div class="page-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <figure class="ft-shot">
+              <img src="/assets/findtext/three-keywords.jpg" width="1600" height="836" alt="Find Text preview of a Word report with budget, campaign, and deadline highlighted in orange, green, and blue, each with its own match counter" loading="lazy">
+            </figure>
+          </div>
+
+          <div class="ft-feature reverse reveal">
+            <div class="ft-feature-text">
+              <p class="ft-kicker">Built-in OCR · every plan</p>
+              <h3>Scanned PDFs and photos are searchable too.</h3>
+              <p>Find Text reads the text in scanned documents, screenshots, whiteboard photos, and images, so a signed contract or a photo of a receipt shows up like any other file. OCR is now free on every plan.</p>
+              <ul class="ft-checks">
+                <li>Scanned PDFs and images: JPG, PNG, HEIC, TIFF, and BMP</li>
+                <li>Recognized text is highlighted on the page in the preview</li>
+                <li>Text recognition runs on your Mac</li>
+              </ul>
             </div>
-            <h3>Guides</h3>
-            <p>Learn practical workflows for finding words inside PDFs, Word files, scans, old books, and document archives.</p>
-            <span class="page-card-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-            </span>
-          </a>
-          <a class="page-card" href="/FindText/guides/ocr-scanned-documents.html">
-            <div class="page-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <figure class="ft-shot">
+              <img src="/assets/findtext/scanned-pdf-ocr.jpg" width="1600" height="854" alt="Find Text finding the word agreement on a scanned, signed PDF, with the recognized word highlighted on the scanned page" loading="lazy">
+            </figure>
+          </div>
+
+          <div class="ft-feature reveal">
+            <div class="ft-feature-text">
+              <p class="ft-kicker">Partial-word search</p>
+              <h3>Find a word or number from any part.</h3>
+              <p>Keywords of three or more letters or digits also match inside longer words, so <code>4401</code> finds <code>PN-44017</code> in orders, packing slips, spreadsheets, and notes. End a word with <code>*</code> to match its start, so <code>ap*</code> finds apple and approval.</p>
+              <ul class="ft-checks">
+                <li>Works with English, Chinese, Japanese, and Korean text</li>
+                <li>Useful for part numbers, invoice numbers, codes, and names you only half remember</li>
+              </ul>
             </div>
-            <h3>OCR Guide</h3>
-            <p>Use Optical Character Recognition (OCR) to search scanned PDFs, English newspapers, old books, and images.</p>
-            <span class="page-card-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-            </span>
-          </a>
-          <a class="page-card" href="/FindText/privacy.html">
-            <div class="page-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <figure class="ft-shot">
+              <img src="/assets/findtext/partial-word.jpg" width="1600" height="854" alt="Find Text searching 4401 and finding PN-44017 in a text note, a purchase order PDF, a packing slip, and an Excel budget" loading="lazy">
+            </figure>
+          </div>
+
+          <div class="ft-feature reverse reveal">
+            <div class="ft-feature-text">
+              <p class="ft-kicker">Narrow results fast</p>
+              <h3>Combine file name, file type, and content.</h3>
+              <p>Find "payment" only in PDFs, or notes named "2026" that mention "budget". With Pro, add exclude keywords to drop drafts or samples from the list.</p>
+              <ul class="ft-checks">
+                <li><strong>File Name</strong>, <strong>Extension</strong>, <strong>Content</strong>, and <strong>Exclude</strong> fields work together</li>
+                <li>Open, Open With, Reveal in Finder, Show Path, and Copy Path from any result</li>
+              </ul>
             </div>
-            <h3>Privacy</h3>
-            <p>Local-first by design. Your files and indexes stay on your Mac.</p>
-            <span class="page-card-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-            </span>
+            <figure class="ft-shot">
+              <img src="/assets/findtext/filters-exclude.jpg" width="1600" height="854" alt="Find Text with File Name set to invoice, Content set to payment, and Exclude set to draft, showing four invoice PDFs, and the same search in Terminal" loading="lazy">
+            </figure>
+          </div>
+        </div>
+
+        <div class="grid three ft-mini-grid ft-more reveal">
+          <article class="ft-mini">
+            <div class="ft-mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+            <h3>iCloud Drive folders</h3>
+            <p>Add iCloud Drive and other synced folders. Files need to be downloaded to your Mac to be indexed.</p>
+          </article>
+          <article class="ft-mini">
+            <div class="ft-mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
+            <h3>Automatic index updates <span class="ft-pro">Pro</span></h3>
+            <p>Keep the index current as files are added and changed, or press Update Index any time.</p>
+          </article>
+          <article class="ft-mini">
+            <div class="ft-mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+            <h3>Command line tool <span class="ft-pro">Pro</span></h3>
+            <p>Run <code>ft search</code> from Terminal, scripts, and AI tools on the same local index.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLI -->
+    <section class="section" id="cli">
+      <div class="section-inner">
+        <div class="ft-cli">
+          <div class="ft-feature-text reveal">
+            <p class="ft-kicker">Command line tool · Pro</p>
+            <h2>Search from Terminal, scripts, and AI tools.</h2>
+            <p>The <code>find-text</code> command, or the short <code>ft</code>, searches the same index as the app. Print names and paths, plain paths, or JSON with snippets and PDF page numbers.</p>
+            <ul class="ft-checks">
+              <li>Set up in Settings &gt; Command Line Tool &gt; Copy Setup Command</li>
+              <li><code>search</code>, <code>status</code>, and <code>update</code> commands</li>
+              <li>The same filters as the app: <code>--name</code>, <code>--ext</code>, <code>--exclude</code></li>
+            </ul>
+            <p><a class="ft-text-link" href="/FindText/cli.html">Read the command line guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></p>
+          </div>
+          <div class="ft-terminal reveal" role="img" aria-label="Terminal example: ft search payment with name invoice, exclude draft, and limit 2 returns two invoice PDFs; ft search marketing with paths-only prints file paths">
+            <div class="ft-terminal-bar"><i></i><i></i><i></i><span>Terminal</span></div>
+<pre><span class="p">~ %</span> <span class="c">ft search payment --name invoice --exclude draft --limit 2</span>
+<span class="o">1.</span> Invoice INV-2026-0627.pdf
+   <span class="o">/Users/Shared/FindTextDemo/Work/Invoices/Invoice INV-2026-0627.pdf</span>
+<span class="o">2.</span> Invoice INV-2026-0603.pdf
+   <span class="o">/Users/Shared/FindTextDemo/Work/Invoices/Invoice INV-2026-0603.pdf</span>
+
+<span class="o">Showing 2 of 4 results.</span>
+
+<span class="p">~ %</span> <span class="c">ft search marketing --ext docx --paths-only</span>
+<span class="o">/Users/Shared/FindTextDemo/Work/Reports/Q2 2026 Marketing Report.docx</span>
+<span class="o">/Users/Shared/FindTextDemo/Work/Meeting Notes/2026-06-02 Budget Review.docx</span>
+
+<span class="p">~ %</span> <span class="c">ft search agreement --json</span> <span class="m"># adds snippets and PDF page numbers</span></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+      <div class="section-inner">
+        <div class="section-head ft-center reveal">
+          <p class="eyebrow">Basic and Pro</p>
+          <h2>Free to start. Upgrade when you need more.</h2>
+          <p>Basic is free with no time limit. Pro is available as Monthly, Yearly, or Lifetime in the app.</p>
+        </div>
+        <div class="ft-plans reveal">
+          <article class="ft-plan">
+            <div class="ft-plan-head"><h3>Basic</h3><span class="ft-pro ft-free">Free</span></div>
+            <p class="ft-plan-price">Free<small>No time limit, no account</small></p>
+            <ul class="ft-checks">
+              <li>Up to 2 folders</li>
+              <li>1 file name keyword and 1 content keyword</li>
+              <li>File type filter, combined with a file name or content keyword</li>
+              <li>OCR for scanned PDFs, images, and iWork files</li>
+              <li>Partial-word search and <code>*</code> prefix search</li>
+              <li>Previews with highlights, Open, and Reveal in Finder</li>
+            </ul>
+          </article>
+          <article class="ft-plan pro">
+            <div class="ft-plan-head"><h3>Pro</h3><span class="ft-pro">Pro</span></div>
+            <p class="ft-plan-price">Monthly, Yearly, or Lifetime<small>Prices are shown in the app and on the App Store</small></p>
+            <ul class="ft-checks">
+              <li><strong>Everything in Basic</strong>, plus:</li>
+              <li>More folders</li>
+              <li>Up to 3 content keywords and multiple file name keywords</li>
+              <li>File-type-only search and exclude keywords</li>
+              <li>Automatic index updates</li>
+              <li>Command line tool (<code>find-text</code> and <code>ft</code>) for Terminal, scripts, and AI tools</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="ft-compare-wrap reveal">
+          <table class="ft-compare">
+            <caption>Compare plans</caption>
+            <thead>
+              <tr><th scope="col">Feature</th><th scope="col">Basic</th><th scope="col">Pro</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Folders</th><td>Up to 2</td><td>More folders</td></tr>
+              <tr><th scope="row">Content keywords</th><td>1</td><td>Up to 3</td></tr>
+              <tr><th scope="row">File name keywords</th><td>1</td><td>Multiple</td></tr>
+              <tr><th scope="row">File type filter</th><td>With a keyword</td><td>Also on its own</td></tr>
+              <tr><th scope="row">OCR for scans and images</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Highlights, match counters, PDF zoom</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Exclude keywords</th><td class="no">—</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Automatic index updates</th><td class="no">—</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Command line tool</th><td class="no">—</td><td class="yes">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ft-note ft-center">There is no free trial: Basic stays free, and Pro unlocks as soon as you subscribe or buy Lifetime. Subscriptions are managed in your Apple Account.</p>
+      </div>
+    </section>
+
+    <!-- Supported files -->
+    <section class="section" id="files">
+      <div class="section-inner">
+        <div class="section-head ft-center reveal">
+          <p class="eyebrow">Supported files</p>
+          <h2>The documents you actually keep.</h2>
+        </div>
+        <div class="grid three reveal">
+          <article class="card">
+            <h3>Documents</h3>
+            <p>PDF, Microsoft Office, and Apple iWork files.</p>
+            <div class="ft-type-tags"><span>pdf</span><span>docx</span><span>pptx</span><span>pptm</span><span>xlsx</span><span>xlsm</span><span>xltx</span><span>xltm</span><span>pages</span><span>numbers</span><span>key</span></div>
+          </article>
+          <article class="card">
+            <h3>Text and web</h3>
+            <p>Notes, logs, data files, and saved web pages.</p>
+            <div class="ft-type-tags"><span>txt</span><span>text</span><span>log</span><span>md</span><span>markdown</span><span>csv</span><span>tsv</span><span>json</span><span>html</span><span>htm</span></div>
+          </article>
+          <article class="card">
+            <h3>Images (OCR)</h3>
+            <p>Scans, screenshots, receipts, and whiteboard photos.</p>
+            <div class="ft-type-tags"><span>jpg</span><span>jpeg</span><span>png</span><span>heic</span><span>tif</span><span>tiff</span><span>bmp</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="section" id="privacy">
+      <div class="section-inner">
+        <div class="ft-privacy reveal">
+          <div>
+            <p class="eyebrow">Private by design</p>
+            <h2>Everything happens on your Mac.</h2>
+            <p style="margin-top:14px">Find Text only reads the folders you choose and builds its index locally. <a href="/FindText/privacy.html">Read the privacy policy</a>.</p>
+          </div>
+          <ul class="ft-checks">
+            <li>Your files, document text, and search history are never uploaded</li>
+            <li>The command line tool reads the same local index</li>
+            <li>No account or sign-in</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-inner">
+        <div class="section-head ft-center reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions, answered.</h2>
+        </div>
+        <div class="ft-faq-wrap faq">
+          <details>
+            <summary>Is OCR included in the free plan?</summary>
+            <div><p>Yes. Since version 1.2, built-in OCR for scanned PDFs and images is included on every plan, including Basic.</p></div>
+          </details>
+          <details>
+            <summary>Do my files leave my Mac?</summary>
+            <div><p>No. Find Text reads only the folders you add, builds its index on your Mac, and never uploads your files, document text, or search history. No account is needed.</p></div>
+          </details>
+          <details>
+            <summary>Can I search part of a word or number?</summary>
+            <div><p>Yes. Type <code>4401</code> to find <code>PN-44017</code>, or end a word with <code>*</code> to match its start, so <code>ap*</code> finds apple and approval. This works with English, Chinese, Japanese, and Korean text.</p></div>
+          </details>
+          <details>
+            <summary>Can it search iCloud Drive?</summary>
+            <div><p>Yes. Add an iCloud Drive folder like any other folder. Files that are stored only in the cloud need to be downloaded to your Mac before their text can be indexed.</p></div>
+          </details>
+          <details>
+            <summary>How do I set up the command line tool?</summary>
+            <div><p>With Pro, open Settings &gt; Command Line Tool, turn it on, click Copy Setup Command, and paste the command into Terminal. Then run <code>ft search</code> followed by your keywords. See the <a href="/FindText/cli.html">command line guide</a> for every option.</p></div>
+          </details>
+          <details>
+            <summary>Is Find Text the same app as Quick Search File?</summary>
+            <div><p>No. They are separate apps. Find Text searches the words inside your documents on Mac. Quick Search File is a different app for finding files by name. Find Text was previously listed on the App Store as "Quick Search Files &amp; Find Text".</p></div>
+          </details>
+        </div>
+        <p class="ft-note ft-center">More answers on the <a href="/FindText/support.html">support page</a>.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="section-inner ft-cta-band reveal">
+        <img src="/assets/findtext/icon-512.png" width="76" height="76" alt="">
+        <h2>Free to start. Private on your Mac.</h2>
+        <p>Add a folder, build the index, and type the word you remember.</p>
+        <div class="ft-cta-row">
+          <a class="ft-store-btn" href="https://apps.apple.com/app/id6768711705">
+            <img src="/assets/findtext/icon-192.png" width="40" height="40" alt="">
+            <div><small>Download on the</small><span>Mac App Store</span></div>
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-row">
-        <span>© 2026 Quick Search Files &amp; Find Text.</span>
-        <span class="footer-links"><a href="/FindText/privacy.html">Privacy Policy</a></span>
+  <footer class="footer ft-footer">
+    <div class="footer-inner ft-footer-grid">
+      <div class="ft-footer-brand">
+        <strong><img src="/assets/findtext/icon-192.png" width="32" height="32" alt="">Find Text: File Content Search</strong>
+        <p>Search inside the PDFs, Office and iWork files, text files, and scans on your Mac. Everything stays on your Mac.</p>
+      </div>
+      <div class="ft-footer-cols">
+        <div><h2>Product</h2><ul><li><a href="/FindText/#features">Features</a></li><li><a href="/FindText/#pricing">Basic and Pro</a></li><li><a href="/FindText/#files">Supported files</a></li><li><a href="/FindText/cli.html">Command line tool</a></li></ul></div>
+        <div><h2>Help</h2><ul><li><a href="/FindText/guides/">Guides</a></li><li><a href="/FindText/support.html">Support</a></li><li><a href="/FindText/support.html#faq">FAQ</a></li><li><a href="mailto:terryting991@gmail.com?subject=Find%20Text%20support">Email support</a></li></ul></div>
+        <div><h2>Legal</h2><ul><li><a href="/FindText/privacy.html">Privacy Policy</a></li><li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a></li><li><a href="https://apps.apple.com/app/id6768711705">Mac App Store</a></li></ul></div>
       </div>
     </div>
+    <div class="footer-inner ft-footer-base footer-row"><span>© 2026 Find Text. Made for macOS.</span></div>
   </footer>
 
   <script>
   (function () {
-    var els = document.querySelectorAll('.reveal, .reveal-stagger');
-    if (!els.length) return;
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('visible'); }); return; }
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function (el) { io.observe(el); });
   })();
   </script>

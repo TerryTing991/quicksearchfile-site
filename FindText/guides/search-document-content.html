@@ -4,41 +4,107 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How to Search Words Inside Files on Mac — Find Text Guide</title>
-  <meta name="description" content="Learn how to search inside PDFs, Word documents, spreadsheets, notes, and local Mac folders with Find Text.">
+  <meta name="description" content="Search inside PDF, Word, Excel, PowerPoint, Pages, Numbers, Keynote, and text files on your Mac with Find Text, and combine file name, file type, content, and exclude keywords.">
   <link rel="canonical" href="https://quicksearchfile.com/FindText/guides/search-document-content.html">
-  <meta property="og:title" content="How to Search Words Inside Files on Mac">
-  <meta property="og:description" content="Use Find Text to search file names, file types, content, and exclude terms in selected Mac folders.">
+  <meta property="og:title" content="How to search words inside files on Mac">
+  <meta property="og:description" content="Search inside PDF, Word, Excel, PowerPoint, Pages, Numbers, Keynote, and text files on your Mac with Find Text, and combine file name, file type, content, and exclude keywords.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://quicksearchfile.com/FindText/guides/search-document-content.html">
-  <meta property="og:image" content="https://quicksearchfile.com/assets/quick-search-find-text-icon.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://quicksearchfile.com/assets/findtext/filters-exclude.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/findtext/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/findtext/icon-192.png">
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="stylesheet" href="/FindText/findtext.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Find Text", "item": "https://quicksearchfile.com/FindText/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://quicksearchfile.com/FindText/guides/"}, {"@type": "ListItem", "position": 3, "name": "Search inside files", "item": "https://quicksearchfile.com/FindText/guides/search-document-content.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to search words inside files on Mac", "description": "Search inside PDF, Word, Excel, PowerPoint, Pages, Numbers, Keynote, and text files on your Mac with Find Text, and combine file name, file type, content, and exclude keywords.", "url": "https://quicksearchfile.com/FindText/guides/search-document-content.html", "image": "https://quicksearchfile.com/assets/findtext/filters-exclude.jpg", "dateModified": "2026-11-07", "about": {"@type": "SoftwareApplication", "name": "Find Text: File Content Search", "operatingSystem": "macOS"}}</script>
 </head>
 <body class="findtext-page">
-  <header class="site-header findtext-header"><nav class="nav" aria-label="Find Text navigation"><a class="brand" href="/FindText/"><img src="/assets/quick-search-find-text-icon-192.png" width="34" height="34" alt="Quick Search Files & Find Text app icon"><span>Find Text</span></a><div class="nav-links"><a href="/">Home</a><a href="/FindText/macos.html">macOS</a><a href="/FindText/guides/" aria-current="page">Guides</a><a class="store-link" href="https://apps.apple.com/app/quick-search-files-find-text/id6768711705">App Store</a></div></nav></header>
-  <main class="article">
-    <article>
-      <header class="article-header">
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header class="site-header ft-header">
+    <nav class="nav" aria-label="Find Text">
+      <a class="brand" href="/FindText/"><img src="/assets/findtext/icon-192.png" width="34" height="34" alt=""><span>Find Text</span></a>
+      <div class="nav-links">
+        <a href="/FindText/#features">Features</a>
+        <a href="/FindText/#pricing">Pricing</a>
+        <a href="/FindText/cli.html">CLI</a>
+        <a href="/FindText/guides/" aria-current="page">Guides</a>
+        <a href="/FindText/support.html">Support</a>
+        <a class="store-link" href="https://apps.apple.com/app/id6768711705">App Store</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="ft-page-hero">
+      <div class="hero-inner">
+        <ol class="ft-crumbs"><li><a href="/FindText/">Find Text</a></li><li><a href="/FindText/guides/">Guides</a></li><li>Search inside files</li></ol>
         <p class="eyebrow">Guide</p>
         <h1>How to search words inside files on Mac.</h1>
-        <p class="lead">Find Text helps when you remember what a document says, but not what the file was named.</p>
-      </header>
-      <h2>Start with the folder you trust</h2>
-      <p>Add the project folder, archive, client folder, research folder, or cloud-synced Finder folder that contains the documents you want to search. This keeps results focused and easier to review.</p>
-      <h2>Use the fields together</h2>
-      <p>Use File Name when you remember part of the title, Extension when you know the format, Content when you remember words inside the file, and Exclude when you want to remove drafts or unrelated copies.</p>
-      <h2>Preview before opening</h2>
-      <p>Select a result to inspect the matching passage first. Previewing saves time when many files mention similar names, dates, or topics.</p>
-      <h2>Good use cases</h2>
+        <p class="lead">Find Text helps when you remember what a document says, but not what the file was called or where you saved it.</p>
+      </div>
+    </section>
+
+    <div class="ft-doc">
+      <h2>1. Add the folders you want to search</h2>
+      <p>Click <strong>Add Folder</strong> and choose a project folder, an archive, a client folder, or an iCloud Drive folder. Basic searches up to 2 folders; Pro adds more. Keeping the list focused makes results easier to review.</p>
+
+      <h2>2. Build the index once</h2>
+      <p>Click <strong>Build Index</strong>. Find Text reads the text inside your documents in the background and shows a progress bar. Later, click <strong>Update Index</strong> after files are added, removed, renamed, or changed, or let Pro update the index automatically.</p>
+      <div class="ft-callout"><p>Files in iCloud Drive that are stored only in the cloud need to be downloaded to your Mac before their text can be indexed.</p></div>
+
+      <h2>3. Type what you remember</h2>
+      <p>Type a word or phrase in <strong>Content</strong> and press Return. Every document that contains it is listed with the matching lines, and the preview on the right highlights each match.</p>
+      <ul>
+        <li>Multiple content keywords must all be found in the document. Separate them with spaces or commas.</li>
+        <li>Keywords of three or more letters or digits also match inside longer words. See <a href="/FindText/guides/partial-word-search.html">partial-word search</a>.</li>
+        <li>English searches can match common variations, such as disc and discs.</li>
+      </ul>
+
+      <h2>4. Narrow the results</h2>
+      <p>Combine the four fields when a word appears in too many files:</p>
+      <ul>
+        <li><strong>File Name</strong>: part of the name you remember, such as a year, client, or project.</li>
+        <li><strong>Extension</strong>: a file type, such as <code>pdf</code> or <code>xlsx</code>. In Basic it works together with a file name or content keyword; Pro can also search by file type alone.</li>
+        <li><strong>Content</strong>: words inside the document.</li>
+        <li><strong>Exclude</strong> (Pro): drop files that contain words like draft, sample, or template.</li>
+      </ul>
+      <figure>
+        <img class="ft-shot" src="/assets/findtext/filters-exclude.jpg" width="1600" height="854" alt="Find Text with File Name invoice, Content payment, and Exclude draft, listing four invoice PDFs" loading="lazy">
+        <figcaption>File Name <code>invoice</code> + Content <code>payment</code> + Exclude <code>draft</code> finds the final invoices only.</figcaption>
+      </figure>
+
+      <h2>5. Preview, then open</h2>
+      <p>Select a result to check the passage before opening the file. Right-click a result to Open, Open With, Reveal in Finder, Show Path, or Copy Path.</p>
+
+      <h2>Good uses</h2>
       <ul>
         <li>Find a contract by a payment clause or renewal term.</li>
         <li>Find a report by a phrase from the body text.</li>
         <li>Find a spreadsheet or presentation by project language.</li>
-        <li>Filter out drafts, templates, or archived versions.</li>
+        <li>Find notes named "2026" that mention "budget".</li>
       </ul>
-    </article>
+      <div class="ft-next">
+        <h2>Keep going</h2>
+        <ul style="margin:0"><li><a href="/FindText/guides/ocr-scanned-documents.html">Search scanned PDFs and photos with OCR</a></li><li><a href="/FindText/guides/keyword-highlights.html">Search up to 3 keywords with colored highlights</a></li></ul>
+        <p><a class="ft-text-link" href="https://apps.apple.com/app/id6768711705">Get Find Text on the Mac App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></p>
+      </div>
+    </div>
   </main>
-  <footer class="footer"><div class="footer-inner"><div class="footer-row"><span>© 2026 Quick Search Files &amp; Find Text guides.</span><span class="footer-links"><a href="/FindText/guides/">Guides</a><a href="/FindText/privacy.html">Privacy Policy</a></span></div></div></footer>
+
+  <footer class="footer ft-footer">
+    <div class="footer-inner ft-footer-grid">
+      <div class="ft-footer-brand">
+        <strong><img src="/assets/findtext/icon-192.png" width="32" height="32" alt="">Find Text: File Content Search</strong>
+        <p>Search inside the PDFs, Office and iWork files, text files, and scans on your Mac. Everything stays on your Mac.</p>
+      </div>
+      <div class="ft-footer-cols">
+        <div><h2>Product</h2><ul><li><a href="/FindText/#features">Features</a></li><li><a href="/FindText/#pricing">Basic and Pro</a></li><li><a href="/FindText/#files">Supported files</a></li><li><a href="/FindText/cli.html">Command line tool</a></li></ul></div>
+        <div><h2>Help</h2><ul><li><a href="/FindText/guides/">Guides</a></li><li><a href="/FindText/support.html">Support</a></li><li><a href="/FindText/support.html#faq">FAQ</a></li><li><a href="mailto:terryting991@gmail.com?subject=Find%20Text%20support">Email support</a></li></ul></div>
+        <div><h2>Legal</h2><ul><li><a href="/FindText/privacy.html">Privacy Policy</a></li><li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a></li><li><a href="https://apps.apple.com/app/id6768711705">Mac App Store</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-inner ft-footer-base footer-row"><span>© 2026 Find Text. Made for macOS.</span></div>
+  </footer>
 </body>
 </html>

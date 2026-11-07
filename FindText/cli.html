@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Command Line Tool — Find Text for Mac (find-text and ft)</title>
+  <meta name="description" content="Search your Find Text index from Terminal, scripts, and AI tools with find-text or ft. Setup, search options (--name, --ext, --exclude, --or, --limit, --json, --paths-only), status, and update.">
+  <link rel="canonical" href="https://quicksearchfile.com/FindText/cli.html">
+  <meta property="og:title" content="Find Text command line tool">
+  <meta property="og:description" content="Search inside your documents from Terminal with ft search. Plain text, paths, or JSON output.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://quicksearchfile.com/FindText/cli.html">
+  <meta property="og:image" content="https://quicksearchfile.com/assets/findtext/paths-only.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/findtext/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/findtext/icon-192.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/FindText/findtext.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Find Text","item":"https://quicksearchfile.com/FindText/"},{"@type":"ListItem","position":2,"name":"Command line tool","item":"https://quicksearchfile.com/FindText/cli.html"}]}
+  </script>
+</head>
+<body class="findtext-page">
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header class="site-header ft-header">
+    <nav class="nav" aria-label="Find Text">
+      <a class="brand" href="/FindText/"><img src="/assets/findtext/icon-192.png" width="34" height="34" alt=""><span>Find Text</span></a>
+      <div class="nav-links">
+        <a href="/FindText/#features">Features</a>
+        <a href="/FindText/#pricing">Pricing</a>
+        <a href="/FindText/cli.html" aria-current="page">CLI</a>
+        <a href="/FindText/guides/">Guides</a>
+        <a href="/FindText/support.html">Support</a>
+        <a class="store-link" href="https://apps.apple.com/app/id6768711705">App Store</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="ft-page-hero">
+      <div class="hero-inner">
+        <ol class="ft-crumbs"><li><a href="/FindText/">Find Text</a></li><li>Command line tool</li></ol>
+        <p class="eyebrow">Command line tool <span class="ft-pro">Pro</span></p>
+        <h1>Search inside your files from Terminal.</h1>
+        <p class="lead">The <code>find-text</code> command, or the short <code>ft</code>, searches the same local index as the app. Use it in Terminal, shell scripts, and AI tools, with plain text, file path, or JSON output.</p>
+        <div class="ft-toc">
+          <a href="#setup">Set up</a>
+          <a href="#commands">Commands</a>
+          <a href="#options">Search options</a>
+          <a href="#output">Output</a>
+          <a href="#examples">Examples</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="ft-doc">
+      <h2 id="setup">Set up</h2>
+      <p>The command line tool is part of Pro. Folders are added only in the app, so add and index your folders there first.</p>
+      <ol>
+        <li>Open Find Text and go to <strong>Settings &gt; Command Line Tool</strong>.</li>
+        <li>Turn on <strong>Command Line Tool</strong>, then click <strong>Copy Setup Command</strong>.</li>
+        <li>Paste the command into Terminal and press Return.</li>
+        <li>Run <code>ft status</code> to check that it works. In Terminal windows that were already open, open a new window first.</li>
+      </ol>
+      <div class="ft-callout">
+        <p><strong>What the setup command does:</strong> it creates a small launcher at <code>~/.local/bin/find-text</code>, plus the short name <code>ft</code>, that runs Find Text's own executable. If needed, it adds <code>~/.local/bin</code> to your PATH in <code>~/.zprofile</code>.</p>
+        <p>Nothing else is downloaded or installed, and the app never runs shell commands by itself.</p>
+      </div>
+
+      <h2 id="commands">Commands</h2>
+      <div class="ft-table-wrap">
+        <table class="ft-table">
+          <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
+          <tbody>
+            <tr><td><code>ft search &lt;words…&gt;</code></td><td>Search file contents, and names, in the Find Text index.</td></tr>
+            <tr><td><code>ft status</code></td><td>Show the indexed folders, the number of indexed files and when they were updated, content documents and pages, OCR results, and files still waiting to be read. Add <code>--json</code> for JSON.</td></tr>
+            <tr><td><code>ft update</code></td><td>Rescan the folders added in the app and read new or changed files, like Update Index. Progress is shown in Terminal; add <code>--quiet</code> to hide it.</td></tr>
+            <tr><td><code>ft help</code></td><td>Show every command and option.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><code>find-text</code> and <code>ft</code> are the same tool. Use whichever you prefer.</p>
+
+      <h2 id="options">Search options</h2>
+      <p>Options match the fields in the app, so a search you build in the window can be repeated from Terminal.</p>
+      <div class="ft-table-wrap">
+        <table class="ft-table">
+          <thead><tr><th scope="col">Option</th><th scope="col">What it does</th></tr></thead>
+          <tbody>
+            <tr><td><code>--name &lt;words&gt;</code></td><td>Only files whose name matches all the words, like the File Name field. Add <code>--name-or</code> to match any of them.</td></tr>
+            <tr><td><code>--ext &lt;ext&gt;</code></td><td>Only these file types, such as <code>pdf</code> or <code>"pdf docx"</code>, like the Extension field.</td></tr>
+            <tr><td><code>--exclude &lt;words&gt;</code></td><td>Leave out files that contain these words, like the Exclude field.</td></tr>
+            <tr><td><code>--or</code></td><td>Content can match any of the words. By default a file must contain all of them.</td></tr>
+            <tr><td><code>--limit &lt;number&gt;</code></td><td>Show at most this many results.</td></tr>
+            <tr><td><code>--json</code></td><td>Print JSON with snippets and PDF page numbers, for scripts or AI tools. Add <code>--compact</code> for one line.</td></tr>
+            <tr><td><code>--paths-only</code></td><td>Print file paths only, one per line, ready to pipe into other commands.</td></tr>
+            <tr><td><code>--update-first</code></td><td>Run <code>update</code> before searching.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ft-callout">
+        <p><strong>How words match:</strong> words of three or more letters or digits also match inside longer words, so <code>4401</code> finds <code>PN-44017</code>. Shorter words match whole words. End a word with <code>*</code> to match its start, so <code>ap*</code> finds apple and approval.</p>
+        <p>Without content words, <code>search</code> matches file names only, using <code>--name</code> and/or <code>--ext</code>.</p>
+      </div>
+
+      <h2 id="output">Output</h2>
+      <ul>
+        <li><strong>Text</strong> (default): a numbered list with each file's name and full path. When <code>--limit</code> cuts the list, the last line says how many results there are in total.</li>
+        <li><strong>Paths</strong> (<code>--paths-only</code>): just the paths, one per line.</li>
+        <li><strong>JSON</strong> (<code>--json</code>): the search, the total and returned counts, and each result's path, file name, snippet, score, and page number. Page numbers are included for PDFs only.</li>
+      </ul>
+      <div class="ft-terminal">
+        <div class="ft-terminal-bar"><i></i><i></i><i></i><span>Terminal</span></div>
+<pre><span class="p">~ %</span> <span class="c">ft search agreement --ext pdf --limit 1 --json</span>
+{
+  "content" : "agreement",
+  "exclude" : null,
+  "extensions" : [
+    "pdf"
+  ],
+  "fileName" : null,
+  "matchMode" : "and",
+  "results" : [
+    {
+      "fileName" : "Signed Agreement - Scan.pdf",
+      "page" : 1,
+      "path" : "/Users/Shared/FindTextDemo/Work/Scans/Signed Agreement - Scan.pdf",
+      "score" : <span class="o">…</span>,
+      "snippet" : "SIGNED AGREEMENT <span class="o">…</span>"
+    }
+  ],
+  "returned" : 1,
+  "total" : 4,
+  "truncated" : true
+}</pre>
+      </div>
+      <figure>
+        <img class="ft-shot" src="/assets/findtext/paths-only.jpg" width="1600" height="854" alt="Find Text app searching marketing, with Terminal running ft search marketing --paths-only and printing five file paths" loading="lazy">
+        <figcaption><code>ft search marketing --paths-only</code> prints the same results as the app, one path per line.</figcaption>
+      </figure>
+
+      <h2 id="examples">Examples</h2>
+      <h3>Search for two words</h3>
+      <div class="ft-terminal">
+        <div class="ft-terminal-bar"><i></i><i></i><i></i><span>Terminal</span></div>
+<pre><span class="p">~ %</span> <span class="c">ft search budget Q3</span>
+<span class="o">1.</span> 2026 Annual Budget.xlsx
+   <span class="o">/Users/Shared/FindTextDemo/Work/Reports/2026 Annual Budget.xlsx</span>
+<span class="o">2.</span> Q2 2026 Marketing Report.docx
+   <span class="o">/Users/Shared/FindTextDemo/Work/Reports/Q2 2026 Marketing Report.docx</span>
+<span class="o">3.</span> 2026-06-02 Budget Review.docx
+   <span class="o">/Users/Shared/FindTextDemo/Work/Meeting Notes/2026-06-02 Budget Review.docx</span>
+<span class="o">4.</span> Whiteboard - Launch Plan.jpg
+   <span class="o">/Users/Shared/FindTextDemo/Personal/Whiteboard - Launch Plan.jpg</span></pre>
+      </div>
+
+      <h3>Combine file name, content, and exclude</h3>
+      <div class="ft-terminal">
+        <div class="ft-terminal-bar"><i></i><i></i><i></i><span>Terminal</span></div>
+<pre><span class="p">~ %</span> <span class="c">ft search payment --name invoice --exclude draft</span>
+<span class="p">~ %</span> <span class="c">ft search agreement --ext pdf</span>   <span class="m"># includes scanned PDFs read with OCR</span>
+<span class="p">~ %</span> <span class="c">ft search launch --exclude invoice</span></pre>
+      </div>
+
+      <h3>Use the results in a script</h3>
+      <div class="ft-terminal">
+        <div class="ft-terminal-bar"><i></i><i></i><i></i><span>Terminal</span></div>
+<pre><span class="m"># Open every PDF that mentions "renewal"</span>
+<span class="p">~ %</span> <span class="c">ft search renewal --ext pdf --paths-only | while read -r f; do open "$f"; done</span>
+
+<span class="m"># Save JSON results for another tool</span>
+<span class="p">~ %</span> <span class="c">ft search contract lease --or --json &gt; results.json</span>
+
+<span class="m"># Refresh the index, then search</span>
+<span class="p">~ %</span> <span class="c">ft search 4401 --update-first --limit 10</span>
+
+<span class="m"># File names only: every PDF or Word file with 2026 in its name</span>
+<span class="p">~ %</span> <span class="c">ft search --name 2026 --ext "pdf docx"</span></pre>
+      </div>
+
+      <h3>Use it with AI tools</h3>
+      <p>AI coding assistants and agents that can run Terminal commands can call <code>ft search ... --json</code> to find the right documents on your Mac. The command reads your local index. What happens to its output after that depends on the tool you pass it to.</p>
+
+      <h2 id="troubleshooting">Troubleshooting</h2>
+      <div class="faq">
+        <details>
+          <summary><code>ft: command not found</code></summary>
+          <div><p>Open a new Terminal window so it picks up the PATH line in <code>~/.zprofile</code>. If it still isn't found, run the setup command from Settings &gt; Command Line Tool again.</p></div>
+        </details>
+        <details>
+          <summary>"Command line access is disabled" or "requires Pro"</summary>
+          <div><p>Open Find Text &gt; Settings and turn on Command Line Tool. The tool needs an active Pro plan. If you already have Pro, open the app once so it can refresh your Pro access.</p></div>
+        </details>
+        <details>
+          <summary>"No index yet"</summary>
+          <div><p>Open Find Text, add folders, and click Build Index. The command line tool searches the index the app builds.</p></div>
+        </details>
+        <details>
+          <summary>New or changed files don't show up</summary>
+          <div><p>Run <code>ft update</code>, or click Update Index in the app. With Pro, automatic index updates can keep the index current for you.</p></div>
+        </details>
+        <details>
+          <summary>How do I search a different folder?</summary>
+          <div><p>Add the folder in the app and build the index. The command line tool searches the folders you added in the app and can't add folders itself.</p></div>
+        </details>
+        <details>
+          <summary>How do I remove the command line tool?</summary>
+          <div><p>Turn off Command Line Tool in Settings, then delete <code>~/.local/bin/find-text</code> and <code>~/.local/bin/ft</code>. You can also remove the PATH line the setup added to <code>~/.zprofile</code>.</p></div>
+        </details>
+      </div>
+
+      <div class="ft-next">
+        <h2>Need help?</h2>
+        <p>See the <a href="/FindText/support.html">support page</a> or email <a href="mailto:terryting991@gmail.com?subject=Find%20Text%20CLI">terryting991@gmail.com</a>. The command line tool comes with Pro. <a href="/FindText/#pricing">Compare Basic and Pro</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer ft-footer">
+    <div class="footer-inner ft-footer-grid">
+      <div class="ft-footer-brand">
+        <strong><img src="/assets/findtext/icon-192.png" width="32" height="32" alt="">Find Text: File Content Search</strong>
+        <p>Search inside the PDFs, Office and iWork files, text files, and scans on your Mac. Everything stays on your Mac.</p>
+      </div>
+      <div class="ft-footer-cols">
+        <div><h2>Product</h2><ul><li><a href="/FindText/#features">Features</a></li><li><a href="/FindText/#pricing">Basic and Pro</a></li><li><a href="/FindText/#files">Supported files</a></li><li><a href="/FindText/cli.html">Command line tool</a></li></ul></div>
+        <div><h2>Help</h2><ul><li><a href="/FindText/guides/">Guides</a></li><li><a href="/FindText/support.html">Support</a></li><li><a href="/FindText/support.html#faq">FAQ</a></li><li><a href="mailto:terryting991@gmail.com?subject=Find%20Text%20support">Email support</a></li></ul></div>
+        <div><h2>Legal</h2><ul><li><a href="/FindText/privacy.html">Privacy Policy</a></li><li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a></li><li><a href="https://apps.apple.com/app/id6768711705">Mac App Store</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-inner ft-footer-base footer-row"><span>© 2026 Find Text. Made for macOS.</span></div>
+  </footer>
+</body>
+</html>
