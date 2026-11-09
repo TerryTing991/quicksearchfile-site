@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://quicksearchfile.com/</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://quicksearchfile.com/quick-search-file.html</loc></url>
+  <url><loc>https://quicksearchfile.com/</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://quicksearchfile.com/quick-search-file.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://quicksearchfile.com/FindText/</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://quicksearchfile.com/FindText/cli.html</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://quicksearchfile.com/FindText/support.html</loc><lastmod>2026-11-07</lastmod></url>
@@ -11,16 +11,16 @@
   <url><loc>https://quicksearchfile.com/FindText/guides/ocr-scanned-documents.html</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://quicksearchfile.com/FindText/guides/keyword-highlights.html</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://quicksearchfile.com/FindText/guides/partial-word-search.html</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://quicksearchfile.com/macos.html</loc></url>
+  <url><loc>https://quicksearchfile.com/macos.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://quicksearchfile.com/ios.html</loc></url>
   <url><loc>https://quicksearchfile.com/performance.html</loc></url>
-  <url><loc>https://quicksearchfile.com/support.html</loc></url>
+  <url><loc>https://quicksearchfile.com/support.html</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://quicksearchfile.com/privacy.html</loc></url>
   <url><loc>https://quicksearchfile.com/terms.html</loc></url>
   <url><loc>https://quicksearchfile.com/PDFtoDXF/privacy.html</loc></url>
   <url><loc>https://quicksearchfile.com/PDFtoDXF/support.html</loc></url>
-  <url><loc>https://quicksearchfile.com/guides/</loc></url>
+  <url><loc>https://quicksearchfile.com/guides/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://quicksearchfile.com/guides/ios-file-search.html</loc></url>
-  <url><loc>https://quicksearchfile.com/guides/mac-folder-search.html</loc></url>
-  <url><loc>https://quicksearchfile.com/guides/cli-file-search.html</loc></url>
+  <url><loc>https://quicksearchfile.com/guides/mac-folder-search.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://quicksearchfile.com/guides/cli-file-search.html</loc><lastmod>2026-11-09</lastmod></url>
 </urlset>

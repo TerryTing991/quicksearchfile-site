@@ -16,7 +16,7 @@
   <meta name="twitter:description" content="Support for Quick Search File on iOS, macOS, OneDrive, Dropbox, subscriptions, and CLI workflows.">
   <link rel="stylesheet" href="/assets/site.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Support","url":"https://quicksearchfile.com/support.html","publisher":{"@type":"Organization","name":"Quick Search File"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I get support?","acceptedAnswer":{"@type":"Answer","text":"Email terryting991@gmail.com with your device model, operating system version, app version, steps that led to the issue, and relevant screenshots or error messages."}},{"@type":"Question","name":"Does Quick Search File upload my local index?","acceptedAnswer":{"@type":"Answer","text":"No. Quick Search File is designed around local indexing. Local indexes and search settings stay on your device."}},{"@type":"Question","name":"How does OneDrive support work?","acceptedAnswer":{"@type":"Answer","text":"When enabled, Quick Search File uses Microsoft OAuth to access OneDrive file and folder information needed for search and indexing. The app does not create, edit, move, delete, or share OneDrive files."}},{"@type":"Question","name":"How does Dropbox support work?","acceptedAnswer":{"@type":"Answer","text":"When enabled, Quick Search File uses Dropbox OAuth to read account info, file and folder metadata, and user-opened file content for search features. The app does not create, edit, move, delete, or share Dropbox files."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I get support?","acceptedAnswer":{"@type":"Answer","text":"Email terryting991@gmail.com with your device model, operating system version, app version, steps that led to the issue, and relevant screenshots or error messages."}},{"@type":"Question","name":"Does Quick Search File upload my local index?","acceptedAnswer":{"@type":"Answer","text":"No. Quick Search File is designed around local indexing. Local indexes and search settings stay on your device."}},{"@type":"Question","name":"What should I do if search results are outdated?","acceptedAnswer":{"@type":"Answer","text":"On macOS, Quick Search watches your indexed folders: when files change, Update Index becomes available, and with Pro and automatic updates on, the index updates by itself. Changes made by other computers on network drives are not reported to your Mac, so use Update Index for those folders. On iOS and iPadOS, update the index after adding, deleting, moving, or renaming many files."}},{"@type":"Question","name":"The Option-Command-S shortcut doesn't open the quick search panel. What can I do?","acceptedAnswer":{"@type":"Answer","text":"macOS or another app may already use the same keys. Choose another shortcut in Quick Search Settings › Quick Search Panel, or open the panel from the Quick Search menu bar icon."}},{"@type":"Question","name":"How does OneDrive support work?","acceptedAnswer":{"@type":"Answer","text":"When enabled, Quick Search File uses Microsoft OAuth to access OneDrive file and folder information needed for search and indexing. The app does not create, edit, move, delete, or share OneDrive files."}},{"@type":"Question","name":"How does Dropbox support work?","acceptedAnswer":{"@type":"Answer","text":"When enabled, Quick Search File uses Dropbox OAuth to read account info, file and folder metadata, and user-opened file content for search features. The app does not create, edit, move, delete, or share Dropbox files."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://quicksearchfile.com/"},{"@type":"ListItem","position":2,"name":"Support","item":"https://quicksearchfile.com/support.html"}]}</script>
 </head>
 <body>
@@ -28,7 +28,7 @@
           <p class="eyebrow">Support</p>
           <h1>Support</h1>
           <p class="lead">Need help with Quick Search File? Send a clear report and we will use it to diagnose the issue as quickly as possible.</p>
-          <p>Last updated: May 28, 2026</p>
+          <p>Last updated: November 9, 2026</p>
           <nav class="language-switch" aria-label="Language"><a href="#en">English</a><a href="#ja">日本語</a><a href="#zh-Hant">繁體中文</a></nav>
         </header>
 
@@ -57,7 +57,13 @@
         <p>No. Local index data and search settings are stored on your device and are not uploaded to a Quick Search File server.</p>
 
         <h3>What should I do if search results are outdated?</h3>
-        <p>Refresh or update the index in the app after adding, deleting, moving, or renaming many files. Cloud provider sync state can also affect whether files are available for indexing.</p>
+        <p>On iOS and iPadOS, refresh or update the index in the app after adding, deleting, moving, or renaming many files. On macOS, Quick Search watches your indexed folders: when files change, Update Index becomes available, and with Pro and automatic updates on, the index updates by itself. Changes made by other computers on network drives (NAS, SMB) are not reported to your Mac, so use Update Index or ⌘R for those folders. Cloud provider sync state can also affect whether files are available for indexing.</p>
+
+        <h3>The ⌥⌘S shortcut doesn't open the quick search panel on my Mac. What can I do?</h3>
+        <p>macOS or another app may already use the same keys. Choose another shortcut in Quick Search › Settings › Quick Search Panel, or turn off the other one. You can also open the panel from the Quick Search menu bar icon.</p>
+
+        <h3>Why can't I add Macintosh HD or my home folder with Basic?</h3>
+        <p>Basic can use up to 3 folders, but it can't add all of Macintosh HD, the Users folder, or your home folder, because each contains almost everything on your Mac. Choose folders inside them instead, such as Documents or Downloads. External and network drives can be added from their top folder. Pro can add these folders and more.</p>
 
         <h3>Why can some cloud folders not be indexed?</h3>
         <p>Some storage providers, app folders, shared drives, read-only locations, or cloud-only files may restrict third-party access. Provider permissions and local availability can affect results.</p>
@@ -73,7 +79,7 @@
 
       <section id="ja" class="legal-section" lang="ja">
         <h2>サポート</h2>
-        <p>最終更新日：2026年5月28日</p>
+        <p>最終更新日：2026年11月9日</p>
 
         <h2>お問い合わせ方法</h2>
         <p>App の利用中に問題が発生した場合は、<a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a> までお問い合わせください。迅速な対応のため、以下の情報をお知らせください。</p>
@@ -100,7 +106,13 @@
         <p>いいえ。ローカル索引データと検索設定は端末内に保存され、Quick Search File のサーバーへアップロードされません。</p>
 
         <h3>検索結果が古い場合はどうすればよいですか？</h3>
-        <p>ファイルを大量に追加、削除、移動、名前変更した後は、App 内で索引を更新してください。クラウドプロバイダの同期状態も、ファイルが索引化可能かどうかに影響する場合があります。</p>
+        <p>iOS / iPadOS では、ファイルを大量に追加、削除、移動、名前変更した後に App 内で索引を更新してください。macOS では、Quick Search が索引対象のフォルダを監視しています。ファイルが変わると「索引を更新」が使えるようになり、Pro で自動更新をオンにしている場合は索引が自動で更新されます。ほかのコンピュータがネットワークドライブ（NAS、SMB）上で行った変更は Mac に通知されないため、それらのフォルダでは「索引を更新」または ⌘R を使ってください。クラウドプロバイダの同期状態も、ファイルが索引化可能かどうかに影響する場合があります。</p>
+
+        <h3>Mac で ⌥⌘S を押してもクイック検索パネルが開きません。</h3>
+        <p>macOS やほかの App が同じキーを使用している可能性があります。Quick Search の設定 › クイック検索パネル で別のショートカットを選ぶか、もう一方をオフにしてください。メニューバーの Quick Search アイコンからもパネルを開けます。</p>
+
+        <h3>Basic で「Macintosh HD」やホームフォルダを追加できないのはなぜですか？</h3>
+        <p>Basic では最大 3 つのフォルダを使えますが、「Macintosh HD」全体、「ユーザ」フォルダ、ホームフォルダは追加できません。どれも Mac のほぼすべてを含むためです。「書類」や「ダウンロード」など、その中のフォルダを選んでください。外部ドライブやネットワークドライブは最上位のフォルダから追加できます。Pro ではこれらのフォルダも追加でき、フォルダ数も増やせます。</p>
 
         <h3>一部のクラウドフォルダを索引化できないのはなぜですか？</h3>
         <p>一部のストレージプロバイダ、App フォルダ、共有ドライブ、読み取り専用の場所、またはクラウド上のみのファイルは、第三者Appからのアクセスが制限される場合があります。プロバイダの権限とローカルでの利用可能性が結果に影響します。</p>
@@ -116,7 +128,7 @@
 
       <section id="zh-Hant" class="legal-section" lang="zh-Hant">
         <h2>支援服務</h2>
-        <p>最後更新日期：2026 年 5 月 28 日</p>
+        <p>最後更新日期：2026 年 11 月 9 日</p>
 
         <h2>如何取得協助</h2>
         <p>若您在使用 App 時遇到問題，請寄信至 <a href="mailto:terryting991@gmail.com">terryting991@gmail.com</a> 與我們聯繫。來信時建議提供下列資訊，以便更快協助您：</p>
@@ -143,7 +155,13 @@
         <p>不會。本機索引資料與搜尋設定會儲存在您的裝置上，不會上傳到 Quick Search File 伺服器。</p>
 
         <h3>搜尋結果不是最新時該怎麼辦？</h3>
-        <p>大量新增、刪除、移動或重新命名檔案後，請在 App 內重新整理或更新索引。雲端服務的同步狀態也可能影響檔案是否可被索引。</p>
+        <p>在 iOS / iPadOS 上，大量新增、刪除、移動或重新命名檔案後，請在 App 內重新整理或更新索引。在 macOS 上，Quick Search 會監看已加入索引的資料夾：檔案有變動時，「更新索引」會變成可以按；Pro 開啟自動更新時，索引會自動更新。其他電腦在網路磁碟（NAS、SMB）上做的變動不會通知您的 Mac，這些資料夾請使用「更新索引」或 ⌘R。雲端服務的同步狀態也可能影響檔案是否可被索引。</p>
+
+        <h3>在 Mac 上按 ⌥⌘S 沒有打開快速搜尋視窗，該怎麼辦？</h3>
+        <p>可能是 macOS 或其他 App 已經使用這組按鍵。請在 Quick Search 的設定 › 快速搜尋視窗 換一組快捷鍵，或關閉另一邊的設定。您也可以從選單列的 Quick Search 圖示打開快速搜尋。</p>
+
+        <h3>為什麼 Basic 無法加入「Macintosh HD」或個人專屬資料夾？</h3>
+        <p>Basic 最多可以使用 3 個資料夾，但無法加入整個「Macintosh HD」、「使用者」資料夾或您的個人專屬資料夾，因為它們幾乎包含整台 Mac。請選擇裡面的資料夾，例如「文件」或「下載」。外接硬碟與網路磁碟可以從最上層資料夾加入。Pro 可以加入這些資料夾，也能使用更多資料夾。</p>
 
         <h3>為什麼有些雲端資料夾不能索引？</h3>
         <p>部分儲存空間提供者、App 資料夾、共享雲端硬碟、唯讀位置或僅存在雲端的檔案，可能會限制第三方 App 存取。提供者權限與本機可用狀態都可能影響結果。</p>
