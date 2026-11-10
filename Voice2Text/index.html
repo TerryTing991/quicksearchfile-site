@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>繁字逐字稿：錄音檔轉逐字稿及會議摘要</title>
+  <meta name="description" content="繁字逐字稿是 iPhone 與 iPad 上的錄音檔逐字稿 App。針對台灣國語與繁體中文優化，每句附時間戳記，並自動產生會議摘要。免註冊、無月租，1 點處理 1 分鐘。">
+  <meta name="apple-itunes-app" content="app-id=6816823463">
+  <meta name="theme-color" content="#0A1D52">
+  <link rel="canonical" href="https://quicksearchfile.com/Voice2Text/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://quicksearchfile.com/Voice2Text/">
+  <link rel="alternate" hreflang="en" href="https://quicksearchfile.com/Voice2Text/#en">
+  <link rel="alternate" hreflang="ja" href="https://quicksearchfile.com/Voice2Text/#ja">
+  <link rel="icon" type="image/png" href="assets/icon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon-256.png">
+  <meta property="og:title" content="繁字逐字稿：錄音檔轉逐字稿及會議摘要">
+  <meta property="og:description" content="錄音檔，一鍵轉換逐字稿及摘要。針對台灣國語與繁體中文優化，免註冊、無月租。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quicksearchfile.com/Voice2Text/">
+  <meta property="og:image" content="https://quicksearchfile.com/Voice2Text/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"繁字逐字稿：錄音轉文字","alternateName":["AccuScribe - Audio to Text","コエジ - 文字起こし・議事録"],"applicationCategory":"ProductivityApplication","operatingSystem":"iOS, iPadOS","inLanguage":["zh-Hant","en","ja"],"description":"將錄音檔轉成逐句附時間戳記的逐字稿，並自動產生會議摘要。免註冊、無月租，以點數計費。","url":"https://quicksearchfile.com/Voice2Text/","image":"https://quicksearchfile.com/Voice2Text/assets/icon-256.png","downloadUrl":"https://apps.apple.com/app/id6816823463","installUrl":"https://apps.apple.com/app/id6816823463","sameAs":"https://apps.apple.com/app/id6816823463","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TWD","description":"免費下載，提供 App 內購買點數。"}}
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0a1d52;
+      --navy-deep: #06123a;
+      --blue: #2459ff;
+      --blue-light: #3b7bff;
+      --cyan: #1bd3ee;
+      --ink: #0f1a33;
+      --muted: #56617a;
+      --bg: #f4f6fb;
+      --panel: #ffffff;
+      --line: #dde3ee;
+      --soft: #e9efff;
+      --wrap: min(1120px, calc(100% - 40px));
+      --sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Hiragino Sans", "Noto Sans TC", "Noto Sans JP", "Microsoft JhengHei", "Segoe UI", sans-serif;
+      --round: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "PingFang TC", "Hiragino Sans", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--blue); }
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { line-height: 1.25; text-wrap: balance; letter-spacing: 0; word-break: auto-phrase; }
+    p { text-wrap: pretty; }
+    .wrap { width: var(--wrap); margin: 0 auto; }
+
+    /* ---------- Header ---------- */
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(6, 18, 58, 0.86);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      color: #fff;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      min-height: 62px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      margin-left: auto;
+      font-size: 0.94rem;
+    }
+    .nav-links a { color: rgba(255, 255, 255, 0.78); text-decoration: none; }
+    .nav-links a:hover { color: #fff; }
+    .lang {
+      display: none;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .js .lang { display: inline-flex; }
+    .lang button {
+      border: 0;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.75);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .lang button[aria-pressed="true"] { background: #fff; color: var(--navy); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--blue-light); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(900px 520px at 82% 18%, rgba(36, 89, 255, 0.42), transparent 62%),
+        linear-gradient(180deg, var(--navy-deep), var(--navy) 55%, #0e2766);
+      color: #fff;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+      gap: 40px;
+      padding: 72px 0 0;
+    }
+    .hero-copy { padding-bottom: 80px; }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 22px;
+      padding: 6px 14px 6px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+    .kicker i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 4px rgba(27, 211, 238, 0.2);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      font-weight: 800;
+      line-height: 1.18;
+    }
+    .hero h1 em {
+      font-style: normal;
+      display: inline-block;
+      background: linear-gradient(90deg, #7fb0ff, var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero h1 .nb { white-space: nowrap; }
+    html[lang="en"] .hero h1 { font-size: clamp(1.9rem, 4vw, 3rem); }
+    .hero .lead {
+      max-width: 34em;
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: clamp(1.02rem, 1.5vw, 1.16rem);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 20px;
+      margin-top: 32px;
+    }
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 58px;
+      padding: 8px 24px 8px 18px;
+      border-radius: 16px;
+      background: #fff;
+      color: var(--navy);
+      text-decoration: none;
+      box-shadow: 0 14px 34px rgba(3, 11, 38, 0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .store-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(3, 11, 38, 0.45); }
+    .store-btn svg { width: 28px; height: 28px; flex: none; color: var(--blue); }
+    .store-btn small { display: block; font-size: 0.74rem; line-height: 1.2; color: var(--muted); font-weight: 600; }
+    .store-btn span { display: block; font-size: 1.16rem; line-height: 1.25; font-weight: 800; }
+    .ghost-link { color: rgba(255, 255, 255, 0.86); font-weight: 600; text-underline-offset: 5px; }
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 34px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .facts li {
+      padding: 6px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.09);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      position: relative;
+      align-self: end;
+      display: flex;
+      justify-content: center;
+    }
+    .wave {
+      position: absolute;
+      inset: 4% -10% auto;
+      height: 64%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+    .wave span {
+      width: 5%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(27, 211, 238, 0.5), rgba(36, 89, 255, 0.28));
+      transform-origin: center;
+      animation: pulse 3.6s ease-in-out infinite;
+    }
+    .wave span:nth-child(1) { height: 30%; animation-delay: -0.4s; }
+    .wave span:nth-child(2) { height: 62%; animation-delay: -1.3s; }
+    .wave span:nth-child(3) { height: 42%; animation-delay: -2.2s; }
+    .wave span:nth-child(4) { height: 82%; animation-delay: -0.9s; }
+    .wave span:nth-child(5) { height: 42%; animation-delay: -2.8s; }
+    .wave span:nth-child(6) { height: 62%; animation-delay: -1.8s; }
+    .wave span:nth-child(7) { height: 30%; animation-delay: -3.1s; }
+    @keyframes pulse { 0%, 100% { transform: scaleY(0.82); } 50% { transform: scaleY(1.08); } }
+
+    /* ---------- Phone ---------- */
+    .phone {
+      position: relative;
+      width: min(300px, 74vw);
+      padding: 9px;
+      border-radius: 50px;
+      background: #0b0f1c;
+      box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.14) inset, 0 34px 70px rgba(6, 18, 58, 0.34);
+    }
+    .phone img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 600 / 1304;
+      border-radius: 41px;
+      background: #f2f2f7;
+    }
+    .hero .phone {
+      margin-bottom: -118px;
+      box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.16) inset, 0 40px 90px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding: 92px 0; }
+    .eyebrow {
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+    .sec-head { max-width: 40em; margin-bottom: 44px; }
+    .sec-head h2, .row h2, .price h2, .final h2 { font-size: clamp(1.7rem, 3.3vw, 2.5rem); font-weight: 800; }
+    .sec-head p:not(.eyebrow) { margin-top: 14px; color: var(--muted); font-size: 1.06rem; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+    .steps li {
+      counter-increment: step;
+      padding: 28px 26px 30px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+    }
+    .steps li::before {
+      content: counter(step);
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      background: var(--soft);
+      color: var(--blue);
+      font-family: var(--round);
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+    .steps h3 { font-size: 1.16rem; }
+    .steps p { margin-top: 8px; color: var(--muted); font-size: 0.98rem; }
+
+    .rows { padding-top: 0; }
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      gap: 56px;
+      padding: 56px 0;
+    }
+    .row + .row { border-top: 1px solid var(--line); }
+    .row.flip .row-art { order: 2; }
+    .row-art {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 44px 0;
+      border-radius: 32px;
+      background: linear-gradient(160deg, #e6edff, #dff6fb);
+    }
+    .row-art .phone { width: min(264px, 64vw); }
+    .row-art.duo .phone:first-child { transform: translateX(-34px) rotate(-3deg); z-index: 1; }
+    .row-art.duo .phone + .phone {
+      position: absolute;
+      top: 78px;
+      left: 50%;
+      transform: translateX(8px) rotate(4deg);
+      width: min(232px, 56vw);
+      z-index: 2;
+    }
+    .row p.body { margin-top: 16px; color: var(--muted); font-size: 1.05rem; }
+    .ticks {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .ticks li {
+      position: relative;
+      padding-left: 30px;
+      font-weight: 500;
+    }
+    .ticks li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.36em;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.4l2.6 2.6L13 6.6' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 18px no-repeat;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; padding: 0; list-style: none; }
+    .tags li {
+      padding: 5px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .more { background: var(--panel); border-block: 1px solid var(--line); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 36px 40px;
+    }
+    .grid h3 { font-size: 1.1rem; }
+    .grid p { margin-top: 8px; color: var(--muted); font-size: 0.98rem; }
+    .grid .mono {
+      margin-bottom: 14px;
+      color: var(--blue);
+      font-family: var(--round);
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    /* ---------- Pricing ---------- */
+    .price {
+      background: linear-gradient(180deg, var(--navy), var(--navy-deep));
+      color: #fff;
+    }
+    .price .eyebrow { color: var(--cyan); }
+    .price-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      align-items: center;
+      gap: 56px;
+    }
+    .price p.body { margin-top: 16px; color: rgba(255, 255, 255, 0.78); font-size: 1.05rem; }
+    .price .ticks li::before { background-color: var(--cyan); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.4l2.6 2.6L13 6.6' fill='none' stroke='%2306123a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+    .packs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .pack {
+      position: relative;
+      padding: 22px 22px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .pack b {
+      display: block;
+      font-family: var(--round);
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack b small { margin-left: 4px; font-size: 1rem; font-weight: 700; color: rgba(255, 255, 255, 0.72); }
+    .pack span { display: block; margin-top: 6px; color: rgba(255, 255, 255, 0.74); font-size: 0.94rem; }
+    .pack.best { border-color: var(--cyan); background: rgba(27, 211, 238, 0.1); }
+    .pack.best::after {
+      content: attr(data-badge);
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: var(--cyan);
+      color: var(--navy-deep);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+    .fine { margin-top: 16px; color: rgba(255, 255, 255, 0.6); font-size: 0.88rem; }
+
+    /* ---------- Privacy + FAQ ---------- */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .trust-grid div {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+    }
+    .trust-grid h3 { font-size: 1.1rem; }
+    .trust-grid p { margin-top: 8px; color: var(--muted); font-size: 0.98rem; }
+    .after { margin-top: 22px; color: var(--muted); }
+
+    .faq { padding-top: 0; }
+    .faq-list { max-width: 820px; border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px 2px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "";
+      flex: none;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: translateY(-3px) rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+    details[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+    details p { padding: 0 2px 22px; color: var(--muted); max-width: 46em; }
+
+    /* ---------- Final CTA + footer ---------- */
+    .final { padding-top: 0; }
+    .final-card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 28px;
+      padding: 40px 44px;
+      border-radius: 32px;
+      background:
+        radial-gradient(520px 300px at 100% 0, rgba(27, 211, 238, 0.28), transparent 65%),
+        linear-gradient(135deg, var(--blue), #1238e0);
+      color: #fff;
+    }
+    .final-card img { width: 92px; height: 92px; border-radius: 22px; box-shadow: 0 14px 30px rgba(3, 11, 38, 0.35); }
+    .final-card p { margin-top: 8px; color: rgba(255, 255, 255, 0.86); }
+    .final-card .store-btn { box-shadow: 0 14px 30px rgba(3, 11, 38, 0.3); }
+
+    footer { border-top: 1px solid var(--line); background: var(--panel); color: var(--muted); font-size: 0.92rem; }
+    .foot {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 24px;
+      padding: 24px 0;
+    }
+    .foot nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+    .foot a { color: var(--muted); text-decoration: none; }
+    .foot a:hover { color: var(--ink); text-decoration: underline; }
+    .disclaimer { padding: 0 0 26px; font-size: 0.85rem; max-width: 64em; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .lang { margin-left: auto; }
+      .hero-grid { grid-template-columns: 1fr; padding-top: 52px; gap: 8px; }
+      .hero-copy { padding-bottom: 44px; }
+      .hero .phone { margin-bottom: -96px; }
+      .steps, .trust-grid { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .row, .price-grid { grid-template-columns: 1fr; gap: 32px; }
+      .row { padding: 44px 0; }
+      .row.flip .row-art { order: 0; }
+      .final-card { grid-template-columns: 1fr; padding: 34px 28px; justify-items: start; }
+      section { padding: 72px 0; }
+    }
+    @media (max-width: 560px) {
+      :root { --wrap: calc(100% - 32px); }
+      .nav { gap: 10px; }
+      .brand span { display: none; }
+      .lang button { padding: 5px 9px; }
+      .nav-cta { padding: 0 13px; }
+      .grid { grid-template-columns: 1fr; gap: 28px; }
+      .row-art.duo .phone + .phone { display: none; }
+      .row-art.duo .phone:first-child { transform: none; }
+      .pack b { font-size: 1.9rem; }
+      .pack b small { display: block; margin: 4px 0 0; font-size: 0.9rem; }
+      .pack { padding: 18px 16px 16px; }
+      .pack.best::after { position: static; display: inline-block; margin-top: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .wave span { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .store-btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap nav">
+      <a class="brand" href="./" data-lh="./"><img src="assets/icon-64.png" width="32" height="32" alt=""><span data-i="name">繁字逐字稿</span></a>
+      <nav class="nav-links" aria-label="主要導覽">
+        <a href="#features" data-i="navFeatures">功能</a>
+        <a href="#pricing" data-i="navPricing">計費</a>
+        <a href="#faq" data-i="navFaq">常見問題</a>
+        <a href="support.html" data-lh="support.html" data-i="navSupport">支援</a>
+      </nav>
+      <div class="lang" role="group" aria-label="語言 / Language / 言語">
+        <button type="button" data-lang="zh" lang="zh-Hant" aria-pressed="true">繁中</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ja" lang="ja" aria-pressed="false">日本語</button>
+      </div>
+      <a class="nav-cta" href="https://apps.apple.com/app/id6816823463" data-i="navGet">下載</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding:0">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker"><i></i><span data-i="kicker">iPhone 與 iPad・已在 App Store 上架</span></p>
+          <h1 data-i="h1">錄音檔，<br>一鍵轉換<span class="nb"><em>逐字稿及摘要</em>。</span></h1>
+          <p class="lead" data-i="lead">針對台灣國語與繁體中文優化，中英夾雜也能精準辨識。每一句都附時間戳記，會議摘要一併完成。</p>
+          <div class="cta-row">
+            <a class="store-btn" href="https://apps.apple.com/app/id6816823463">
+              <svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 4v14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M8 12.5l6 6 6-6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 23.5h16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+              <div><small data-i="storeSmall">免費下載</small><span data-i="storeBig">前往 App Store</span></div>
+            </a>
+            <a class="ghost-link" href="#how" data-i="seeHow">看看怎麼運作</a>
+          </div>
+          <ul class="facts">
+            <li data-i="fact1">免註冊、免登入</li>
+            <li data-i="fact2">新用戶 60 點試用</li>
+            <li data-i="fact3">無月租</li>
+            <li data-i="fact4">摘要不另扣點</li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <div class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="phone"><img data-shot="home" src="assets/zh/home.webp" width="600" height="1304" alt="繁字逐字稿首頁：選好錄音檔後顯示所需點數與「產生逐字稿及摘要」按鈕" data-alt="altHome"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" style="padding-top:176px">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow" data-i="howEyebrow">使用方式</p>
+          <h2 data-i="howTitle">從錄音到摘要，三個步驟</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal">
+            <h3 data-i="s1t">選擇錄音檔</h3>
+            <p data-i="s1p">從「檔案」選取，或在「語音備忘錄」點選分享。支援 m4a、mp3、wav、aac、caf，單檔最長 5 小時。</p>
+          </li>
+          <li class="reveal">
+            <h3 data-i="s2t">勾選摘要段落</h3>
+            <p data-i="s2p">確認所需點數後，點選「產生逐字稿及摘要」，勾選想要的段落。選擇會保留供下次使用。</p>
+          </li>
+          <li class="reveal">
+            <h3 data-i="s3t">閱讀、核對、匯出</h3>
+            <p data-i="s3p">完成後直接打開摘要，可隨時切換回逐字稿，點選任一句重聽錄音，再匯出成需要的格式。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="features" class="rows">
+      <div class="wrap">
+        <div class="row">
+          <div class="row-art reveal">
+            <div class="phone"><img data-shot="playing" src="assets/zh/playing.webp" width="600" height="1304" loading="lazy" alt="逐字稿畫面：每句附時間戳記，正在播放的句子以藍色標示" data-alt="altPlaying"></div>
+          </div>
+          <div class="reveal">
+            <p class="eyebrow" data-i="f1e">逐字稿</p>
+            <h2 data-i="f1t">每一句，都能點回錄音</h2>
+            <p class="body" data-i="f1p">逐字稿每句都附時間戳記。對內容有疑問時，點一下那句話，錄音就從該處開始播放，不必來回拖曳進度條。</p>
+            <ul class="ticks">
+              <li data-i="f1a">結合語音辨識與文字校對，整理日常對話與專業用語</li>
+              <li data-i="f1b">可逐句修正，匯出時使用修正後的內容</li>
+              <li data-i="f1c">加入「常用詞彙」，協助處理人名、單位與專有名詞</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row flip">
+          <div class="row-art duo reveal">
+            <div class="phone"><img data-shot="sections" src="assets/zh/sections.webp" width="600" height="1304" loading="lazy" alt="摘要段落選擇面板，列出八個可勾選的段落" data-alt="altSections"></div>
+            <div class="phone"><img data-shot="summary" src="assets/zh/summary.webp" width="600" height="1304" loading="lazy" alt="會議摘要畫面，依重點摘要、討論事項、決議事項等段落整理" data-alt="altSummary"></div>
+          </div>
+          <div class="reveal">
+            <p class="eyebrow" data-i="f2e">會議摘要</p>
+            <h2 data-i="f2t">摘要一併完成，不另扣點</h2>
+            <p class="body" data-i="f2p">製作逐字稿時會自動產生條理清楚的會議摘要。開始前勾選需要的段落，摘要裡的時間軸可直接跳回逐字稿與對應的錄音位置。</p>
+            <ul class="tags">
+              <li data-i="t1">重點摘要</li>
+              <li data-i="t2">前次會議決議辦理情形</li>
+              <li data-i="t3">報告事項</li>
+              <li data-i="t4">討論事項</li>
+              <li data-i="t5">決議事項</li>
+              <li data-i="t6">臨時動議</li>
+              <li data-i="t7">待辦事項</li>
+              <li data-i="t8">時間軸</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-art reveal">
+            <div class="phone"><img data-shot="calendar" src="assets/zh/calendar.webp" width="600" height="1304" loading="lazy" alt="歷史紀錄的月曆，有逐字稿的日期以深色標示" data-alt="altCalendar"></div>
+          </div>
+          <div class="reveal">
+            <p class="eyebrow" data-i="f3e">歷史紀錄</p>
+            <h2 data-i="f3t">依日期找回每一場會議</h2>
+            <p class="body" data-i="f3p">用月曆快速篩選特定日期的逐字稿，有內容的日期會清楚標示。逐字稿、摘要與錄音放在一起，隨時可以回頭查閱。</p>
+            <ul class="ticks">
+              <li data-i="f3a">長按即可刪除單筆逐字稿、摘要與相關錄音</li>
+              <li data-i="f3b">iPhone 與 iPad 皆可使用</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="more">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow" data-i="mE">更多功能</p>
+          <h2 data-i="mT">整理會議紀錄需要的，都準備好了</h2>
+        </div>
+        <div class="grid">
+          <div class="reveal"><p class="mono">TXT · MD · DOCX · PDF · SRT</p><h3 data-i="g1t">多種匯出格式</h3><p data-i="g1p">逐字稿可匯出為純文字、Markdown、Word、PDF 或 SRT 字幕；摘要可匯出為純文字、Markdown、Word 或 PDF。</p></div>
+          <div class="reveal"><p class="mono">M4A · MP3 · WAV · AAC · CAF</p><h3 data-i="g2t">常見音訊格式，最長 5 小時</h3><p data-i="g2p">長時間的會議、課程或訪談也能一次處理，不需要自己先分段。</p></div>
+          <div class="reveal"><p class="mono" data-i="g3m">語音備忘錄 → 分享</p><h3 data-i="g3t">從語音備忘錄快速匯入</h3><p data-i="g3p">在「語音備忘錄」點選分享，選擇繁字逐字稿，回到 App 時錄音檔已經選好。</p></div>
+          <div class="reveal"><p class="mono" data-i="g4m">常用詞彙</p><h3 data-i="g4t">教它認得你的專有名詞</h3><p data-i="g4p">先加入人名、組織、單位與專業用語，協助文字校對正確處理同音字。</p></div>
+          <div class="reveal"><p class="mono" data-i="g5m">逐句編輯</p><h3 data-i="g5t">辨識結果可以修正</h3><p data-i="g5p">逐句檢查並修改文字，後續匯出會使用修正後的內容。</p></div>
+          <div class="reveal"><p class="mono">繁體中文 · English · 日本語</p><h3 data-i="g6t">三種語言</h3><p data-i="g6p">可在「設定 › 語言」切換。語言同時決定錄音的辨識語言，校對與摘要也會使用對應語言。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="price">
+      <div class="wrap price-grid">
+        <div class="reveal">
+          <p class="eyebrow" data-i="pE">計費方式</p>
+          <h2 data-i="pT">1 點處理 1 分鐘，用多少算多少</h2>
+          <p class="body" data-i="pP">沒有月租或訂閱，只有製作逐字稿時才使用點數。只計完整分鐘，例如 10 分 40 秒的錄音扣 10 點，單檔最低 1 點。</p>
+          <ul class="ticks">
+            <li data-i="p1">符合資格的新用戶可獲得 60 點試用點數</li>
+            <li data-i="p2">會議摘要免費，不另扣點</li>
+            <li data-i="p3">處理失敗不扣點，或由系統自動退還</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="packs">
+            <div class="pack"><b>60<small data-i="unit">點</small></b><span data-i="h1h">約 1 小時錄音</span></div>
+            <div class="pack"><b>300<small data-i="unit">點</small></b><span data-i="h5h">約 5 小時錄音</span></div>
+            <div class="pack"><b>600<small data-i="unit">點</small></b><span data-i="h10h">約 10 小時錄音</span></div>
+            <div class="pack best" data-badge="最划算" data-badge-key="best"><b>1,500<small data-i="unit">點</small></b><span data-i="h25h">約 25 小時錄音</span></div>
+          </div>
+          <p class="fine" data-i="pFine">點數方案為 App 內購買的消耗型項目，實際售價以 App 內「點數」頁面顯示為準。試用點數每台裝置限領一次。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow" data-i="trE">隱私與資料</p>
+          <h2 data-i="trT">不用帳號，資料由你決定去留</h2>
+        </div>
+        <div class="trust-grid">
+          <div class="reveal"><h3 data-i="tr1t">免註冊使用</h3><p data-i="tr1p">不需要提供姓名、電子郵件或密碼。App 以匿名帳號保存點數與工作狀態。</p></div>
+          <div class="reveal"><h3 data-i="tr2t">先說明，再處理</h3><p data-i="tr2p">語音辨識、文字校對與摘要由私密雲端服務處理。使用前會先顯示資料處理說明，並取得你的同意。</p></div>
+          <div class="reveal"><h3 data-i="tr3t">隨時可以刪除</h3><p data-i="tr3p">可逐筆刪除逐字稿、摘要與錄音，也可在「設定」選擇「刪除帳號與所有資料」。</p></div>
+        </div>
+        <p class="after reveal" data-i="trAfter">各服務接收的資料明細，請參閱<a href="privacy.html" data-lh="privacy.html">隱私權政策</a>。</p>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow" data-i="qE">常見問題</p>
+          <h2 data-i="qT">下載前想知道的事</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary data-i="q1">逐字稿的準確度如何？</summary><p data-i="a1">品質會受到原始錄音的清晰度、背景噪音、收音距離、說話音量及多人同時發言等因素影響；清楚且干擾較少的錄音通常能獲得較佳結果。產生的逐字稿與摘要仍可能包含錯誤，重要的姓名、數字、決議及待辦事項請與原始錄音核對。</p></details>
+          <details><summary data-i="q2">點數不夠處理整段錄音怎麼辦？</summary><p data-i="a2">App 會顯示還差幾點，並預先選好足夠的點數方案，購買後即可處理完整錄音。</p></details>
+          <details><summary data-i="q3">處理失敗會扣點嗎？</summary><p data-i="a3">不會。處理失敗不扣點，或由系統自動退還。摘要若產生失敗，可在摘要畫面免費重新產生。</p></details>
+          <details><summary data-i="q4">點數可以移到另一台裝置嗎？</summary><p data-i="a4">點數屬於 App 在這台裝置上建立的匿名帳號，無法假定可移轉至其他裝置。刪除帳號會一併移除剩餘點數，請勿為了排除餘額問題而刪除帳號。</p></details>
+          <details><summary data-i="q5">需要網路連線嗎？</summary><p data-i="a5">需要。製作逐字稿與摘要時須連上網路；完成後的內容可在 App 內查看與匯出。</p></details>
+          <details><summary data-i="q6">遇到問題要找誰？</summary><p data-i="a6">請參閱<a href="support.html" data-lh="support.html">支援頁面</a>，裡面有詳細的操作說明與聯絡方式。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <div class="final-card reveal">
+          <img src="assets/icon-256.png" width="92" height="92" alt="" loading="lazy">
+          <div>
+            <h2 data-i="finT">下一場會議，交給繁字逐字稿</h2>
+            <p data-i="finP">免費下載，新用戶可獲得 60 點試用點數，約可處理 1 小時錄音。</p>
+          </div>
+          <a class="store-btn" href="https://apps.apple.com/app/id6816823463">
+            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 4v14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M8 12.5l6 6 6-6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 23.5h16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+            <div><small data-i="storeSmall">免費下載</small><span data-i="storeBig">前往 App Store</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <span data-i="copy">Copyright 2026 繁字逐字稿。</span>
+        <nav aria-label="頁尾">
+          <a href="privacy.html" data-lh="privacy.html" data-i="fPrivacy">隱私權政策</a>
+          <a href="support.html" data-lh="support.html" data-i="navSupport">支援</a>
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-i="fEula">使用條款（EULA）</a>
+          <a href="https://apps.apple.com/app/id6816823463">App Store</a>
+        </nav>
+      </div>
+      <p class="disclaimer" data-i="disc">Apple、iPhone、iPad 與 App Store 是 Apple Inc. 的商標。</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var T = {
+        en: {
+          title: "AccuScribe: Recordings to Transcripts and Meeting Summaries",
+          name: "AccuScribe",
+          navFeatures: "Features", navPricing: "Pricing", navFaq: "FAQ", navSupport: "Support", navGet: "Get",
+          kicker: "iPhone and iPad · Available on the App Store",
+          h1: "Recordings to <em>transcripts and summaries</em> in one tap.",
+          lead: "Accurate English transcripts for American and British speakers, with a timestamp on every line and a meeting summary made in the same step.",
+          storeSmall: "Free download", storeBig: "Get it on the App Store", seeHow: "See how it works",
+          fact1: "No sign-up or login", fact2: "60 credits for new users", fact3: "No subscription", fact4: "Summaries are free",
+          altHome: "AccuScribe Home screen with a recording selected, the credit estimate, and the Create Transcript & Summary button",
+          altPlaying: "Transcript screen with a timestamp on every line and the line being played highlighted in blue",
+          altSections: "Summary sections sheet listing eight sections to choose from",
+          altSummary: "Meeting summary organized into overview, discussion, decisions, and other sections",
+          altCalendar: "Calendar in the Transcripts tab, with darker dates marking days that have transcripts",
+          howEyebrow: "HOW IT WORKS", howTitle: "From recording to summary in three steps",
+          s1t: "Choose a recording", s1p: "Pick a file from Files, or share one from Voice Memos. Supports m4a, mp3, wav, aac, and caf, up to five hours per recording.",
+          s2t: "Pick summary sections", s2p: "Review the credit estimate, tap “Create Transcript &amp; Summary,” and choose the sections you want. Your choice is remembered for next time.",
+          s3t: "Read, check, export", s3p: "The summary opens first; switch to the transcript at any time, tap a line to hear it again, then export in the format you need.",
+          f1e: "TRANSCRIPTS", f1t: "Tap any line to hear it again",
+          f1p: "Every line has a timestamp. When something looks off, tap the line and the recording plays from that moment. No scrubbing back and forth.",
+          f1a: "Speech recognition plus proofreading for everyday talk and specialist terms",
+          f1b: "Correct any line; exports use your corrected text",
+          f1c: "Add names, companies, and acronyms to Vocabulary so they are spelled correctly",
+          f2e: "MEETING SUMMARIES", f2t: "A summary with every transcript, at no extra charge",
+          f2p: "A clear meeting summary is created along with each transcript. Choose the sections before you start, and tap any point in the timeline to jump back to the transcript and the recording.",
+          t1: "Overview", t2: "Matters Arising", t3: "Reports", t4: "Discussion", t5: "Decisions", t6: "Other Business", t7: "Action Items", t8: "Timeline",
+          f3e: "HISTORY", f3t: "Find any meeting by date",
+          f3p: "Filter transcripts by date with the calendar; days with transcripts are clearly marked. Transcript, summary, and recording stay together so you can come back to them.",
+          f3a: "Touch and hold to delete a transcript with its summary and recording",
+          f3b: "Works on iPhone and iPad",
+          mE: "MORE", mT: "Everything you need to turn a meeting into notes",
+          g1t: "Export in many formats", g1p: "Export transcripts as plain text, Markdown, Word, PDF, or SRT subtitles. Export summaries as plain text, Markdown, Word, or PDF.",
+          g2t: "Common audio formats, up to five hours", g2p: "Long meetings, lectures, and interviews are processed in one go. No need to split the file first.",
+          g3m: "Voice Memos → Share", g3t: "Import straight from Voice Memos", g3p: "Tap Share in Voice Memos and choose AccuScribe. When you open the app, the recording is already selected.",
+          g4m: "Vocabulary", g4t: "Teach it your terms", g4p: "Add names, companies, products, and acronyms before transcribing so they are spelled correctly.",
+          g5m: "Line editing", g5t: "Fix what it got wrong", g5p: "Check and correct the text line by line. Exports use your corrected text.",
+          g6t: "Three languages", g6p: "Switch in Settings › Language. The language also sets how recordings are recognized, proofread, and summarized.",
+          pE: "PRICING", pT: "1 credit covers 1 minute. Pay only for what you use.",
+          pP: "No subscription. Credits are used only for transcripts and only whole minutes count: a recording of 10 minutes 40 seconds costs 10 credits, with a minimum of 1 credit per recording.",
+          p1: "Eligible new users may receive 60 credits", p2: "Meeting summaries are free", p3: "If processing fails, you are not charged, or the credits are refunded automatically",
+          unit: "credits", h1h: "About 1 hour of audio", h5h: "About 5 hours of audio", h10h: "About 10 hours of audio", h25h: "About 25 hours of audio", best: "Best value",
+          pFine: "Credit packs are consumable in-app purchases. Current prices are shown on the Credits tab in the app. The new-user offer is limited to once per device.",
+          trE: "PRIVACY AND DATA", trT: "No account needed, and your data stays under your control",
+          tr1t: "No sign-up", tr1p: "No name, email, or password. The app keeps your credits and job status in an anonymous account.",
+          tr2t: "Disclosure first", tr2p: "Speech recognition, proofreading, and summaries run on private cloud services. The app explains what is shared and asks for your consent before anything is processed.",
+          tr3t: "Delete at any time", tr3p: "Delete individual transcripts with their summaries and recordings, or choose Delete Account and All Data in Settings.",
+          trAfter: "See the <a href=\"privacy.html#en\" data-lh=\"privacy.html\">Privacy Policy</a> for what each service receives.",
+          qE: "FAQ", qT: "Good to know before you download",
+          q1: "How accurate are the transcripts?", a1: "Quality depends on the recording: clarity, background noise, distance from the microphone, and people talking over each other all matter. Clear recordings with little noise give the best results. Transcripts and summaries can still contain mistakes, so check names, numbers, decisions, and action items against the original audio.",
+          q2: "What if I don't have enough credits for a recording?", a2: "The app shows how many credits you are short and preselects a pack that covers it. After the purchase you can process the whole recording.",
+          q3: "Am I charged if processing fails?", a3: "No. If processing fails, you are not charged, or the credits are refunded automatically. If a summary fails, you can try again for free on the summary screen.",
+          q4: "Can I move credits to another device?", a4: "Credits belong to the app's anonymous account on this device and cannot be moved to another device. Deleting your account also removes any remaining credits, so please don't delete it to troubleshoot a balance.",
+          q5: "Do I need an internet connection?", a5: "Yes, to create transcripts and summaries. Finished items can be viewed and exported in the app.",
+          q6: "Where can I get help?", a6: "The <a href=\"support.html#en\" data-lh=\"support.html\">Support page</a> has step-by-step help and contact details.",
+          finT: "Hand your next meeting to AccuScribe", finP: "Free to download. New users may receive 60 credits, enough for about an hour of audio.",
+          copy: "Copyright 2026 AccuScribe.", fPrivacy: "Privacy Policy", fEula: "Terms of Use (EULA)",
+          disc: "Apple, iPhone, iPad, and App Store are trademarks of Apple Inc."
+        },
+        ja: {
+          title: "コエジ：録音ファイルを文字起こしと要約に",
+          name: "コエジ",
+          navFeatures: "機能", navPricing: "料金", navFaq: "よくある質問", navSupport: "サポート", navGet: "入手",
+          kicker: "iPhone・iPad対応・App Storeで配信中",
+          h1: "録音ファイルを、<br>ワンタップで<span class=\"nb\"><em>文字起こしと要約</em>に。</span>",
+          lead: "日本語の音声を認識し、句読点を整えた読みやすい文字起こしを作成します。文ごとにタイムスタンプが付き、会議の要約も同時に作成します。",
+          storeSmall: "無料ダウンロード", storeBig: "App Storeで入手", seeHow: "使い方を見る",
+          fact1: "登録・ログイン不要", fact2: "新規ユーザーに60ポイント", fact3: "サブスクリプションなし", fact4: "要約は無料",
+          altHome: "コエジのホーム画面。録音ファイルを選択すると、必要なポイントと作成ボタンが表示されます",
+          altPlaying: "文字起こし画面。各文にタイムスタンプが付き、再生中の文が青色で表示されます",
+          altSections: "要約の項目を選ぶシート。8つの項目が並んでいます",
+          altSummary: "概要、討議事項、決定事項などの項目に整理された会議の要約",
+          altCalendar: "文字起こしタブのカレンダー。文字起こしがある日付は濃い色で表示されます",
+          howEyebrow: "使い方", howTitle: "録音から要約まで、3つのステップ",
+          s1t: "録音ファイルを選ぶ", s1p: "「ファイル」から選ぶか、「ボイスメモ」から共有します。m4a、mp3、wav、aac、cafに対応し、1件あたり最大5時間です。",
+          s2t: "要約の項目を選ぶ", s2p: "必要なポイントを確認して「文字起こしと要約を作成」をタップし、要約の項目を選びます。選択内容は次回も引き継がれます。",
+          s3t: "読む、確かめる、書き出す", s3p: "完了すると要約が開き、いつでも文字起こしに切り替えられます。文をタップして録音を聞き直し、必要な形式で書き出せます。",
+          f1e: "文字起こし", f1t: "どの文からでも、録音を聞き直せる",
+          f1p: "文ごとにタイムスタンプが付きます。気になる文をタップすると、その位置から録音を再生します。再生位置を探し直す必要はありません。",
+          f1a: "音声認識と文章の校正で、会話や専門用語を整理",
+          f1b: "各文を修正でき、書き出しには修正後のテキストを使用",
+          f1c: "「用語集」に名前、会社名、略語を追加して正しい表記に",
+          f2e: "会議の要約", f2t: "要約も同時に作成、追加のポイントは不要",
+          f2p: "文字起こしと同時に、読みやすい会議の要約を自動で作成します。開始前に項目を選べ、タイムライン上の項目をタップすると、文字起こしと録音の該当する時点に移動できます。",
+          t1: "概要", t2: "前回決定事項の進捗", t3: "報告事項", t4: "討議事項", t5: "決定事項", t6: "その他の議題", t7: "アクションアイテム", t8: "タイムライン",
+          f3e: "履歴", f3t: "日付から会議を探せる",
+          f3p: "カレンダーで日付を絞り込めます。文字起こしがある日付はひと目でわかります。文字起こし、要約、録音をまとめて保存し、いつでも見返せます。",
+          f3a: "長押しで、文字起こしを要約と録音ファイルも含めて削除",
+          f3b: "iPhoneとiPadに対応",
+          mE: "その他の機能", mT: "議事録づくりに必要な機能をひとつに",
+          g1t: "多彩な書き出し形式", g1p: "文字起こしはプレーンテキスト、Markdown、Word、PDF、SRT字幕として、要約はプレーンテキスト、Markdown、Word、PDFとして書き出せます。",
+          g2t: "主な音声形式に対応、最大5時間", g2p: "長時間の会議、講義、インタビューも一度に処理できます。ファイルを分割する必要はありません。",
+          g3m: "ボイスメモ → 共有", g3t: "ボイスメモからすぐに取り込める", g3p: "「ボイスメモ」で共有をタップし、コエジを選びます。アプリを開くと、録音ファイルが選択された状態になります。",
+          g4m: "用語集", g4t: "固有名詞を登録できる", g4p: "文字起こしの前に、名前、会社名、製品名、略語を追加しておくと、正しい表記に役立ちます。",
+          g5m: "文ごとの編集", g5t: "認識結果を修正できる", g5p: "文ごとに確認して修正できます。書き出しには修正後のテキストを使用します。",
+          g6t: "3つの言語", g6p: "「設定 › 言語」で切り替えられます。言語は録音の認識言語も決め、校正と要約にも同じ言語を使用します。",
+          pE: "料金", pT: "1ポイント＝1分。使った分だけ",
+          pP: "サブスクリプションはなく、ポイントを使うのは文字起こしだけです。1分未満は切り捨てるため、10分40秒の録音は10ポイントです。録音ファイル1件につき最低1ポイントが必要です。",
+          p1: "対象となる新規ユーザーは60ポイントを受け取れます", p2: "会議の要約は無料", p3: "処理に失敗した場合は消費されないか、自動で返還",
+          unit: "ポイント", h1h: "録音 約1時間分", h5h: "録音 約5時間分", h10h: "録音 約10時間分", h25h: "録音 約25時間分", best: "いちばんお得",
+          pFine: "ポイントパックはアプリ内課金の消耗型アイテムです。現在の価格はアプリの「ポイント」タブで確認できます。新規ユーザー向けの特典は端末ごとに1回限りです。",
+          trE: "プライバシーとデータ", trT: "アカウント登録なし。データの扱いは自分で決められる",
+          tr1t: "登録不要", tr1p: "名前、メールアドレス、パスワードは必要ありません。ポイントと処理状況は匿名アカウントに保存します。",
+          tr2t: "説明のうえで処理", tr2p: "音声認識、文章の校正、要約はクラウドサービスで処理します。処理の前に共有するデータを説明し、同意をいただきます。",
+          tr3t: "いつでも削除できる", tr3p: "文字起こしを要約と録音ファイルも含めて個別に削除できます。「設定」で「アカウントとすべてのデータを削除」も選べます。",
+          trAfter: "各サービスが受け取るデータについては、<a href=\"privacy.html#ja\" data-lh=\"privacy.html\">プライバシーポリシー</a>をご覧ください。",
+          qE: "よくある質問", qT: "ダウンロードの前に",
+          q1: "文字起こしの精度はどのくらいですか？", a1: "精度は録音の状態に左右されます。音声の明瞭さ、背景雑音、マイクとの距離、複数の人が同時に話す場面などが影響します。雑音が少ない明瞭な録音ほど良い結果になります。文字起こしと要約には誤りが含まれる場合があるため、名前、数字、決定事項、アクションアイテムは元の録音と照合してください。",
+          q2: "ポイントが足りない場合はどうなりますか？", a2: "不足しているポイント数を表示し、それをまかなえるパックをあらかじめ選択します。購入後、録音全体を処理できます。",
+          q3: "処理に失敗した場合、ポイントは消費されますか？", a3: "いいえ。処理に失敗した場合はポイントを消費しないか、自動的に返還します。要約に失敗した場合は、要約画面から無料で再試行できます。",
+          q4: "ポイントを別の端末に移せますか？", a4: "ポイントはこの端末上の匿名アカウントに紐づいており、別の端末への移行はできません。アカウントを削除すると残りのポイントも削除されるため、残高の問題を解決する目的では削除しないでください。",
+          q5: "インターネット接続は必要ですか？", a5: "文字起こしと要約の作成には必要です。完了した項目は、アプリ内で閲覧と書き出しができます。",
+          q6: "困ったときはどうすればよいですか？", a6: "<a href=\"support.html#ja\" data-lh=\"support.html\">サポートページ</a>に、詳しい使い方とお問い合わせ先を掲載しています。",
+          finT: "次の会議は、コエジにおまかせ", finP: "無料でダウンロードできます。新規ユーザーは60ポイント（録音 約1時間分）を受け取れます。",
+          copy: "Copyright 2026 コエジ。", fPrivacy: "プライバシーポリシー", fEula: "使用許諾契約（EULA）",
+          disc: "Apple、iPhone、iPad、App Storeは、Apple Inc.の商標です。"
+        }
+      };
+
+      var root = document.documentElement;
+      root.classList.add("js");
+      var nodes = [].slice.call(document.querySelectorAll("[data-i]"));
+      var alts = [].slice.call(document.querySelectorAll("[data-alt]"));
+      var shots = [].slice.call(document.querySelectorAll("[data-shot]"));
+      var badge = document.querySelector("[data-badge-key]");
+      var buttons = [].slice.call(document.querySelectorAll(".lang button"));
+      var zh = { title: document.title, best: badge.getAttribute("data-badge") };
+      nodes.forEach(function (el) { if (!(el.getAttribute("data-i") in zh)) zh[el.getAttribute("data-i")] = el.innerHTML; });
+      alts.forEach(function (el) { zh[el.getAttribute("data-alt")] = el.alt; });
+      T.zh = zh;
+
+      function show(lang) {
+        var t = T[lang];
+        root.lang = lang === "zh" ? "zh-Hant" : lang;
+        document.title = t.title;
+        nodes.forEach(function (el) { el.innerHTML = t[el.getAttribute("data-i")]; });
+        alts.forEach(function (el) { el.alt = t[el.getAttribute("data-alt")]; });
+        shots.forEach(function (el) { el.src = "assets/" + lang + "/" + el.getAttribute("data-shot") + ".webp"; });
+        badge.setAttribute("data-badge", t.best);
+        [].forEach.call(document.querySelectorAll("[data-lh]"), function (el) {
+          el.href = el.getAttribute("data-lh") + "#" + lang;
+        });
+        buttons.forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false"); });
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener("click", function () {
+          var lang = b.getAttribute("data-lang");
+          show(lang);
+          history.replaceState(null, "", "#" + lang);
+        });
+      });
+
+      // #en / #zh / #ja picks the language; otherwise follow the browser:
+      // zh -> 繁體中文, ja -> 日本語, anything else -> English.
+      var hash = location.hash.replace("#", "");
+      var nav = (navigator.language || "").toLowerCase();
+      var guess = nav.indexOf("zh") === 0 ? "zh" : nav.indexOf("ja") === 0 ? "ja" : "en";
+      show(T[hash] ? hash : guess);
+
+      var reveals = [].slice.call(document.querySelectorAll(".reveal"));
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+        }, { rootMargin: "0px 0px -8% 0px" });
+        reveals.forEach(function (el) { io.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add("in"); });
+      }
+    })();
+  </script>
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</body>
+</html>
