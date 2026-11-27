@@ -1,4 +1,24 @@
+# Every crawler is welcome, including AI search and AI assistants.
+# A short plain-text summary of this site for language models: https://quicksearchfile.com/llms.txt
+
 User-agent: *
+Allow: /
+
+# AI search, AI assistants, and model crawlers (listed explicitly so the intent is clear)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://quicksearchfile.com/sitemap.xml
